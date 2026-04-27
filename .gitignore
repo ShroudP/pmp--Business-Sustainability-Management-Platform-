@@ -1,0 +1,42 @@
+# ── LaTeX build artefacts ──────────────────────────────────────────
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+*.idx
+*.ind
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Compiled PDF (track only if you want to share a built copy)
+# Remove the next line if you DO want to commit the PDF
+report/main.pdf
+
+# ── macOS ──────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ── Windows ────────────────────────────────────────────────────────
+Thumbs.db
+desktop.ini
+
+# ── Course slide PDFs (large, reference-only, not source) ──────────
+*.pdf
+# Un-comment the line below if you DO want to track the compiled report PDF:
+# !report/main.pdf
+
+# ── Original Word templates (binary, not needed in git) ────────────
+*.docx
+*.doc
