@@ -25,6 +25,7 @@
 \definecolor{rowalt}{RGB}{220,230,242}      % alternate row shading
 
 % ---- Graphics & tables ----
+\usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{booktabs}
@@ -32,6 +33,15 @@
 \usepackage{colortbl}
 \usepackage{longtable}
 \usepackage{multirow}
+\usepackage{tikz}           
+\usepackage{enumitem}       
+\usepackage{float}           
+\usepackage{amsmath}         
+% hyperref 必须放在最后一行（禁止移动！）
+\usepackage[pdftex]{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+% 自定义表格列样式
 \newcolumntype{L}[1]{>{\raggedright\hbadness=10000\hfuzz=15pt\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 
@@ -245,190 +255,213 @@ Charter.}
 %  SECTION 2: INTEGRATION MANAGEMENT
 % ============================================================
 \section{Integration Management}
+Integration Management includes all of the processes required to unify, coordinate and manage all project elements to completion. This section describes how integration activities will be accomplished for the \textit{Business Sustainability Management Platform} developed by Group 5.
 
-Integration Management includes all of the processes required to
-unify, coordinate and manage all project elements to completion.
-Integration Management crosses all phases of projects and includes
-change management, execution, control and close out. Briefly describe
-how this will be accomplished.
+\subsection{Integration Management Overview and Approach}
+The primary objective of integration management for this project is to coordinate six work packages and unify ten functional modules to deliver a fully functional web-based ESG management platform. The integration strategy employs a modular blueprint architecture implemented in Flask. This ensures each business module, such as carbon tracking and waste management, operates independently while sharing a unified data layer, authentication system, and frontend framework. All subsidiary plans are integrated into this comprehensive project management plan. The scope baseline encompasses the ten functional modules detailed in the System Documentation. The schedule baseline aligns with a 16-week timeline from March to June, featuring monthly milestones for design, development, and testing. As a zero-cost academic endeavor, the cost baseline is constrained to team labor hours and university-provided virtual machine infrastructure.
 
-% --- 2.1 ---
-\subsection{Project Team Structure}
+\subsection{Project Team Structure and Governance}
+The project adopts a strong matrix organizational structure, granting the project manager moderate to high authority over resource allocation and task prioritization. The internal team consists of six members, supported by the course instructor acting as the project sponsor, and the university IT department providing virtual machine hosting. External stakeholders include compliance standard bodies like GRI and ISO 14064, open-source software communities, and hypothetical end-users such as Five Guys regional managers. Communication is maintained through weekly progress reports submitted to the sponsor, ensuring adherence to GRI Standards and UN SDG 12. The corporate governance structure, illustrated in Figure \ref{fig:team_structure}, involves a Project Steering Committee that conducts weekly reviews and cross-module coordination.
 
-\instr{Describe the organizational boundaries between the project and
-external entities. Define and describe communication with senior
-management, customers, subcontractors, purchasing, sales, marketing,
-legal, finance, procurement, installation and support organizations,
-standards or certification bodies, auditors, manufacturing, and the
-like.}
-
-\instr{Using a diagram, illustrate corporate governance bodies that may be
-involved in the approval process and describe their roles and
-responsibilities in Section~\ref{sec:roles}. Illustrate the project
-team structure and relationships in a style adapted to the project size
-and complexity.}
-
-\vspace{0.5em}
-% Org-chart figure — replace path below with your PNG file
 \begin{figure}[h]
-  \centering
-  \includegraphics[width=0.7\textwidth]{figures/project_team_structure.png}
-  \caption{Project Team Structure}
-  \label{fig:orgchart}
+\centering
+\begin{tikzpicture}[node distance=1.5cm, every node/.style={rectangle, draw, align=center, minimum width=3cm, minimum height=0.8cm}]
+    \node (corp) {Corporate / Programme Committee\\(Course Teaching Team)};
+    \node (steering) [below of=corp, yshift=-0.5cm, fill=blue!20, minimum width=8cm] {Project Steering Committee};
+    
+    \node (senior) [below of=steering, xshift=-4cm] {Senior User};
+    \node (sponsor) [below of=steering] {Executive / Sponsor\\(Course Instructor)};
+    \node (supplier) [below of=steering, xshift=4cm] {Senior Supplier\\(University IT)};
+    
+    \node (pm) [below of=sponsor, yshift=-1cm] {Project Manager\\(Liu Haopu)};
+    
+    % 调整虚线框：稍微上移 (yshift=0.5cm)，并减小高度 (3.8cm)，使其刚好包裹 PM 和 Team Leaders
+    \node (pmt) [below of=pm, yshift=0.5cm, dashed, draw, minimum width=9.5cm, minimum height=3.8cm] {};
+    \node at (pmt.north) [above=0.1cm, draw=none] {Project Management Team};
+    
+    \node (tl1) [below of=pm, xshift=-3cm, yshift=-0.5cm] {Team Leader 1\\(Yao Tianren)};
+    \node (tl2) [below of=pm, xshift=3cm, yshift=-0.5cm] {Team Leader 2\\(Gong Zhijian)};
+    
+    % 将最底部的两个节点额外下移 (yshift=-0.5cm)，彻底避开虚线框
+    \node (ug) [below of=tl1, yshift=-0.5cm] {User Group\\(Li Sihang)};
+    \node (sme) [below of=tl2, yshift=-0.5cm] {Subject Matter Experts\\(All Team Members)};
+    
+    \draw[->] (corp) -- (steering);
+    \draw[->] (steering) -- (sponsor);
+    \draw[->] (sponsor) -- (pm);
+    \draw[->] (pm) -- (tl1);
+    \draw[->] (pm) -- (tl2);
+    \draw[->] (tl1) -- (ug);
+    \draw[->] (tl2) -- (sme);
+\end{tikzpicture}
+\caption{Project Team Structure and Governance}
+\label{fig:team_structure}
 \end{figure}
 
-% --- 2.2 ---
-\subsection{Roles and Responsibilities}
-\label{sec:roles}
-
-\instr{List the major roles identified in the project team structure
-diagram as well as internal and external project stakeholders who are
-not specifically members of the project team. Describe their relevance
-to the project and their degree of interaction for specific project
-activities.}
-
-\vspace{0.5em}
-\noindent
-\begin{tabularx}{\linewidth}{|L{3.5cm}|L{3cm}|X|L{2.5cm}|}
-  \hline
-  \thead{Project Position} & \thead{Name} & \thead{Responsibilities} & \thead{External Resource}\\
-  \hline
-  & & & \\[8pt]
-  \hline
-  & & & \\[8pt]
-  \hline
-  & & & \\[8pt]
-  \hline
-  & & & \\[8pt]
-  \hline
-  & & & \\[8pt]
-  \hline
+The work package-based team structure is defined as follows, with clear integration points between packages:
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\linewidth}{|c|c|c|X|}
+\hline
+\textbf{WP ID} & \textbf{Lead} & \textbf{Focus Area} & \textbf{Key Integration Deliverables} \\
+\hline
+WP1 & Yao Tianren & Requirements \& Design & System architecture, database schema, prototype \\
+\hline
+WP2 & Liu Haopu & Backend Development & Core APIs, business logic, database migrations \\
+\hline
+WP3 & Li Sihang & Frontend Foundation & Auth system, reusable components, role-based navigation \\
+\hline
+WP4 & Gong Zhijian & Business Frontend & Carbon/waste/report pages, dashboard visualization \\
+\hline
+WP5 & Gong Zhijian & Integration \& Testing & End-to-end flow validation, deployment, performance optimization \\
+\hline
+WP6 & Liu Haopu & Delivery \& Documentation & System documentation, user manual, final presentation \\
+\hline
 \end{tabularx}
+\caption{Work Package Structure and Integration Responsibilities}
+\end{table}
 
-% --- 2.3 ---
+\subsection{Roles and Responsibilities}
+Table \ref{tab:roles} defines the major roles in the project team, their core integration management responsibilities, and external resource dependencies.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{|p{2.5cm}|p{8.5cm}|p{3cm}|}
+\hline
+\textbf{Project Position} & \textbf{Integration Management Responsibilities} & \textbf{External Resource} \\
+\hline
+Project Manager (Liu Haopu) & Holds ultimate responsibility for integration activities, coordinates cross-work package dependencies, chairs Change Control Board (CCB) meetings, and integrates performance data into status reports. & Course Instructor, University IT \\
+\hline
+Change Control Board & Reviews baseline change requests, assesses their impact on scope, schedule, and quality, and monitors the implementation of approved changes. & None \\
+\hline
+WP1 Lead (Yao Tianren) & Integrates user requirements into system design, ensures the database schema supports all modules, and resolves architectural conflicts. & None \\
+\hline
+WP2 Lead (Liu Haopu) & Integrates backend APIs with frontend modules, ensures data consistency, and implements cross-module business logic such as compliance scoring. & None \\
+\hline
+WP3 Lead (Li Sihang) & Integrates the authentication system with business modules, ensures consistent UI/UX, and implements role-based access control. & None \\
+\hline
+WP4/WP5 Lead (Gong Zhijian) & Integrates frontend pages with backend APIs, ensures end-to-end data flow, validates cross-browser compatibility, and manages system deployment. & University IT (VM Deployment) \\
+\hline
+Project Sponsor & Approves the project charter, resolves organizational resource conflicts, and authorizes major scope changes affecting project objectives. & None \\
+\hline
+\end{tabular}
+\caption{Roles and Responsibilities for Integration Management}
+\label{tab:roles}
+\end{table}
+
+\subsection{Direct and Manage Project Execution}
+Execution activities are driven by a structured workflow where all code and documentation are managed via GitLab. A main branch is maintained for stable releases alongside feature branches for specific work packages, with peer reviews required before merging. Weekly synchronization meetings are held every Monday to review progress, identify blockers, and align upcoming tasks. Work performance data, including completed tasks, bug resolution rates, and test coverage, is collected weekly and integrated into status reports. Approved change requests are assigned to relevant work package leads, and their implementation is verified by the project manager before closure. The Project Management Information System (PMIS) comprises GitLab for version control, Discord for real-time communication, Google Docs for collaborative documentation, and MySQL Workbench for database management.
+
+\subsection{Monitor and Control Project Work}
+Project performance is continuously monitored against the 16-week schedule baseline. Key performance indicators include schedule variance, defect density, and cross-module integration resolution time. Earned Value Management (EVM) principles are applied to quantify progress, triggering corrective actions if the Schedule Performance Index (SPI) falls below 0.9 for two consecutive weeks. A three-tiered information flow ensures consistent reporting: raw work performance data is analyzed into performance information, which is then compiled into weekly status reports for the team and monthly updates for the sponsor. When deviations occur, the root cause is analyzed to develop corrective actions that minimize schedule disruption. Furthermore, technical risks and data anomalies are tracked during weekly reviews, utilizing the platform's built-in anomaly detection module to maintain data integrity.
+
 \subsection{Change Management}
+The formal change control process governs all modifications affecting the project's scope, schedule, or quality baselines. Any team member can identify a change, which must be documented via a GitLab Issue template. The relevant work package lead then conducts a comprehensive impact analysis. The Change Control Board (CCB), chaired by the project manager, reviews these requests during weekly Wednesday meetings. Minor changes, such as defect repairs, are approved by the project manager, while major scope additions require sponsor authorization. Emergency critical bug fixes may be implemented immediately but must undergo CCB review within three business days. All changes are tracked in a living change log, ensuring that only approved modifications are integrated into the main codebase.
 
-\instr{Describe how change will be managed throughout the Delivery
-Stage of this project. This should include Change Management processes,
-roles and responsibilities, tools and techniques and reporting.}
-
-\subsubsection{Change Control}
-
-\instr{Describe the Change Control process that will be used
-including:}
-\begin{itemize}
-  \item Change governance
-  \item Change identification and request management
-  \item Impact analysis
-  \item Change approval process
-  \item Change tracking
-\end{itemize}
-
-% --- 2.4 ---
 \subsection{Project Close Out}
-
-\instr{Include the plans necessary to ensure orderly close out of the
-project. Items in the close out plan should include a staff
-reassignment plan, a plan for archiving project materials, a plan for
-post-mortem debriefings of project personnel, and preparation of a
-final report to include lessons learned and analysis of project
-objectives achieved.}
+The project close-out phase ensures a systematic transition of the final deliverables to the sponsor. This process begins with scope verification to confirm all baseline requirements are met, followed by a final system quality acceptance test. Upon successful validation, the fully functional platform, comprehensive system documentation, user manuals, and presentation materials are formally transitioned to the sponsor, culminating in a signed acceptance certificate. Following the handover, team members are released from their primary responsibilities but remain available for a two-week support period. All project artifacts, including source code, design documents, and test results, are archived in the GitLab repository for future reference. Finally, a post-mortem meeting is conducted to document lessons learned, evaluating the effectiveness of the modular architecture and team structure to update organizational process assets.
 
 % ============================================================
 %  SECTION 3: SCOPE MANAGEMENT
 % ============================================================
 \section{Scope Management}
+\subsection{Scope Management Plan Overview}
+This section establishes the framework for managing the scope of the Business Sustainability Management Platform, ensuring the project delivers all necessary features without unauthorized additions. The primary objectives are to clearly define product and project boundaries, standardize requirements collection, and prevent scope creep. The project adheres to standard scope management processes, encompassing scope planning, requirements collection, scope definition, Work Breakdown Structure (WBS) creation, scope validation, and scope control. The Project Manager oversees the entire process and chairs the Change Control Board, while specific team members, such as Gong Zhijian and Yao Tianren, lead frontend integration and requirements analysis, respectively. The Project Sponsor provides final baseline approval.
 
-\instr{Describe how scope will be managed throughout the Delivery Stage
-of this project. This could include information on specific Scope
-Management processes such as scope verification and control,
-development of work breakdown structure, roles and responsibilities,
-tools and techniques and reporting.}
-
-% --- 3.1 ---
-\subsection{Scope Statement}
-
-\instr{Provide a scope statement, including what is within and what is
-not within scope; that is, the scope of the project needed to meet the
-stated objective. It is important to keep in mind that scope includes
-the requirements for both the product scope (the features and functions
-of a product or service) and project scope (the work required to
-deliver the product).}
-
-\vspace{0.5em}
-\noindent
-\begin{tabularx}{\linewidth}{|X|X|}
-  \hline
-  \thead{Activities In Scope} & \thead{Activities Out of Scope}\\
-  \hline
-  & \\[30pt]
-  \hline
-  & \\[30pt]
-  \hline
+\begin{table}[h!]
+\centering
+\caption{Scope Management Roles and Responsibilities}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+\textbf{Role} & \textbf{Responsibilities} \\ \midrule
+Project Manager & Overall scope management, change control board chair, baseline approval \\
+Development Team & Execute scope work, report progress, identify scope deviations \\
+Gong Zhijian & Lead business frontend development and integration testing \\
+Yao Tianren & Requirements analysis, system design, scope validation \\
+Liu Haopu & Backend development, database design, documentation \\
+Li Sihang & Frontend infrastructure, reusable components development \\
+Client Representative & Requirements confirmation, deliverable acceptance, change request submission \\
+Project Sponsor & Final scope baseline approval, major change request authorization \\ \bottomrule
 \end{tabularx}
+\end{table}
 
-% --- 3.2 ---
 \subsection{Requirements Management}
+Requirements are systematically categorized into business, stakeholder, solution, transition, project, and quality requirements. Business requirements focus on centralized ESG data management and compliance with GRI Standards. Stakeholder needs range from simple data entry for store staff to comprehensive analytics for headquarters managers. Solution requirements dictate the functional modules, such as carbon tracking and supplier assessment, alongside non-functional targets like supporting 1000 concurrent users and ensuring sub-two-second page load times. These requirements are elicited through interviews with restaurant managers, focus groups, prototyping, and document analysis. Prioritization follows the MoSCoW method, distinguishing essential features like carbon tracking from optional enhancements like OCR-assisted input. A Requirements Traceability Matrix (RTM) is maintained to link each requirement to its source, WBS component, and test case, ensuring comprehensive coverage and facilitating impact analysis during change requests.
 
-\instr{Requirements will feed into the details of the project and
-product scope. Describe how requirements will be gathered, detailed,
-validated, controlled and managed. Also include tools and processes
-that will be used, such as requirements mapping.}
+\subsection{Project Scope Statement}
+The primary objective is to develop and deploy a web-based Business Sustainability Management Platform for multi-store restaurant chains by June 30, 2026. The product scope encompasses core modules for carbon tracking, waste management, and ESG governance, featuring role-based access control. The project scope includes all design, development, testing, deployment, and documentation activities. Out-of-scope items include native mobile application development, real-time IoT sensor integration, legacy data migration, and long-term post-delivery maintenance. Deliverables are accepted based on the successful implementation of all functional requirements, resolution of critical bugs, and successful deployment on the designated virtual machine. The project is constrained by a fixed June 2026 deadline, a five-member team, and the mandatory use of the Flask and MySQL technology stack, assuming continuous availability of team members and virtual machine infrastructure.
 
-% --- 3.3 ---
-\subsection{Project Deliverables}
+\subsection{Work Breakdown Structure (WBS)}
+The Work Breakdown Structure (WBS) decomposes the project scope into manageable work packages, adhering to the 100\% rule to ensure all project work is captured. The decomposition is limited to seven hierarchical levels, with the lowest level representing work packages that require 8 to 80 hours of effort. A hierarchical encoding system is utilized, starting from the project level down to specific tasks. For instance, Work Package 1.4.1 involves developing the carbon emission tracking module, which includes implementing frontend pages, integrating backend APIs, and conducting module tests. The approved Project Scope Statement, WBS, and WBS Dictionary collectively form the scope baseline, which is strictly controlled against unauthorized changes.
 
-\instr{List the major items to be delivered to the customers,
-subcontractors, integrators, or other parties. As appropriate, list
-the deliverables, their recipients, interim and final delivery dates,
-and delivery method.}
+\subsubsection{WBS Hierarchical Structure}
+\begin{verbatim}
+1.0 Business Sustainability Management Platform
+    1.1 Project Requirement Analysis and Architecture Design
+        1.1.1 Analyze enterprise user core requirements
+        1.1.2 Determine technical stack and development specifications
+        1.1.3 Design overall system architecture and module division
+        1.1.4 Design database structure and data association logic
+        1.1.5 Develop core page prototypes and design documents
+        1.1.6 Review and revise design documents
+    1.2 Database Development and Backend Interface
+        1.2.1 Create database instance and table structures
+        1.2.2 Develop user account and authentication interfaces
+        1.2.3 Develop core business module interfaces
+        1.2.4 Implement parameter validation and exception handling
+        1.2.5 Write and execute unit test cases
+        1.2.6 Generate backend interface documentation
+    1.3 Frontend Infrastructure and Common Modules
+        1.3.1 Set up frontend project framework
+        1.3.2 Develop reusable UI components
+        1.3.3 Implement login and authentication pages
+        1.3.4 Design global styles and responsive layout
+        1.3.5 Test and optimize frontend infrastructure
+    1.4 Core Business Module Development
+        1.4.1 Develop carbon emission tracking module
+        1.4.2 Develop waste management module
+        1.4.3 Develop sustainability reporting module
+        1.4.4 Integrate frontend and backend interfaces
+        1.4.5 Optimize module interaction experience
+        1.4.6 Conduct module functional testing
+    1.5 Platform Integration and Performance Optimization
+        1.5.1 Integrate all system modules
+        1.5.2 Perform full-coverage functional testing
+        1.5.3 Conduct cross-browser compatibility testing
+        1.5.4 Optimize database queries and interface performance
+        1.5.5 Fix identified bugs and issues
+        1.5.6 Deploy platform to designated virtual machine
+    1.6 Project Documentation and Final Delivery
+        1.6.1 Compile full-process development documents
+        1.6.2 Write detailed user operation manual
+        1.6.3 Prepare final presentation materials
+        1.6.4 Conduct project demonstration and acceptance
+\end{verbatim}
 
-\instr{The list should differentiate the project management deliverables
-(e.g.\ project schedule, communication plan, progress report, etc.)
-from the project deliverables (e.g.\ system, database,
-telecommunication equipment, system and user documentation, etc.).}
-
-\vspace{0.5em}
-\noindent
-\begin{tabularx}{\linewidth}{|X|X|C{2.5cm}|L{3cm}|}
-  \hline
-  \thead{Deliverable} & \thead{Recipients} & \thead{Delivery Date} & \thead{Delivery Method}\\
-  \hline
-  & & & \\[8pt]
-  \hline
-  & & & \\[8pt]
-  \hline
-  & & & \\[8pt]
-  \hline
+\subsubsection{WBS Dictionary Example}
+\begin{table}[h!]
+\centering
+\caption{WBS Dictionary Entry for Work Package 1.4.1}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+\textbf{WBS Code} & 1.4.1 \\
+\textbf{Title} & Develop Carbon Emission Tracking Module \\
+\textbf{Responsible} & Gong Zhijian \\
+\textbf{Duration} & 2 weeks (April 1 - April 14, 2026) \\
+\textbf{Description} & Implement frontend pages and logic for carbon emission data entry, viewing, editing, and comparison. Integrate with backend APIs. \\
+\textbf{Deliverables} & Carbon tracking module pages, integration test report \\
+\textbf{Dependencies} & 1.2.3 (Core business interfaces), 1.3.2 (Reusable components) \\
+\textbf{Acceptance Criteria} & All carbon tracking functions work correctly, data is saved and retrieved accurately, interface is responsive and user-friendly \\ \bottomrule
 \end{tabularx}
+\end{table}
 
-\subsubsection{Work Activities}
+\subsection{Validate Scope}
+Scope validation formalizes the acceptance of completed project deliverables. Once the development team completes a deliverable and performs internal quality control, it is submitted to the client representative for review. The client evaluates the deliverable against predefined acceptance criteria. If accepted, a formal acceptance document is signed; if rejected, the team addresses the provided feedback and resubmits the deliverable. This process involves the Project Manager coordinating the review, the Development Team demonstrating the functionality, and the Client Representative making the acceptance decision. All acceptance documentation, including signed forms and test reports, is archived in the project repository.
 
-\instr{Specify the various work activities to be performed in the
-project. A Work Breakdown Structure should be used to depict the work
-activities and the relationships among work activities.}
-
-\subsubsection{Constraints}
-
-\instr{Constraints or restrictions limit or place conditions on the
-project, especially those associated with the project scope (e.g.\ a
-hard deadline, a predetermined budget, a set milestone, contract
-provisions, privacy or security considerations, etc.)}
-
-\subsubsection{Assumptions}
-
-\instr{Assumptions are factors that for planning purposes are
-considered to be true, real or certain. These assumptions will be
-validated during the planning process in the Delivery Stage.}
-
-\subsubsection{Stakeholders}
-
-\instr{Identify the individuals or organizations (e.g.\ customer,
-sponsor, performing organization or the public) that are actively
-involved in the project, or whose interests may be positively or
-negatively affected by execution or completion of the project.
-(PMBOK\textsuperscript{\textregistered}) This is a preliminary
-estimate.}
+\subsection{Control Scope}
+Scope control involves continuously monitoring the project status to manage changes to the scope baseline. Progress is assessed weekly by comparing actual completed work against the WBS, with any variance exceeding 5\% triggering a formal review. All proposed scope modifications must follow a strict change control process: a written request is submitted, evaluated for impact by the Project Manager, and subsequently reviewed by the Change Control Board (CCB). To prevent scope creep, all client requests for new features require formal CCB approval. Similarly, gold plating is strictly prohibited; team members must not implement unauthorized enhancements without submitting them through the formal change request process.
 
 % ============================================================
 %  SECTION 4: SCHEDULE MANAGEMENT
