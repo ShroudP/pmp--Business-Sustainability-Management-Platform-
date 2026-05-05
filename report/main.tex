@@ -598,78 +598,176 @@ testing etc.}
 % ============================================================
 \section{Process Improvement Plan}
 
-\instr{Describe the processes that will be used to identify and
-implement improvements to the project management and technical
-processes used throughout the project.}
+This plan aims to establish a standardized and quantifiable process improvement system. By continuously optimizing the processes throughout the project lifecycle and eliminating non-value-added activities, it improves delivery efficiency and product quality, ensuring that the platform meets the reliability and scalability requirements of Luckin Coffee's enterprise-level ESG management and supports unified data management and compliant operations across more than 5,000 stores nationwide.
+
+\subsection{7.1 Improvement Scope and Process Boundaries}
+This process improvement covers 6 core processes throughout the project lifecycle, clarifying the inputs, outputs and responsible parties for each process. All processes must comply with Luckin Coffee's IT system development specifications:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Requirements Management Process}: Requirements collection, review, change control, traceability
+    \item \textbf{Development Management Process}: Architecture design, coding implementation, code review, version control
+    \item \textbf{Test Management Process}: Unit testing, integration testing, system testing, acceptance testing
+    \item \textbf{Deployment Management Process}: Environment configuration, continuous integration, continuous deployment, rollback mechanism
+    \item \textbf{Operation and Maintenance Management Process}: Monitoring and alerting, fault handling, data backup, performance optimization
+    \item \textbf{Communication Management Process}: Internal collaboration, Luckin Coffee communication, supplier communication, reporting mechanism
+\end{itemize}
+
+\subsection{7.2 Process Measurement Index System}
+Establish a quantitative process performance index system to drive improvement through data. All indicators are aligned with Luckin Coffee's enterprise-level project delivery standards:
+\begin{table}[h]
+\centering
+\caption{Core Process Performance Measurement Indicators}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Process Name} & \textbf{Key Quantitative Indicators} & \textbf{Target Value} \\
+\midrule
+\multirow{3}{*}{Requirements Management} & Requirements Change Rate & ≤8\% \\
+& One-time Requirements Review Pass Rate & ≥90\% \\
+& Requirements Traceability Coverage & 100\% \\
+\midrule
+\multirow{3}{*}{Development Management} & Defects per 1000 Lines of Code & ≤3 \\
+& Code Review Coverage & 100\% \\
+& Module Delivery Timeliness & ≥95\% \\
+\midrule
+\multirow{3}{*}{Test Management} & Test Case Coverage & ≥95\% \\
+& Defect Repair Timeliness & ≥98\% \\
+& Defect Escape Rate & ≤2\% \\
+\midrule
+\multirow{2}{*}{Deployment Management} & Deployment Success Rate & ≥99\% \\
+& Mean Time to Recovery (MTTR) & ≤30 minutes \\
+\midrule
+\multirow{2}{*}{Operation and Maintenance Management} & System Availability & ≥99.9\% \\
+& Mean Time Between Failures (MTBF) & ≥720 hours \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{7.3 Improvement Objectives and Implementation Strategies}
+\textbf{Overall Objective}: Improve overall delivery efficiency by 20\%, reduce product defect rate by 30\%, and achieve Luckin Coffee's satisfaction of over 95\% during the project cycle, ensuring that the platform passes Luckin Coffee's IT system acceptance at one time.
+
+\textbf{Phased Implementation Strategy}:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Phase 1 (Weeks 1-4): Process Standardization}
+    Develop unified requirement document templates, code specifications, test case templates and deployment processes, all templates need to be confirmed by Luckin Coffee's IT department; establish Git branch management strategy and code review system; configure CI/CD pipelines to realize automated construction and testing.
+
+    \item \textbf{Phase 2 (Weeks 5-12): Process Optimization}
+    Hold weekly iteration retrospective meetings to analyze process data and identify bottlenecks; introduce automated testing tools to improve testing efficiency; optimize the requirement change process, all changes need to be submitted to Luckin Coffee's Change Control Board for approval.
+
+    \item \textbf{Phase 3 (Weeks 13-16): Process Solidification}
+    Solidify the verified effective processes into organizational process assets; establish a process improvement knowledge base to record best practices and lessons learned; form a culture and mechanism for continuous improvement, providing reference for other ESG-related projects of Luckin Coffee in the future.
+\end{enumerate}
+
+\subsection{7.4 Improvement Methods and Tools}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{PDCA Cycle}: Plan-Do-Check-Act, continuous iterative improvement
+    \item \textbf{Root Cause Analysis}: Use 5-Why method and fishbone diagram to analyze the root cause of problems
+    \item \textbf{Value Stream Analysis}: Identify and eliminate non-value-added activities in the process
+    \item \textbf{Tool Support}: Use Jira for task and defect management, GitLab for code management and CI/CD, Prometheus+Grafana for system monitoring. All tools must comply with Luckin Coffee's information security requirements
+\end{itemize}
+
+\subsection{7.5 Responsibility Assignment and Monitoring Mechanism}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Project Manager}: Overall responsible for the formulation, implementation and monitoring of the process improvement plan, and regularly report the improvement progress to Luckin Coffee
+    \item \textbf{Process Improvement Team}: Composed of module leaders, responsible for collecting process problems and proposing improvement suggestions
+    \item \textbf{All Members}: Participate in process improvement activities and implement improvement measures
+    \item \textbf{Monitoring Mechanism}: Count process performance indicators weekly, hold a process improvement review meeting monthly, invite Luckin Coffee representatives to participate, evaluate improvement effects and adjust plans
+\end{itemize}
 
 % ============================================================
 %  SECTION 8: HUMAN RESOURCE MANAGEMENT
 % ============================================================
 \section{Human Resource Management}
 
-\instr{Describe how human resources will be managed throughout the
-delivery stage of this project. This should include how resource
-requirements will be determined, how resources will be acquired, how
-they will be developed and managed, roles and responsibilities, tools
-and techniques and reporting. HR management also includes team building
-and rewards and recognition.}
+This project adopts a matrix organizational structure, balancing functional professionalism and project execution capability. It establishes a clear role responsibility system and team collaboration mechanism to ensure the project has sufficient human resources with corresponding skills to meet the delivery requirements of Luckin Coffee's enterprise-level projects.
 
 % --- 8.1 ---
 \subsection{Human Resources Acquisition}
 
-\instr{Specify the number of human resources needed by skill area or
-project role, along with required skill levels, and the duration for
-which each resource is needed. Describe the anticipated resource
-profile (the mix of skills and effort levels needed at various times in
-the project), when people will be added to the project or depart from
-it, and how new team members will be oriented. Specify the sources of
-resources such as internal from your branch, internal from another
-branch within your organization, hiring of a new employee, or hiring
-of contractors. Document the following information in this section:}
+The core team of this project consists of 5 full-time internal members, supplemented by 1 external professional consultant. All resources are exclusively allocated to the project with no cross-project conflicts. The specific resource allocation is as follows:
 \begin{itemize}
-  \item Available internal candidates, their skill sets, and dates of
-        availability
-  \item Requirements for external candidates, including job
-        classifications and descriptions
-  \item Selection of candidates and assignments to tasks
-  \item Availability and duration of assignment for all candidates
+  \item \textbf{Available Internal Resources}:
+  \begin{itemize}
+    \item System Architect: Proficient in Flask backend development and database design, with experience in large chain enterprise system architecture, available full cycle (Weeks 1-16)
+    \item Backend Developer: Proficient in Python and MySQL, with experience in ESG management system development, available full cycle (Weeks 1-16)
+    \item Frontend Developer (Framework): Proficient in Vue3 and Bootstrap, with experience in enterprise-level management system frontend development, available full cycle (Weeks 1-16)
+    \item Frontend Developer (Visualization): Proficient in ECharts data visualization, with experience in big data display system development, available full cycle (Weeks 1-16)
+    \item Test and DevOps Engineer: Proficient in system testing and cloud server deployment, with experience in Luckin Coffee system testing, available full cycle (Weeks 1-16)
+  \end{itemize}
+  \item \textbf{External Resource Requirements}:
+  \begin{itemize}
+    \item ESG Compliance Consultant: Certified in GRI standards and ISO 14064 system, familiar with ESG management requirements in the catering industry, responsible for providing ESG reporting framework and compliance guidance tailored to Luckin Coffee, service period Weeks 2-4
+  \end{itemize}
+  \item \textbf{Resource Profile}:
+  \begin{itemize}
+    \item Weeks 1-4 (Requirements and Design Phase): Full team involvement, focusing on System Architect and Requirements Analyst, completing Luckin Coffee's requirement confirmation and system design
+    \item Weeks 5-12 (Development Phase): Full team at maximum capacity, with frontend and backend developers accounting for the highest proportion, completing core function development
+    \item Weeks 13-16 (Testing and Deployment Phase): Increased involvement of test and DevOps engineers, gradual reduction of development engineers, cooperating with Luckin Coffee to complete acceptance testing and deployment
+  \end{itemize}
+  \item \textbf{New Team Member Orientation}: Within 24 hours of joining, new members complete environment setup, permission configuration and project document reading. A dedicated mentor is assigned for 3 days of one-on-one guidance covering project background, Luckin Coffee's business requirements, technology stack, code specifications and business processes. A capability assessment is conducted at the end of the first week to ensure independent task performance.
 \end{itemize}
 
 % --- 8.2 ---
 \subsection{Human Resources Development}
 
-\instr{Describe how human resources will be developed to ensure that
-they have the required skills and knowledge to complete project
-deliverables. Development usually includes project specific training
-but may include knowledge sharing, job shadowing and mentoring.}
+This project establishes a multi-level personnel development system to ensure team members possess the technical capabilities and business knowledge required to complete the project, especially for Luckin Coffee's industry characteristics and ESG management requirements:
+\begin{itemize}
+  \item \textbf{Project-Specific Training}:
+  \begin{itemize}
+    \item ESG Domain Knowledge Training: Conducted in Week 2 by the external ESG consultant, covering GRI standards, ISO 14064 carbon accounting methods and Luckin Coffee's ESG management system requirements
+    \item Technology Stack Training: Conducted in Weeks 1-2 by the Technical Lead, covering Flask framework, Vue3 frontend, MySQL database optimization and cloud server deployment. All technical solutions must comply with Luckin Coffee's IT technical specifications
+    \item Project Management Process Training: Conducted in Week 1 by the Project Manager, covering agile development processes, Git branch management, Jira usage specifications and Luckin Coffee's project communication and reporting mechanism
+  \end{itemize}
+  \item \textbf{Knowledge Sharing Mechanism}: A 1-hour technical sharing session is held every Friday afternoon, where team members take turns presenting technical difficulties, best practices and learning experiences. A project knowledge base is established, with all design documents, technical solutions and problem solutions uploaded to a unified platform for team access, and simultaneously synchronized to Luckin Coffee's project contact person.
+  \item \textbf{Mentoring and Job Shadowing}: Each junior member is assigned a dedicated mentor for daily guidance and problem resolution. For complex modules, job shadowing is adopted, with experienced engineers leading junior engineers to complete tasks together, ensuring knowledge transfer and skill improvement.
+  \item \textbf{Rewards and Recognition}: "Technical Innovation Award" and "Best Contribution Award" are established, selected monthly, with material rewards and public recognition for outstanding members. Upon project completion, all members receive project certificates and recommendation letters to support their career development.
+\end{itemize}
 
 % ============================================================
 %  SECTION 9: PROCUREMENT MANAGEMENT PLAN
 % ============================================================
 \section{Procurement Management Plan}
 
-\instr{Describe the procurement strategy for acquiring goods and
-services required for this project. Include processes for make-or-buy
-decisions, vendor selection criteria, contract types, and procurement
-schedule.}
+This project's procurement management follows the principles of compliance, efficiency and economy. All procurement activities must comply with Luckin Coffee's procurement management system, ensuring that required infrastructure, third-party services and consulting services are obtained on time, with quality and at cost, meeting the security and reliability requirements of enterprise-level projects.
+
+\textbf{Make-or-Buy Decisions}: Core business logic and system functions are independently developed by the internal team. Infrastructure, general third-party services and professional consulting services are outsourced. All outsourced products and services must pass Luckin Coffee's supplier qualification review:
+\begin{itemize}
+  \item Make: All frontend pages, backend API interfaces, database design and business logic implementation
+  \item Buy: Cloud servers, domain names, SSL certificates, OCR API, SMS API, email services, MySQL Enterprise Edition licenses, IDE commercial edition licenses and ESG consulting services
+\end{itemize}
+
+\textbf{Vendor Selection Criteria}:
+\begin{itemize}
+  \item Qualification Requirements: Possess legal business qualifications and relevant industry certifications, and have been included in Luckin Coffee's qualified supplier list
+  \item Product Quality: Stable product performance, meeting national relevant standards and Luckin Coffee's IT system technical requirements
+  \item Service Capability: Provide 7×24 technical support with response time ≤2 hours, able to cooperate with Luckin Coffee to complete system integration
+  \item Price Reasonableness: Select the most cost-effective vendor while meeting quality and service requirements
+  \item Good Reputation: No major illegal or irregular records, good market reputation, priority given to those with good cooperation history with Luckin Coffee
+\end{itemize}
+
+\textbf{Contract Types}:
+\begin{itemize}
+  \item Fixed-Price Contracts: Applicable to standard products such as cloud servers, domain names, SSL certificates and software licenses. Contract terms must follow Luckin Coffee's standard contract template
+  \item Time and Materials Contracts: Applicable to ESG consulting services, settled based on actual service hours. Service content and deliverables must be confirmed by Luckin Coffee
+\end{itemize}
+
+\textbf{Procurement Schedule}:
+\begin{itemize}
+  \item Week 1: Complete procurement of test environment cloud servers, domain names and IDE commercial edition licenses. All procurement applications need to be submitted to Luckin Coffee for approval
+  \item Week 2: Complete procurement of ESG consulting services and sign the service contract
+  \item Week 4: Complete procurement of OCR API, SMS API and email services
+  \item Week 8: Complete procurement of production environment cloud servers, SSL certificates and MySQL Enterprise Edition licenses. Production environment configuration must comply with Luckin Coffee's information security requirements
+\end{itemize}
+
+The procurement process strictly follows Luckin Coffee's procurement management system, including requirement proposal, procurement application, Luckin Coffee approval, vendor selection, contract signing, order placement, acceptance and payment. All procurements are formalized with contracts clarifying rights and obligations, delivery standards, acceptance terms and liability for breach of contract. A vendor evaluation system is established to regularly assess product quality and service levels, ensuring vendors continue to meet project requirements.
 
 % ============================================================
 %  SECTION 10: COMMUNICATIONS MANAGEMENT
 % ============================================================
 \section{Communications Management}
 
-\instr{Describe how communications will be managed throughout the
-Delivery Stage of this project. This should include processes that will
-be used to plan communications, identify and manage stakeholders,
-determine communication requirements, roles and responsibilities, tools
-and techniques.}
+This plan establishes a standardized and efficient communication mechanism to ensure timely, accurate and effective transmission of project information to all stakeholders, especially Luckin Coffee's project team, avoiding information asymmetry and communication barriers, and guaranteeing the smooth progress of the project.
 
 % --- 10.1 ---
 \subsection{Stakeholder Analysis}
-
-\instr{Describe the process used to identify stakeholders, how they
-will impact and be impacted by the project. A stakeholder analysis will
-feed into a Stakeholder Management Plan.}
 
 \vspace{0.5em}
 \noindent
@@ -680,21 +778,22 @@ feed into a Stakeholder Management Plan.}
     & \thead{How they will be impacted by the project}
     & \thead{Communication Requirements}\\
   \hline
-  & & & \\[20pt]
+  Head of Luckin Coffee IT Dept & Provides project funding and business requirements, approves major decisions, determines project acceptance results & Obtains a qualified ESG management platform, enhances enterprise sustainable development management capability & Monthly formal report, immediate communication on major issues, submit project documents and demonstrations in accordance with Luckin Coffee's specifications\\
   \hline
-  & & & \\[20pt]
+  Head of Luckin Coffee ESG Dept & Provides ESG business requirements and compliance requirements, participates in requirement review and acceptance & Obtains a standardized ESG data management tool, simplifies daily work processes & Biweekly business communication, participates in requirement review and acceptance testing, provides business guidance\\
+  \hline
+  Project Team Members & Responsible for specific project implementation, determines project progress and quality & Gains project experience and skill improvement, completes course learning tasks & Daily stand-up, weekly meeting, instant messaging communication\\
+  \hline
+  Cloud Service Vendor & Provides infrastructure and technical support, affects system stability and performance & Obtains sales revenue and customer cases & On-demand communication, immediate response to fault handling, regular service quality follow-up\\
+  \hline
+  ESG Consultant & Provides professional guidance and advice, affects project compliance and professionalism & Obtains consulting fees and industry experience & Weekly communication, phased achievement review, provision of consulting reports\\
+  \hline
+  Luckin Coffee Store Employees & End users of the system, provide feedback, affects system practicality & Simplifies daily ESG data entry work, improves work efficiency & User training, online support, regular feedback collection\\
   \hline
 \end{tabularx}
 
 % --- 10.2 ---
 \subsection{Project Reporting and Communication}
-
-\instr{Identify the regular reports and communications expected of the
-project, such as weekly status reports, regular reviews, and as-needed
-communication. Specify the reporting mechanisms, report contents, and
-information flows used to communicate the status of requirements,
-schedule, budget, quality, risks, and other status indicators both
-within the project and to external stakeholders.}
 
 \vspace{0.5em}
 {\setlength{\tabcolsep}{4pt}%
@@ -707,14 +806,32 @@ within the project and to external stakeholders.}
     & \thead{Initiator}
     & \thead{Recipient}\\
   \hline
-  \textit{Status Report} & \textit{every Friday} & \textit{team meeting}
-    & \textit{Project Manager} & \textit{Project Team}\\
+  Daily Stand-up & Daily 9:00-9:15 & Offline/Tencent Meeting & Project Manager & All Project Team Members\\
   \hline
-  & & & & \\[8pt]
+  Weekly Status Report & Every Friday before 17:00 & Email+Jira & Module Leaders & Project Manager\\
   \hline
-  & & & & \\[8pt]
+  Weekly Team Meeting & Every Friday 16:00-17:30 & Offline/Tencent Meeting & Project Manager & All Project Team Members\\
+  \hline
+  Biweekly Business Meeting & Every 2 weeks Wednesday 14:00-15:00 & Tencent Meeting+PPT & Project Manager & Head of Luckin Coffee ESG Dept\\
+  \hline
+  Biweekly Progress Report & Every 2 weeks Friday 14:00-15:00 & Tencent Meeting+PPT & Project Manager & School Instructor\\
+  \hline
+  Monthly Formal Report & Last Friday of every month 10:00-11:00 & Tencent Meeting+PPT & Project Manager & Head of Luckin Coffee IT Dept\\
+  \hline
+  Requirements Review & On Demand & Offline/Tencent Meeting & Requirements Analyst & Luckin Coffee Representatives, Relevant Dev/Test Personnel\\
+  \hline
+  Technical Review & On Demand & Offline/Tencent Meeting & Technical Lead & Luckin Coffee IT Representatives, Relevant Developers\\
+  \hline
+  Change Control Meeting & On Demand & Offline/Tencent Meeting & Project Manager & Luckin Coffee Change Control Board\\
+  \hline
+  Emergency Meeting & On Demand & Phone/Tencent Meeting & Project Manager & Relevant Personnel\\
   \hline
 \end{tabular}}
+
+\vspace{1em}
+Information distribution tools prioritize Luckin Coffee's internal collaboration tools. Enterprise WeChat is used for internal communication, Jira for task management, Confluence for document sharing, GitLab for code management, enterprise email for formal reports, and Tencent Meeting for remote meetings. The use of all tools must comply with Luckin Coffee's information security management regulations, and it is strictly prohibited to upload Luckin Coffee's sensitive data to external platforms.
+
+All communications follow these specifications: Meeting notices are sent 1 day in advance with clear agendas and participant lists. Meeting minutes are issued within 24 hours after the meeting, clarifying resolution items, responsible persons and completion times, and synchronized to all participants and Luckin Coffee's contact person. Formal emails use Luckin Coffee's standard format with clear subjects and concise content. Problems are communicated immediately without delay to avoid affecting project progress. A communication conflict resolution mechanism is established: parties first negotiate independently, then the project manager mediates if negotiation fails, and unresolved issues are escalated to Luckin Coffee's Project Steering Committee for decision-making.
 
 % ============================================================
 %  SECTION 11: RISK MANAGEMENT
