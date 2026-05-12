@@ -598,10 +598,10 @@ testing etc.}
 % ============================================================
 \section{Process Improvement Plan}
 
-This plan aims to establish a standardized and quantifiable process improvement system. By continuously optimizing the processes throughout the project lifecycle and eliminating non-value-added activities, it improves delivery efficiency and product quality, ensuring that the platform meets the reliability and scalability requirements of Luckin Coffee's enterprise-level ESG management and supports unified data management and compliant operations across more than 5,000 stores nationwide.
+This plan establishes a standardized and quantifiable process improvement system based on the **PDCA Cycle of Quality Management**. By continuously optimizing processes throughout the project lifecycle and eliminating non-value-added activities, it improves delivery efficiency and product quality, ensuring that the platform meets the reliability and scalability requirements of Luckin Coffee's enterprise-level ESG management and supports unified data management and compliant operations across more than 5,000 stores nationwide.
 
 \subsection{7.1 Improvement Scope and Process Boundaries}
-This process improvement covers 6 core processes throughout the project lifecycle, clarifying the inputs, outputs and responsible parties for each process. All processes must comply with Luckin Coffee's IT system development specifications:
+This process improvement covers 6 core processes throughout the project lifecycle.All processes must comply with Luckin Coffee's IT system development specifications:
 \begin{itemize}[leftmargin=*]
     \item \textbf{Requirements Management Process}: Requirements collection, review, change control, traceability
     \item \textbf{Development Management Process}: Architecture design, coding implementation, code review, version control
@@ -612,7 +612,8 @@ This process improvement covers 6 core processes throughout the project lifecycl
 \end{itemize}
 
 \subsection{7.2 Process Measurement Index System}
-Establish a quantitative process performance index system to drive improvement through data. All indicators are aligned with Luckin Coffee's enterprise-level project delivery standards:
+Establish a quantitative process performance index system based on the **Cost of Quality (COQ) Model** to drive improvement through data. All indicators are aligned with Luckin Coffee's enterprise-level project delivery standards:
+
 \begin{table}[h]
 \centering
 \caption{Core Process Performance Measurement Indicators}
@@ -657,12 +658,21 @@ Establish a quantitative process performance index system to drive improvement t
 \end{enumerate}
 
 \subsection{7.4 Improvement Methods and Tools}
+Carry out process improvement using the **Seven Basic Quality Tools** and **Seven Quality Assurance Tools** taught in the course:
 \begin{itemize}[leftmargin=*]
     \item \textbf{PDCA Cycle}: Plan-Do-Check-Act, continuous iterative improvement
-    \item \textbf{Root Cause Analysis}: Use 5-Why method and fishbone diagram to analyze the root cause of problems
+    \item \textbf{Root Cause Analysis}: Use the **5-Why Method** and **Fishbone Diagram (Ishikawa Diagram)** to analyze the root cause of problems
+    \item \textbf{Defect Priority Analysis}: Use the **Pareto Chart** to identify the 20% of main causes that lead to 80% of defects
     \item \textbf{Value Stream Analysis}: Identify and eliminate non-value-added activities in the process
     \item \textbf{Tool Support}: Use Jira for task and defect management, GitLab for code management and CI/CD, Prometheus+Grafana for system monitoring. All tools must comply with Luckin Coffee's information security requirements
 \end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig7-3_fishbone.png}
+\caption{Fishbone Diagram for High Code Defect Rate Root Cause Analysis}
+\label{fig:req_flow}
+\end{figure}
 
 \subsection{7.5 Responsibility Assignment and Monitoring Mechanism}
 \begin{itemize}[leftmargin=*]
@@ -677,7 +687,7 @@ Establish a quantitative process performance index system to drive improvement t
 % ============================================================
 \section{Human Resource Management}
 
-This project adopts a matrix organizational structure, balancing functional professionalism and project execution capability. It establishes a clear role responsibility system and team collaboration mechanism to ensure the project has sufficient human resources with corresponding skills to meet the delivery requirements of Luckin Coffee's enterprise-level projects.
+This project adopts a **Strong Matrix Organizational Structure** (the project manager has moderate to high decision-making authority), balancing functional professionalism and project execution capability. It establishes a clear role responsibility system and team collaboration mechanism to ensure the project has sufficient human resources with corresponding skills to meet the delivery requirements of Luckin Coffee's enterprise-level projects.
 
 % --- 8.1 ---
 \subsection{Human Resources Acquisition}
@@ -705,10 +715,36 @@ The core team of this project consists of 5 full-time internal members, suppleme
   \item \textbf{New Team Member Orientation}: Within 24 hours of joining, new members complete environment setup, permission configuration and project document reading. A dedicated mentor is assigned for 3 days of one-on-one guidance covering project background, Luckin Coffee's business requirements, technology stack, code specifications and business processes. A capability assessment is conducted at the end of the first week to ensure independent task performance.
 \end{itemize}
 
-% --- 8.2 ---
-\subsection{Human Resources Development}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig8-1_raci_matrix.png}
+\caption{RACI Responsibility Assignment Matrix for Core Project Tasks}
+\label{fig:raci_matrix}
+\end{figure}
 
-This project establishes a multi-level personnel development system to ensure team members possess the technical capabilities and business knowledge required to complete the project, especially for Luckin Coffee's industry characteristics and ESG management requirements:
+% --- 8.2 ---
+\subsection{Human Resources Development and Team Management}
+
+This project establishes a multi-level personnel development system and carries out team building in accordance with the **Tuckman Ladder Theory** to ensure team members possess the technical capabilities and business knowledge required to complete the project:
+
+\subsubsection{8.2.1 Team Development Stage Management}
+The team will go through the following five development stages in sequence, adopting targeted management strategies:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Forming (Week 1)}: Team members meet each other and learn about project goals and their respective roles. Management focus: clarify division of labor, establish basic rules, create a positive atmosphere
+    \item \textbf{Storming (Weeks 2-3)}: Members begin to express different opinions and conflicts may arise. Management focus: encourage communication, resolve conflicts, build trust
+    \item \textbf{Norming (Weeks 4-8)}: Members begin to collaborate and form team consensus. Management focus: strengthen team goals, promote knowledge sharing
+    \item \textbf{Performing (Weeks 9-15)}: The team operates efficiently and can solve problems independently. Management focus: empowerment, encourage innovation
+    \item \textbf{Adjourning (Week 16)}: The project is completed and the team disbands. Management focus: summarize experience, recognize excellence, complete handover
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig8-2_tuckman_ladder.png}
+\caption{Tuckman Ladder: Team Development Stages and Management Focus}
+\label{fig:tuckman}
+\end{figure}
+
+\subsubsection{8.2.2 Personnel Development Measures}
 \begin{itemize}
   \item \textbf{Project-Specific Training}:
   \begin{itemize}
@@ -718,7 +754,23 @@ This project establishes a multi-level personnel development system to ensure te
   \end{itemize}
   \item \textbf{Knowledge Sharing Mechanism}: A 1-hour technical sharing session is held every Friday afternoon, where team members take turns presenting technical difficulties, best practices and learning experiences. A project knowledge base is established, with all design documents, technical solutions and problem solutions uploaded to a unified platform for team access, and simultaneously synchronized to Luckin Coffee's project contact person.
   \item \textbf{Mentoring and Job Shadowing}: Each junior member is assigned a dedicated mentor for daily guidance and problem resolution. For complex modules, job shadowing is adopted, with experienced engineers leading junior engineers to complete tasks together, ensuring knowledge transfer and skill improvement.
-  \item \textbf{Rewards and Recognition}: "Technical Innovation Award" and "Best Contribution Award" are established, selected monthly, with material rewards and public recognition for outstanding members. Upon project completion, all members receive project certificates and recommendation letters to support their career development.
+  \item \textbf{Incentive Mechanism}: Establish a multi-level reward system based on **Maslow's Hierarchy of Needs**:
+  \begin{itemize}
+    \item Physiological/Safety Needs: Provide reasonable working hours and working environment
+    \item Social Needs: Organize regular team building activities
+    \item Esteem Needs: Establish "Technical Innovation Award" and "Best Contribution Award", selected monthly with public recognition
+    \item Self-Actualization Needs: Provide project certificates and recommendation letters upon project completion to support career development
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{8.2.3 Conflict Management}
+More than 50% of conflicts in projects arise from resources, priorities and schedules. The following five conflict resolution methods are adopted:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Collaborate/Problem Solve}: Preferred method, confront the problem directly and work together to find a win-win solution
+    \item \textbf{Compromise/Reconcile}: Both parties give up something to reach a temporary consensus
+    \item \textbf{Smooth/Accommodate}: Emphasize areas of agreement rather than differences
+    \item \textbf{Force/Direct}: Applicable to emergency situations, the project manager makes the decision
+    \item \textbf{Withdraw/Avoid}: Applicable to non-critical issues, postpone resolution
 \end{itemize}
 
 % ============================================================
@@ -728,7 +780,7 @@ This project establishes a multi-level personnel development system to ensure te
 
 This project's procurement management follows the principles of compliance, efficiency and economy. All procurement activities must comply with Luckin Coffee's procurement management system, ensuring that required infrastructure, third-party services and consulting services are obtained on time, with quality and at cost, meeting the security and reliability requirements of enterprise-level projects.
 
-\textbf{Make-or-Buy Decisions}: Core business logic and system functions are independently developed by the internal team. Infrastructure, general third-party services and professional consulting services are outsourced. All outsourced products and services must pass Luckin Coffee's supplier qualification review:
+\textbf{Make-or-Buy Decisions}: Analyze based on four dimensions: cost, schedule, technical capability and risk. Core business logic and system functions are independently developed by the internal team. Infrastructure, general third-party services and professional consulting services are outsourced. All outsourced products and services must pass Luckin Coffee's supplier qualification review:
 \begin{itemize}
   \item Make: All frontend pages, backend API interfaces, database design and business logic implementation
   \item Buy: Cloud servers, domain names, SSL certificates, OCR API, SMS API, email services, MySQL Enterprise Edition licenses, IDE commercial edition licenses and ESG consulting services
@@ -743,10 +795,34 @@ This project's procurement management follows the principles of compliance, effi
   \item Good Reputation: No major illegal or irregular records, good market reputation, priority given to those with good cooperation history with Luckin Coffee
 \end{itemize}
 
-\textbf{Contract Types}:
+\textbf{Contract Type Selection}: Choose appropriate contract types based on the characteristics of the procurement content. The risk allocation of different contract types is as follows:
+
+\begin{table}[h]
+\centering
+\caption{Contract Type Risk Comparison Table}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Contract Type} & \textbf{Buyer Risk} & \textbf{Seller Risk} & \textbf{Applicable Scenarios} \\
+\midrule
+Firm Fixed Price (FFP) & Low & High & Standard products with clear requirements and scope \\
+Fixed Price Incentive Fee (FPIF) & Medium & Medium & Products with clear performance indicators \\
+Cost Plus Fixed Fee (CPFF) & High & Low & Exploratory projects with unclear requirements \\
+Time and Materials (T&M) & Medium & Medium & Short-term, small-scale service procurement \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig9-1_contract_risk.png}
+\caption{Contract Type Risk Comparison and Applicable Scenarios}
+\label{fig:contract_risk}
+\end{figure}
+
+Specific contract type applications for this project:
 \begin{itemize}
-  \item Fixed-Price Contracts: Applicable to standard products such as cloud servers, domain names, SSL certificates and software licenses. Contract terms must follow Luckin Coffee's standard contract template
-  \item Time and Materials Contracts: Applicable to ESG consulting services, settled based on actual service hours. Service content and deliverables must be confirmed by Luckin Coffee
+  \item Firm Fixed Price (FFP) Contracts: Applicable to standard products such as cloud servers, domain names, SSL certificates and software licenses. Contract terms must follow Luckin Coffee's standard contract template
+  \item Time and Materials (T&M) Contracts: Applicable to ESG consulting services, settled based on actual service hours. Service content and deliverables must be confirmed by Luckin Coffee
 \end{itemize}
 
 \textbf{Procurement Schedule}:
@@ -757,7 +833,11 @@ This project's procurement management follows the principles of compliance, effi
   \item Week 8: Complete procurement of production environment cloud servers, SSL certificates and MySQL Enterprise Edition licenses. Production environment configuration must comply with Luckin Coffee's information security requirements
 \end{itemize}
 
-The procurement process strictly follows Luckin Coffee's procurement management system, including requirement proposal, procurement application, Luckin Coffee approval, vendor selection, contract signing, order placement, acceptance and payment. All procurements are formalized with contracts clarifying rights and obligations, delivery standards, acceptance terms and liability for breach of contract. A vendor evaluation system is established to regularly assess product quality and service levels, ensuring vendors continue to meet project requirements.
+The procurement process strictly follows Luckin Coffee's procurement management system, including four phases: **Plan Procurement Management → Conduct Procurements → Control Procurements → Close Procurements**:
+1. Plan Procurement Management: Develop procurement plan, clarify procurement content, time and budget
+2. Conduct Procurements: Issue procurement requirements, select vendors, sign contracts
+3. Control Procurements: Monitor vendor performance, manage contract changes
+4. Close Procurements: Complete acceptance, conduct procurement audits, archive contract documents
 
 % ============================================================
 %  SECTION 10: COMMUNICATIONS MANAGEMENT
@@ -768,6 +848,15 @@ This plan establishes a standardized and efficient communication mechanism to en
 
 % --- 10.1 ---
 \subsection{Stakeholder Analysis}
+
+Classify project stakeholders using the **Power/Interest Grid** and develop targeted management strategies:
+
+% [Chart to be added 8]: Power/Interest Grid
+% Content: Draw a two-dimensional grid with horizontal axis "Level of Interest" (Low→High) and vertical axis "Level of Power" (Low→High), divided into four quadrants:
+% 1. High Power, High Interest: Head of Luckin Coffee IT Dept, Head of Luckin Coffee ESG Dept → Manage closely
+% 2. High Power, Low Interest: No such core stakeholders
+% 3. Low Power, High Interest: Project Team Members, Luckin Coffee Store Employees → Keep informed
+% 4. Low Power, Low Interest: Cloud Service Vendor, ESG Consultant → Monitor
 
 \vspace{0.5em}
 \noindent
@@ -782,7 +871,7 @@ This plan establishes a standardized and efficient communication mechanism to en
   \hline
   Head of Luckin Coffee ESG Dept & Provides ESG business requirements and compliance requirements, participates in requirement review and acceptance & Obtains a standardized ESG data management tool, simplifies daily work processes & Biweekly business communication, participates in requirement review and acceptance testing, provides business guidance\\
   \hline
-  Project Team Members & Responsible for specific project implementation, determines project progress and quality & Gains project experience and skill improvement, completes course learning tasks & Daily stand-up, weekly meeting, instant messaging communication\\
+  Project Team Members & Responsible for specific project implementation, determines project progress and quality & Gains project experience and skill improvement, completes project delivery tasks & Daily stand-up, weekly meeting, instant messaging communication\\
   \hline
   Cloud Service Vendor & Provides infrastructure and technical support, affects system stability and performance & Obtains sales revenue and customer cases & On-demand communication, immediate response to fault handling, regular service quality follow-up\\
   \hline
@@ -794,6 +883,13 @@ This plan establishes a standardized and efficient communication mechanism to en
 
 % --- 10.2 ---
 \subsection{Project Reporting and Communication}
+
+This project has 9 core stakeholders in total (1 Project Manager + 5 Team Members + 1 External Consultant + 2 Luckin Coffee Department Heads). The number of communication channels is:
+\[
+\text{Number of Communication Channels} = \frac{n(n-1)}{2} = \frac{9 \times 8}{2} = 36
+\]
+
+To effectively manage communication channels, establish the following standardized communication mechanisms:
 
 \vspace{0.5em}
 {\setlength{\tabcolsep}{4pt}%
@@ -814,9 +910,7 @@ This plan establishes a standardized and efficient communication mechanism to en
   \hline
   Biweekly Business Meeting & Every 2 weeks Wednesday 14:00-15:00 & Tencent Meeting+PPT & Project Manager & Head of Luckin Coffee ESG Dept\\
   \hline
-  Biweekly Progress Report & Every 2 weeks Friday 14:00-15:00 & Tencent Meeting+PPT & Project Manager & School Instructor\\
-  \hline
-  Monthly Formal Report & Last Friday of every month 10:00-11:00 & Tencent Meeting+PPT & Project Manager & Head of Luckin Coffee IT Dept\\
+  Monthly Formal Report & Last Friday of every month 10:00-11:00 & Tencent Meeting+PPT & Project Manager & Head of Luckin Coffee IT Dept, Head of Luckin Coffee ESG Dept\\
   \hline
   Requirements Review & On Demand & Offline/Tencent Meeting & Requirements Analyst & Luckin Coffee Representatives, Relevant Dev/Test Personnel\\
   \hline
@@ -831,7 +925,13 @@ This plan establishes a standardized and efficient communication mechanism to en
 \vspace{1em}
 Information distribution tools prioritize Luckin Coffee's internal collaboration tools. Enterprise WeChat is used for internal communication, Jira for task management, Confluence for document sharing, GitLab for code management, enterprise email for formal reports, and Tencent Meeting for remote meetings. The use of all tools must comply with Luckin Coffee's information security management regulations, and it is strictly prohibited to upload Luckin Coffee's sensitive data to external platforms.
 
-All communications follow these specifications: Meeting notices are sent 1 day in advance with clear agendas and participant lists. Meeting minutes are issued within 24 hours after the meeting, clarifying resolution items, responsible persons and completion times, and synchronized to all participants and Luckin Coffee's contact person. Formal emails use Luckin Coffee's standard format with clear subjects and concise content. Problems are communicated immediately without delay to avoid affecting project progress. A communication conflict resolution mechanism is established: parties first negotiate independently, then the project manager mediates if negotiation fails, and unresolved issues are escalated to Luckin Coffee's Project Steering Committee for decision-making.
+All communications follow the **Communication Model** (Encode → Transmit → Decode → Feedback):
+1. Encode: The sender converts information into clear and accurate language
+2. Transmit: Send information through appropriate channels
+3. Decode: The receiver correctly understands the information content
+4. Feedback: The receiver confirms to the sender that the information has been received and understood
+
+All communications follow these specifications: Meeting notices are sent 1 day in advance with clear agendas and participant lists. Meeting minutes are issued within 24 hours after the meeting, clarifying resolution items, responsible persons and completion times, and synchronized to all participants and Luckin Coffee's contact person. Formal emails use Luckin Coffee's standard format with clear subjects and concise content. Problems are communicated immediately without delay to avoid affecting project progress. A communication conflict resolution mechanism is established: parties first negotiate independently, then the project manager mediates if negotiation fails, and unresolved issues are escalated to Luckin Coffee's Project Steering Committee for decision-making.s after the meeting, clarifying resolution items, responsible persons and completion times, and synchronized to all participants and Luckin Coffee's contact person. Formal emails use Luckin Coffee's standard format with clear subjects and concise content. Problems are communicated immediately without delay to avoid affecting project progress. A communication conflict resolution mechanism is established: parties first negotiate independently, then the project manager mediates if negotiation fails, and unresolved issues are escalated to Luckin Coffee's Project Steering Committee for decision-making.
 
 % ============================================================
 %  SECTION 11: RISK MANAGEMENT
