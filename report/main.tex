@@ -33,13 +33,12 @@
 \usepackage{colortbl}
 \usepackage{longtable}
 \usepackage{multirow}
-\usepackage{tikz}           
-\usepackage{enumitem}       
-\usepackage{float}           
-\usepackage{amsmath}         
-% hyperref 必须放在最后一行（禁止移动！）
-\usepackage[pdftex]{hyperref}
-\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{amsmath}
+% Allow the Unicode characters ≤ and ≥ used in some tables
+\DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+\DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
 
 % 自定义表格列样式
 \newcolumntype{L}[1]{>{\raggedright\hbadness=10000\hfuzz=15pt\arraybackslash}p{#1}}
@@ -616,7 +615,7 @@ Establish a quantitative process performance index system to drive improvement t
 \begin{table}[h]
 \centering
 \caption{Core Process Performance Measurement Indicators}
-\begin{tabular}{@{}lcc@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{5cm}>{\raggedright\arraybackslash}p{7cm}c@{}}
 \toprule
 \textbf{Process Name} & \textbf{Key Quantitative Indicators} & \textbf{Target Value} \\
 \midrule
