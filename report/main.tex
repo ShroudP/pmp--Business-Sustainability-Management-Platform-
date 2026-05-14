@@ -89,6 +89,10 @@
 \newcommand{\thead}[1]{%
   \cellcolor{tabheadbg}\textcolor{tabheadfg}{\textbf{#1}}}
 
+% Placeholder for missing figures (compile-safe)
+\newcommand{\missingfig}[2][0.8\textwidth]{%
+  \fbox{\parbox{#1}{\centering\vspace{2.5cm}\textit{[Figure placeholder: #2]}\vspace{2.5cm}}}}
+
 % ============================================================
 \begin{document}
 
@@ -104,11 +108,11 @@
   {\fontsize{28}{34}\selectfont\bfseries\color{heading}
     PROJECT MANAGEMENT PLAN\\[0.8cm]}
 
-  {\Large\color{heading}\instr{Project Name}\\[0.4cm]}
+  {\Large\color{heading} Business Sustainability Management Platform\\[0.4cm]}
 
-  {\large Group \instr{Group Number}\\[0.4cm]}
+  {\large Group 5\\[0.4cm]}
 
-  {\normalsize\instr{Author Names}\\[1.5cm]}
+  {\normalsize Liu Haopu \quad Yao Tianren \quad Gong Zhijian \quad Li Sihang\\[1.5cm]}
 
   {\large\bfseries\color{heading} Planning Phase\\[0.3cm]}
 
@@ -254,37 +258,35 @@ Charter.}
 %  SECTION 2: INTEGRATION MANAGEMENT
 % ============================================================
 \section{Integration Management}
-Integration Management includes all of the processes required to unify, coordinate and manage all project elements to completion. This section describes how integration activities will be accomplished for the \textit{Business Sustainability Management Platform} developed by Group 5.
+Integration Management includes all of the processes required to unify, coordinate and manage all project elements to completion. This section describes how integration activities will be accomplished for the \textit{Business Sustainability Management Platform} delivered by Group 5 to Luckin Coffee.
 
 \subsection{Integration Management Overview and Approach}
-The primary objective of integration management for this project is to coordinate six work packages and unify ten functional modules to deliver a fully functional web-based ESG management platform. The integration strategy employs a modular blueprint architecture implemented in Flask. This ensures each business module, such as carbon tracking and waste management, operates independently while sharing a unified data layer, authentication system, and frontend framework. All subsidiary plans are integrated into this comprehensive project management plan. The scope baseline encompasses the ten functional modules detailed in the System Documentation. The schedule baseline aligns with a 16-week timeline from March to June, featuring monthly milestones for design, development, and testing. As a zero-cost academic endeavor, the cost baseline is constrained to team labor hours and university-provided virtual machine infrastructure.
+The primary objective of integration management for this project is to coordinate six work packages and unify ten functional modules to deliver a fully functional web-based ESG management platform for Luckin Coffee. The integration strategy employs a modular blueprint architecture implemented in Flask. This ensures each business module, such as carbon tracking and waste management, operates independently while sharing a unified data layer, authentication system, and frontend framework. All subsidiary plans are integrated into this comprehensive project management plan. The scope baseline encompasses the ten functional modules detailed in the System Documentation. The schedule baseline aligns with a 16-week timeline from March to June, with six milestone gates as defined in Section~4. The cost baseline covers internal labour, infrastructure provisioning, third-party service procurement, and ESG consulting fees, denominated in CNY and managed under the EVM framework defined in Section~5.
 
 \subsection{Project Team Structure and Governance}
-The project adopts a strong matrix organizational structure, granting the project manager moderate to high authority over resource allocation and task prioritization. The internal team consists of six members, supported by the course instructor acting as the project sponsor, and the university IT department providing virtual machine hosting. External stakeholders include compliance standard bodies like GRI and ISO 14064, open-source software communities, and hypothetical end-users such as Five Guys regional managers. Communication is maintained through weekly progress reports submitted to the sponsor, ensuring adherence to GRI Standards and UN SDG 12. The corporate governance structure, illustrated in Figure \ref{fig:team_structure}, involves a Project Steering Committee that conducts weekly reviews and cross-module coordination.
+The project adopts a strong matrix organisational structure, granting the project manager moderate to high authority over resource allocation and task prioritisation. The internal delivery team consists of six members covering project management, architecture, backend, frontend, visualisation, and quality engineering, supplemented by an external ESG compliance consultant engaged for Weeks~2--4. The client side is represented by the Head of Luckin Coffee IT Department (project sponsor) and the Head of Luckin Coffee ESG Department (business owner). Cloud infrastructure is procured from a qualified Luckin Coffee supplier; the ESG reporting framework follows GRI Standards, UN SDG~12, and ISO~14064. The corporate governance structure, illustrated in Figure~\ref{fig:team_structure}, includes a Project Steering Committee chaired by the sponsor, which conducts biweekly reviews and approves baseline change requests escalated by the Change Control Board.
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[node distance=1.5cm, every node/.style={rectangle, draw, align=center, minimum width=3cm, minimum height=0.8cm}]
-    \node (corp) {Corporate / Programme Committee\\(Course Teaching Team)};
+    \node (corp) {Luckin Coffee Corporate Steering Group};
     \node (steering) [below of=corp, yshift=-0.5cm, fill=blue!20, minimum width=8cm] {Project Steering Committee};
-    
-    \node (senior) [below of=steering, xshift=-4cm] {Senior User};
-    \node (sponsor) [below of=steering] {Executive / Sponsor\\(Course Instructor)};
-    \node (supplier) [below of=steering, xshift=4cm] {Senior Supplier\\(University IT)};
-    
+
+    \node (senior) [below of=steering, xshift=-4cm] {Senior User\\(Head of Luckin Coffee\\ESG Dept)};
+    \node (sponsor) [below of=steering] {Executive / Sponsor\\(Head of Luckin Coffee\\IT Dept)};
+    \node (supplier) [below of=steering, xshift=4cm] {Senior Supplier\\(Cloud \& ESG\\Consulting Vendors)};
+
     \node (pm) [below of=sponsor, yshift=-1cm] {Project Manager\\(Liu Haopu)};
-    
-    % 调整虚线框：稍微上移 (yshift=0.5cm)，并减小高度 (3.8cm)，使其刚好包裹 PM 和 Team Leaders
+
     \node (pmt) [below of=pm, yshift=0.5cm, dashed, draw, minimum width=9.5cm, minimum height=3.8cm] {};
     \node at (pmt.north) [above=0.1cm, draw=none] {Project Management Team};
-    
-    \node (tl1) [below of=pm, xshift=-3cm, yshift=-0.5cm] {Team Leader 1\\(Yao Tianren)};
-    \node (tl2) [below of=pm, xshift=3cm, yshift=-0.5cm] {Team Leader 2\\(Gong Zhijian)};
-    
-    % 将最底部的两个节点额外下移 (yshift=-0.5cm)，彻底避开虚线框
-    \node (ug) [below of=tl1, yshift=-0.5cm] {User Group\\(Li Sihang)};
-    \node (sme) [below of=tl2, yshift=-0.5cm] {Subject Matter Experts\\(All Team Members)};
-    
+
+    \node (tl1) [below of=pm, xshift=-3cm, yshift=-0.5cm] {WP Lead --- Requirements\\(Yao Tianren)};
+    \node (tl2) [below of=pm, xshift=3cm, yshift=-0.5cm] {WP Lead --- Frontend \& Integration\\(Gong Zhijian)};
+
+    \node (ug) [below of=tl1, yshift=-0.5cm] {WP Lead --- Frontend Foundation\\(Li Sihang)};
+    \node (sme) [below of=tl2, yshift=-0.5cm] {Subject Matter Experts\\(ESG Consultant, All Members)};
+
     \draw[->] (corp) -- (steering);
     \draw[->] (steering) -- (sponsor);
     \draw[->] (sponsor) -- (pm);
@@ -331,19 +333,19 @@ Table \ref{tab:roles} defines the major roles in the project team, their core in
 \hline
 \textbf{Project Position} & \textbf{Integration Management Responsibilities} & \textbf{External Resource} \\
 \hline
-Project Manager (Liu Haopu) & Holds ultimate responsibility for integration activities, coordinates cross-work package dependencies, chairs Change Control Board (CCB) meetings, and integrates performance data into status reports. & Course Instructor, University IT \\
+Project Manager (Liu Haopu) & Holds ultimate responsibility for integration activities, coordinates cross-work package dependencies, chairs Change Control Board (CCB) meetings, and integrates performance data into status reports. & Luckin Coffee IT Dept, ESG Consultant \\
 \hline
-Change Control Board & Reviews baseline change requests, assesses their impact on scope, schedule, and quality, and monitors the implementation of approved changes. & None \\
+Change Control Board & Reviews baseline change requests, assesses their impact on scope, schedule, and quality, and monitors the implementation of approved changes. & Luckin Coffee Change Control Board (escalation) \\
 \hline
-WP1 Lead (Yao Tianren) & Integrates user requirements into system design, ensures the database schema supports all modules, and resolves architectural conflicts. & None \\
+WP1 Lead (Yao Tianren) & Integrates user requirements into system design, ensures the database schema supports all modules, and resolves architectural conflicts. & ESG Consultant (Weeks 2--4) \\
 \hline
 WP2 Lead (Liu Haopu) & Integrates backend APIs with frontend modules, ensures data consistency, and implements cross-module business logic such as compliance scoring. & None \\
 \hline
 WP3 Lead (Li Sihang) & Integrates the authentication system with business modules, ensures consistent UI/UX, and implements role-based access control. & None \\
 \hline
-WP4/WP5 Lead (Gong Zhijian) & Integrates frontend pages with backend APIs, ensures end-to-end data flow, validates cross-browser compatibility, and manages system deployment. & University IT (VM Deployment) \\
+WP4/WP5 Lead (Gong Zhijian) & Integrates frontend pages with backend APIs, ensures end-to-end data flow, validates cross-browser compatibility, and manages system deployment. & Cloud Service Vendor \\
 \hline
-Project Sponsor & Approves the project charter, resolves organizational resource conflicts, and authorizes major scope changes affecting project objectives. & None \\
+Project Sponsor (Head of Luckin Coffee IT Dept) & Approves the project charter, resolves organisational resource conflicts, and authorises major scope changes affecting project objectives. & None \\
 \hline
 \end{tabular}
 \caption{Roles and Responsibilities for Integration Management}
@@ -351,7 +353,7 @@ Project Sponsor & Approves the project charter, resolves organizational resource
 \end{table}
 
 \subsection{Direct and Manage Project Execution}
-Execution activities are driven by a structured workflow where all code and documentation are managed via GitLab. A main branch is maintained for stable releases alongside feature branches for specific work packages, with peer reviews required before merging. Weekly synchronization meetings are held every Monday to review progress, identify blockers, and align upcoming tasks. Work performance data, including completed tasks, bug resolution rates, and test coverage, is collected weekly and integrated into status reports. Approved change requests are assigned to relevant work package leads, and their implementation is verified by the project manager before closure. The Project Management Information System (PMIS) comprises GitLab for version control, Discord for real-time communication, Google Docs for collaborative documentation, and MySQL Workbench for database management.
+Execution activities are driven by a structured workflow where all code and documentation are managed via GitLab. A main branch is maintained for stable releases alongside feature branches for specific work packages, with peer reviews required before merging. Weekly synchronisation meetings are held every Monday to review progress, identify blockers, and align upcoming tasks. Work performance data, including completed tasks, bug resolution rates, and test coverage, is collected weekly and integrated into status reports. Approved change requests are assigned to relevant work package leads, and their implementation is verified by the project manager before closure. The Project Management Information System (PMIS) comprises GitLab for version control and CI/CD, Jira for task and defect tracking, Confluence for collaborative documentation, Tencent Meeting for synchronous communication, Enterprise WeChat for day-to-day messaging, and Prometheus--Grafana for runtime monitoring of the deployed platform.
 
 \subsection{Monitor and Control Project Work}
 Project performance is continuously monitored against the 16-week schedule baseline. Key performance indicators include schedule variance, defect density, and cross-module integration resolution time. Earned Value Management (EVM) principles are applied to quantify progress, triggering corrective actions if the Schedule Performance Index (SPI) falls below 0.9 for two consecutive weeks. A three-tiered information flow ensures consistent reporting: raw work performance data is analyzed into performance information, which is then compiled into weekly status reports for the team and monthly updates for the sponsor. When deviations occur, the root cause is analyzed to develop corrective actions that minimize schedule disruption. Furthermore, technical risks and data anomalies are tracked during weekly reviews, utilizing the platform's built-in anomaly detection module to maintain data integrity.
@@ -465,29 +467,17 @@ Scope control involves continuously monitoring the project status to manage chan
 % ============================================================
 %  SECTION 4: SCHEDULE MANAGEMENT
 % ============================================================
-% ============================================================
-% Required packages (add to your Overleaf preamble if not already present):
-%   \usepackage{booktabs}
-%   \usepackage{multirow}
-%   \usepackage{enumitem}
-%   \usepackage{array}
-%   \usepackage{longtable}
-%   \usepackage{geometry}
-% ============================================================
-
-% ============================================================
 \section{Schedule Management}
-% ============================================================
 
-\subsection{4.1 Schedule Management Plan}
+\subsection{Schedule Management Plan}
 
 The Schedule Management Plan defines how the project schedule will be planned, developed, monitored, and controlled throughout the project lifecycle. It establishes the methods, tools, responsibilities, and procedures used to manage schedule activities and track project progress. The main purpose of this plan is to ensure that the project remains on schedule and that any delays or deviations can be identified and addressed in a timely manner.
 
-\subsubsection{4.1.1 Milestone Progress Measurement}
+\subsubsection{Milestone Progress Measurement}
 
 Progress is formally assessed at each of the six milestones during the Friday team meeting. A milestone is recorded as complete only when all acceptance criteria for that phase---as specified in the WBS Dictionary---are fully satisfied. Between milestones, weekly task completion is compared against the Jira board to provide an ongoing progress signal.
 
-\subsubsection{4.1.2 Methods and Tools for Schedule Performance Comparison}
+\subsubsection{Methods and Tools for Schedule Performance Comparison}
 
 The project uses three complementary methods to compare actual performance to planned performance:
 
@@ -498,7 +488,7 @@ The project uses three complementary methods to compare actual performance to pl
 \textbf{Schedule Variance Tracking.} Consistent with the EVM principles applied in Section 2.5, Schedule Variance (\(SV = EV - PV\)) and the Schedule Performance Index (\(SPI = EV / PV\)) are calculated weekly. An SPI below 0.9 for two consecutive weeks triggers a formal corrective action review.
 
 % ============================================================
-\subsection{4.2 Define Activities}
+\subsection{Define Activities}
 % ============================================================
 
 The following activity list covers all project tasks from planning through final acceptance:
@@ -539,12 +529,12 @@ The following activity list covers all project tasks from planning through final
 \end{itemize}
 
 % ============================================================
-\subsection{4.3 Sequence Activities}
+\subsection{Sequence Activities}
 % ============================================================
 
 In this process, the relationships and dependencies between project activities are identified and arranged in a logical order. This helps the project team organise tasks more efficiently, coordinate parallel activities, and reduce unnecessary delays during the project lifecycle.
 
-\subsubsection{4.3.1 Tools and Techniques for Sequence Activities}
+\subsubsection{Tools and Techniques for Sequence Activities}
 
 \textbf{Precedence Diagramming Method (PDM).} This method is used to create a project schedule model by representing activities as nodes and linking them with logical dependencies to illustrate the order in which the activities should be carried out. Four logical relationships are used:
 
@@ -572,14 +562,15 @@ In this process, the relationships and dependencies between project activities a
 \end{itemize}
 
 % ============================================================
-\subsection{4.4 Estimate Activities Duration}
+\subsection{Estimate Activities Duration}
+\label{subsec:estimate_duration}
 % ============================================================
 
 In this process, the estimated time required to complete each project activity is determined based on the assigned resources and expected workload. The duration estimates are then used as an important input when developing the overall project schedule.
 
-\subsubsection{4.4.1 Tools and Techniques for Estimating Activities Duration}
+\subsubsection{Tools and Techniques for Estimating Activities Duration}
 
-\textbf{4.4.1.1 Three-Point Estimating}
+\paragraph{Three-Point Estimating}\mbox{}\\
 
 The three-point estimating technique is applied to the overall project duration:
 
@@ -591,7 +582,7 @@ The three-point estimating technique is applied to the overall project duration:
 
 Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated activities duration is \textbf{111 $\pm$ 10 working days}, with a 10\% probability of exceeding 120 days.
 
-\textbf{4.4.1.2 Reserve Analysis}
+\paragraph{Reserve Analysis}\mbox{}\\
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Contingency Reserve: 15 Days.} A contingency reserve of 15 working days is included in the project schedule baseline to address identified risks such as integration defects, testing rework, performance optimisation delays, and cross-browser compatibility issues. The reserve may be used by the project manager when necessary during project execution.
@@ -599,12 +590,12 @@ Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated a
 \end{itemize}
 
 % ============================================================
-\subsection{4.5 Develop Schedule}
+\subsection{Develop Schedule}
 % ============================================================
 
 In this process, activity sequences, duration estimates, resource requirements, and scheduling constraints are analysed to develop the overall project schedule. By combining task relationships, resource availability, and planned durations within the scheduling tool, the project team produces a schedule model with planned start and finish dates for all activities.
 
-\subsubsection{4.5.1 Tools and Techniques for Developing Schedule}
+\subsubsection{Tools and Techniques for Developing Schedule}
 
 \textbf{Schedule Network Analysis.}
 
@@ -620,29 +611,21 @@ In this process, activity sequences, duration estimates, resource requirements, 
     \item \textbf{Resource Smoothing}: If workload pressure becomes too high during certain periods, resource smoothing will be used by adjusting non-critical activities within their available float so that team workload remains stable without affecting the project deadline.
 \end{itemize}
 
-\subsubsection{4.5.2 Project Schedule}
+\subsubsection{Project Schedule}
 
-\textbf{4.5.2.1 Gantt Chart}
+\paragraph{Gantt Chart}\mbox{}\\
 
-The project Gantt chart is maintained in Jira (Timeline view) and updated weekly. The schedule baseline was locked at M1 (March 28, 2026). A milestone chart summarising all six gate events is provided in Section 4.5.2.2.
+The project Gantt chart is maintained in Jira (Timeline view) and updated weekly. The schedule baseline was locked at M1 (March 28, 2026). A milestone chart summarising all six gate events is provided below.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{Milestone.png}
-    \caption{Milestone}
-    \label{Milestone}
+    \includegraphics[width=0.6\textwidth]{figures/Milestone.png}
+    \caption{Milestone Overview}
+    \label{fig:milestone_overview}
 \end{figure}
 
-\textbf{4.5.2.2 Milestone Chart}
+\paragraph{Milestone Chart}\mbox{}\\
 
 The project is organised around six milestones, each representing a significant gate event that confirms a major phase of work is complete and approved before the next phase begins. All milestones carry zero duration and serve as objective checkpoints against which actual progress is measured.
-
-% 导言区需要加入
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{booktabs}
-\usepackage{array}
-
-% ========================= TABLE =========================
 
 \begin{table}[H]
 \centering
@@ -695,12 +678,12 @@ Platform deployed to production virtual machine; all documentation and user manu
 }
 \end{table}
 
-\textbf{4.5.2.3 Project Schedule Network Diagram}
+\paragraph{Project Schedule Network Diagram}\mbox{}\\
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{Project schedule network diagram.png}
-    \caption{schedule network diagram}
-    \label{Milestone}
+    \includegraphics[width=0.8\textwidth]{figures/project_schedule_network.png}
+    \caption{Project Schedule Network Diagram}
+    \label{fig:schedule_network}
 \end{figure}
 
 The project's critical chain is as follows:
@@ -710,12 +693,12 @@ A1 $\to$ A2 $\to$ A3 $\to$ A5 $\to$ A6 $\to$ A13 $\to$ A14 $\to$ A15 $\to$ A16 $
 \end{center}
 
 % ============================================================
-\subsection{4.6 Control Schedule}
+\subsection{Control Schedule}
 % ============================================================
 
 Schedule control is the process of monitoring the status of project activities to update project progress and manage changes to the schedule baseline to achieve the plan. The key benefit of this process is that it provides the means to recognize deviation from the plan and take corrective and preventive actions, thus minimizing risk.
 
-\subsubsection{4.6.1 Corrective Action When Performance Deviates}
+\subsubsection{Corrective Action When Performance Deviates}
 
 When actual progress deviates from the planned schedule, corrective and preventive actions are applied according to the severity of the deviation. The primary recovery tools are two schedule compression techniques---crashing and fast tracking.
 
@@ -732,12 +715,12 @@ Contingency reserves built into the schedule baseline may be drawn upon to absor
 
 \textbf{Severe deviation} (a milestone missed, or SPI $<$ 0.9 for four or more consecutive weeks): Failure to achieve any milestone is considered a severe deviation and requires a formal schedule revision to be initiated.
 
-\subsubsection{4.6.2 Schedule Modification and Commitment}
+\subsubsection{Schedule Modification and Commitment}
 
 The schedule baseline may be formally revised when a milestone is missed, when an approved scope change materially affects the critical path, or when a verified technical blocker cannot be absorbed by available float or contingency reserve. The project manager prepares the revised schedule in Jira, presents it at the Wednesday CCB meeting, and obtains approval per the authority levels in Section 2.6. Each work package lead acknowledges revised task dates within 24 hours via Jira comment. The previous baseline is archived in GitLab as a tagged release. Formal revisions are limited to three over the project lifecycle.
 
 % ============================================================
-\subsection{4.7 Schedule Responsibility and Accountability}
+\subsection{Schedule Responsibility and Accountability}
 % ============================================================
 
 All team members are responsible for completing assigned activities according to the approved schedule baseline and for updating task progress in Jira on time. Each work package lead is responsible for monitoring the progress of activities within their area and reporting any potential delays during the weekly project meeting.
@@ -756,7 +739,7 @@ Repeated failure to meet agreed task deadlines without reasonable justification 
 Project Cost Management for the Luckin Coffee Sustainability Platform covers four processes: Plan Cost Management, Estimate Costs, Determine Budget, and Control Costs. The goal is to ensure the project is completed within the approved budget while maintaining full transparency on cost performance at every milestone gate.
 
 % ============================================================
-\subsection{5.1 Plan Cost Management}
+\subsection{Plan Cost Management}
 % ============================================================
 
 The Cost Management Plan defines the following parameters that govern how all cost-related activities are conducted:
@@ -770,7 +753,7 @@ The Cost Management Plan defines the following parameters that govern how all co
 \end{itemize}
 
 % ============================================================
-\subsection{5.2 Estimate Costs}
+\subsection{Estimate Costs}
 % ============================================================
 
 Cost estimation for this project was conducted during the planning phase by the project manager in collaboration with all work package leads. The team applied the practical software cost estimation process structured in five steps:
@@ -786,23 +769,23 @@ Cost estimation for this project was conducted during the planning phase by the 
 All activity cost estimates are documented in the project cost tracking spreadsheet stored in GitLab, including the estimation method used, the three-point values, and the derived expected cost. Cost estimates were reviewed and approved at the M1 milestone gate (March 28, 2026) and will be re-evaluated at each subsequent milestone if material scope changes occur.
 
 % ============================================================
-\subsection{5.3 Determine Budget}
+\subsection{Determine Budget}
 % ============================================================
 
 The project budget is determined by aggregating all activity cost estimates and adding reserve provisions. The budget is structured in the following layers:
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Activity Cost Estimates}: the rolled-up direct and indirect costs from Section 5.2, summed across all 32 WBS activities.
-    \item \textbf{Contingency Reserve}: an amount corresponding to identified ``known-unknown'' risks (consistent with the 15-day schedule contingency reserve defined in Section 4.4.1.2), held within the Cost Baseline and managed by the project manager. This reserve may be drawn upon without a formal change request when cost overruns fall within this buffer.
+    \item \textbf{Contingency Reserve}: an amount corresponding to identified ``known-unknown'' risks (consistent with the 15-day schedule contingency reserve defined in Section~\ref{subsec:estimate_duration}), held within the Cost Baseline and managed by the project manager. This reserve may be drawn upon without a formal change request when cost overruns fall within this buffer.
     \item \textbf{Management Reserve}: a budget held by the project sponsor for unforeseen ``unknown-unknown'' risks that cannot be identified at planning time. The management reserve is excluded from the Cost Baseline and requires sponsor approval before use.
 \end{itemize}
 
-The sum of all activity cost estimates and the contingency reserve constitutes the \textbf{Cost Baseline (BAC)}. The Cost Baseline is displayed as an S-curve that plots cumulative planned expenditure against the project timeline, tied to the six milestone dates defined in Section 4.5.2.2. The S-curve is maintained in the project cost tracking spreadsheet in GitLab and serves as the reference against which actual expenditure is compared each week.
+The sum of all activity cost estimates and the contingency reserve constitutes the \textbf{Cost Baseline (BAC)}. The Cost Baseline is displayed as an S-curve that plots cumulative planned expenditure against the project timeline, tied to the six milestone dates listed in Table~\ref{tab:milestone_schedule}. The S-curve is maintained in the project cost tracking spreadsheet in GitLab and serves as the reference against which actual expenditure is compared each week.
 
 Project funding requirements are released by milestone gate: the sponsor confirms the release of funds for the next phase at each milestone review. The Cost Baseline may only be revised through formal change control procedures, consistent with the authority levels defined in Section 2.6. Formal revisions are limited to three over the project lifecycle.
 
 % ============================================================
-\subsection{5.4 Control Costs}
+\subsection{Control Costs}
 % ============================================================
 
 Cost control is carried out throughout the project lifecycle using Earned Value Management (EVM). The project manager calculates the following EVM indicators weekly and reports them at the Friday team meeting and at each milestone gate:
@@ -847,13 +830,59 @@ All EVM data (PV, EV, AC, CV, SV, CPI, SPI, EAC, ETC, VAC, TCPI) is recorded wee
 % ============================================================
 %  SECTION 6: QUALITY MANAGEMENT
 % ============================================================
+\section{Quality Management}
 % ============================================================
-\subsection{6.2 Perform Quality Assurance}
+
+Quality Management for the Luckin Coffee Sustainability Platform covers three integrated processes: Plan Quality Management, Perform Quality Assurance, and Control Quality. The objective is to ensure all project deliverables meet the quality requirements agreed with the client and pass acceptance at each milestone gate without rework.
+
+% ============================================================
+\subsection{Plan Quality Management}
+% ============================================================
+
+The Quality Management Plan defines the quality standards, governance structure, and metrics applied throughout the project lifecycle.
+
+\subsubsection{Quality Standards and Acceptance Criteria}
+
+The platform shall comply with the following quality standards, agreed with the client at the M1 milestone gate:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Functional correctness}: every feature listed in the WBS must satisfy the acceptance criteria recorded in its WBS Dictionary entry, with no unresolved severe defects at milestone review.
+    \item \textbf{Performance}: backend API average response time below 2 seconds; database query response below 500 milliseconds for the demonstration data volume; concurrent-user target as agreed in the requirements specification.
+    \item \textbf{Compatibility}: validated on the latest two major versions of Chrome, Edge, Firefox, and Safari; responsive layout supported down to 1280$\times$720 desktop resolution.
+    \item \textbf{Security}: passwords stored using PBKDF2-SHA256 with per-user salt; role-based access control enforced server-side; sensitive Luckin Coffee data is never written to client logs or exported to external platforms.
+    \item \textbf{Documentation}: every backend API has reference documentation; every functional module has a user-facing operation guide; all design decisions are recorded in Confluence.
+\end{itemize}
+
+\subsubsection{Quality Metrics}
+
+The following quantitative quality metrics are reported at every milestone gate, aligned with the process performance indicators defined in Section 7:
+
+\begin{itemize}[leftmargin=*]
+    \item Defect density: $\leq$ 3 defects per 1000 lines of code.
+    \item Code review coverage: 100\% of merged changes reviewed.
+    \item Test case coverage: $\geq$ 95\% of business requirements covered by an executable test case.
+    \item Defect escape rate (defects found post-milestone $\div$ total defects): $\leq$ 2\%.
+    \item Defect repair timeliness: $\geq$ 98\% of severe defects resolved within the agreed turnaround time.
+\end{itemize}
+
+\subsubsection{Cost of Quality}
+
+Quality investment is allocated across the four Cost-of-Quality categories:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Prevention costs}: design reviews, coding standards training, automated linting, and process documentation.
+    \item \textbf{Appraisal costs}: peer review effort, manual and automated testing, milestone audits.
+    \item \textbf{Internal failure costs}: defect rework before the deliverable reaches the client.
+    \item \textbf{External failure costs}: defects found by Luckin Coffee acceptance testers; minimised through preventive and appraisal investment in earlier phases.
+\end{itemize}
+
+% ============================================================
+\subsection{Perform Quality Assurance}
 % ============================================================
 
 Quality assurance focuses on evaluating whether the project processes are effective and whether the team is consistently following the defined quality standards throughout project execution.
 
-\subsubsection{6.2.1 Quality Assurance Activities}
+\subsubsection{Quality Assurance Activities}
 
 The following quality assurance activities are performed during the project lifecycle:
 
@@ -867,7 +896,7 @@ The following quality assurance activities are performed during the project life
 
 Quality assurance activities are primarily preventive and are intended to identify process weaknesses early before they affect final deliverables.
 
-\subsubsection{6.2.2 Continuous Improvement}
+\subsubsection{Continuous Improvement}
 
 The project applies the PDCA (Plan--Do--Check--Act) cycle throughout the development lifecycle:
 
@@ -880,7 +909,7 @@ The project applies the PDCA (Plan--Do--Check--Act) cycle throughout the develop
 
 At the end of each milestone, the project team conducts a short retrospective meeting to identify process improvements for the next phase of work.
 
-\subsubsection{6.2.3 Quality Governance and Responsibilities}
+\subsubsection{Quality Governance and Responsibilities}
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Project Manager}: responsible for overall quality governance, milestone quality approval, and escalation of major quality issues.
@@ -893,12 +922,12 @@ At the end of each milestone, the project team conducts a short retrospective me
 If recurring quality issues significantly affect schedule or cost performance, corrective actions or formal change requests may be initiated according to the procedures defined in Sections 4.6 and 5.4.
 
 % ============================================================
-\subsection{6.3 Control Quality}
+\subsection{Control Quality}
 % ============================================================
 
 Quality control focuses on monitoring project deliverables and verifying that completed work satisfies the defined quality requirements before formal acceptance.
 
-\subsubsection{6.3.1 Quality Control Activities}
+\subsubsection{Quality Control Activities}
 
 The project applies multiple quality control mechanisms throughout development and testing:
 
@@ -914,7 +943,7 @@ The project applies multiple quality control mechanisms throughout development a
 
 All identified defects are recorded in Jira, assigned to responsible developers, prioritized according to severity, and tracked until closure.
 
-\subsubsection{6.3.2 Defect Reporting and Corrective Action}
+\subsubsection{Defect Reporting and Corrective Action}
 
 Defects are classified into three severity levels:
 
@@ -926,7 +955,7 @@ Defects are classified into three severity levels:
 
 If defect trends indicate recurring process problems, the project manager initiates a root cause analysis using quality management tools such as Pareto analysis or cause-and-effect diagrams. Corrective actions may include additional testing, process adjustments, code refactoring, or reassignment of technical resources.
 
-\subsubsection{6.3.3 Verified Deliverables and Acceptance}
+\subsubsection{Verified Deliverables and Acceptance}
 
 A deliverable is considered verified only when:
 
@@ -937,16 +966,16 @@ A deliverable is considered verified only when:
     \item the responsible reviewer formally approves the deliverable in Jira or GitLab.
 \end{itemize}
 
-Verified deliverables are then submitted for milestone acceptance review by the Project Manager, Client Representative, or Sponsor according to the milestone approval structure defined in Section 4.5.2.2.
+Verified deliverables are then submitted for milestone acceptance review by the Project Manager, Client Representative, or Sponsor according to the milestone approval structure listed in Table~\ref{tab:milestone_schedule}.
 
 % ============================================================
 %  SECTION 7: PROCESS IMPROVEMENT PLAN
 % ============================================================
 \section{Process Improvement Plan}
 
-This plan establishes a standardized and quantifiable process improvement system based on the **PDCA Cycle of Quality Management**. By continuously optimizing processes throughout the project lifecycle and eliminating non-value-added activities, it improves delivery efficiency and product quality, ensuring that the platform meets the reliability and scalability requirements of Luckin Coffee's enterprise-level ESG management and supports unified data management and compliant operations across more than 5,000 stores nationwide.
+This plan establishes a standardized and quantifiable process improvement system based on the \textbf{PDCA Cycle of Quality Management}. By continuously optimizing processes throughout the project lifecycle and eliminating non-value-added activities, it improves delivery efficiency and product quality, ensuring that the platform meets the reliability and scalability requirements of Luckin Coffee's enterprise-level ESG management and supports unified data management and compliant operations across more than 5,000 stores nationwide.
 
-\subsection{7.1 Improvement Scope and Process Boundaries}
+\subsection{Improvement Scope and Process Boundaries}
 This process improvement covers 6 core processes throughout the project lifecycle.All processes must comply with Luckin Coffee's IT system development specifications:
 \begin{itemize}[leftmargin=*]
     \item \textbf{Requirements Management Process}: Requirements collection, review, change control, traceability
@@ -957,8 +986,8 @@ This process improvement covers 6 core processes throughout the project lifecycl
     \item \textbf{Communication Management Process}: Internal collaboration, Luckin Coffee communication, supplier communication, reporting mechanism
 \end{itemize}
 
-\subsection{7.2 Process Measurement Index System}
-Establish a quantitative process performance index system based on the **Cost of Quality (COQ) Model** to drive improvement through data. All indicators are aligned with Luckin Coffee's enterprise-level project delivery standards:
+\subsection{Process Measurement Index System}
+Establish a quantitative process performance index system based on the \textbf{Cost of Quality (COQ) Model} to drive improvement through data. All indicators are aligned with Luckin Coffee's enterprise-level project delivery standards:
 
 \begin{table}[h]
 \centering
@@ -988,7 +1017,7 @@ Establish a quantitative process performance index system based on the **Cost of
 \end{tabular}
 \end{table}
 
-\subsection{7.3 Improvement Objectives and Implementation Strategies}
+\subsection{Improvement Objectives and Implementation Strategies}
 \textbf{Overall Objective}: Improve overall delivery efficiency by 20\%, reduce product defect rate by 30\%, and achieve Luckin Coffee's satisfaction of over 95\% during the project cycle, ensuring that the platform passes Luckin Coffee's IT system acceptance at one time.
 
 \textbf{Phased Implementation Strategy}:
@@ -1003,24 +1032,24 @@ Establish a quantitative process performance index system based on the **Cost of
     Solidify the verified effective processes into organizational process assets; establish a process improvement knowledge base to record best practices and lessons learned; form a culture and mechanism for continuous improvement, providing reference for other ESG-related projects of Luckin Coffee in the future.
 \end{enumerate}
 
-\subsection{7.4 Improvement Methods and Tools}
-Carry out process improvement using the **Seven Basic Quality Tools** and **Seven Quality Assurance Tools** taught in the course:
+\subsection{Improvement Methods and Tools}
+Carry out process improvement using the \textbf{Seven Basic Quality Tools} and \textbf{Seven Quality Assurance Tools} taught in the course:
 \begin{itemize}[leftmargin=*]
     \item \textbf{PDCA Cycle}: Plan-Do-Check-Act, continuous iterative improvement
-    \item \textbf{Root Cause Analysis}: Use the **5-Why Method** and **Fishbone Diagram (Ishikawa Diagram)** to analyze the root cause of problems
-    \item \textbf{Defect Priority Analysis}: Use the **Pareto Chart** to identify the 20% of main causes that lead to 80% of defects
+    \item \textbf{Root Cause Analysis}: Use the \textbf{5-Why Method} and \textbf{Fishbone Diagram (Ishikawa Diagram)} to analyze the root cause of problems
+    \item \textbf{Defect Priority Analysis}: Use the \textbf{Pareto Chart} to identify the 20% of main causes that lead to 80% of defects
     \item \textbf{Value Stream Analysis}: Identify and eliminate non-value-added activities in the process
     \item \textbf{Tool Support}: Use Jira for task and defect management, GitLab for code management and CI/CD, Prometheus+Grafana for system monitoring. All tools must comply with Luckin Coffee's information security requirements
 \end{itemize}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/fig7-3_fishbone.png}
+\missingfig{Fishbone Diagram for High Code Defect Rate}
 \caption{Fishbone Diagram for High Code Defect Rate Root Cause Analysis}
 \label{fig:req_flow}
 \end{figure}
 
-\subsection{7.5 Responsibility Assignment and Monitoring Mechanism}
+\subsection{Responsibility Assignment and Monitoring Mechanism}
 \begin{itemize}[leftmargin=*]
     \item \textbf{Project Manager}: Overall responsible for the formulation, implementation and monitoring of the process improvement plan, and regularly report the improvement progress to Luckin Coffee
     \item \textbf{Process Improvement Team}: Composed of module leaders, responsible for collecting process problems and proposing improvement suggestions
@@ -1033,20 +1062,21 @@ Carry out process improvement using the **Seven Basic Quality Tools** and **Seve
 % ============================================================
 \section{Human Resource Management}
 
-This project adopts a **Strong Matrix Organizational Structure** (the project manager has moderate to high decision-making authority), balancing functional professionalism and project execution capability. It establishes a clear role responsibility system and team collaboration mechanism to ensure the project has sufficient human resources with corresponding skills to meet the delivery requirements of Luckin Coffee's enterprise-level projects.
+This project adopts a \textbf{Strong Matrix Organizational Structure} (the project manager has moderate to high decision-making authority), balancing functional professionalism and project execution capability. It establishes a clear role responsibility system and team collaboration mechanism to ensure the project has sufficient human resources with corresponding skills to meet the delivery requirements of Luckin Coffee's enterprise-level projects.
 
 % --- 8.1 ---
 \subsection{Human Resources Acquisition}
 
-The core team of this project consists of 5 full-time internal members, supplemented by 1 external professional consultant. All resources are exclusively allocated to the project with no cross-project conflicts. The specific resource allocation is as follows:
+The core team of this project consists of 6 full-time internal members (1 Project Manager and 5 specialist engineers), supplemented by 1 external professional consultant. All resources are exclusively allocated to the project with no cross-project conflicts. The specific resource allocation is as follows:
 \begin{itemize}
   \item \textbf{Available Internal Resources}:
   \begin{itemize}
-    \item System Architect: Proficient in Flask backend development and database design, with experience in large chain enterprise system architecture, available full cycle (Weeks 1-16)
-    \item Backend Developer: Proficient in Python and MySQL, with experience in ESG management system development, available full cycle (Weeks 1-16)
-    \item Frontend Developer (Framework): Proficient in Vue3 and Bootstrap, with experience in enterprise-level management system frontend development, available full cycle (Weeks 1-16)
-    \item Frontend Developer (Visualization): Proficient in ECharts data visualization, with experience in big data display system development, available full cycle (Weeks 1-16)
-    \item Test and DevOps Engineer: Proficient in system testing and cloud server deployment, with experience in Luckin Coffee system testing, available full cycle (Weeks 1-16)
+    \item Project Manager (Liu Haopu): Holds overall delivery accountability; chairs the Change Control Board; coordinates communications with Luckin Coffee stakeholders; available full cycle (Weeks 1--16)
+    \item System Architect / Tech Lead: Proficient in Flask backend development and database design, with experience in large chain enterprise system architecture, available full cycle (Weeks 1--16)
+    \item Backend Developer: Proficient in Python and MySQL, with experience in ESG management system development, available full cycle (Weeks 1--16)
+    \item Frontend Developer (Framework): Proficient in Vue3 and Bootstrap, with experience in enterprise-level management system frontend development, available full cycle (Weeks 1--16)
+    \item Frontend Developer (Visualization): Proficient in ECharts data visualization, with experience in big data display system development, available full cycle (Weeks 1--16)
+    \item Test and DevOps Engineer: Proficient in system testing and cloud server deployment, with experience in Luckin Coffee system testing, available full cycle (Weeks 1--16)
   \end{itemize}
   \item \textbf{External Resource Requirements}:
   \begin{itemize}
@@ -1063,7 +1093,7 @@ The core team of this project consists of 5 full-time internal members, suppleme
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/fig8-1_raci_matrix.png}
+\missingfig{RACI Responsibility Assignment Matrix}
 \caption{RACI Responsibility Assignment Matrix for Core Project Tasks}
 \label{fig:raci_matrix}
 \end{figure}
@@ -1071,9 +1101,9 @@ The core team of this project consists of 5 full-time internal members, suppleme
 % --- 8.2 ---
 \subsection{Human Resources Development and Team Management}
 
-This project establishes a multi-level personnel development system and carries out team building in accordance with the **Tuckman Ladder Theory** to ensure team members possess the technical capabilities and business knowledge required to complete the project:
+This project establishes a multi-level personnel development system and carries out team building in accordance with the \textbf{Tuckman Ladder Theory} to ensure team members possess the technical capabilities and business knowledge required to complete the project:
 
-\subsubsection{8.2.1 Team Development Stage Management}
+\subsubsection{Team Development Stage Management}
 The team will go through the following five development stages in sequence, adopting targeted management strategies:
 \begin{enumerate}[leftmargin=*]
     \item \textbf{Forming (Week 1)}: Team members meet each other and learn about project goals and their respective roles. Management focus: clarify division of labor, establish basic rules, create a positive atmosphere
@@ -1085,12 +1115,12 @@ The team will go through the following five development stages in sequence, adop
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/fig8-2_tuckman_ladder.png}
+\missingfig{Tuckman Ladder of Team Development Stages}
 \caption{Tuckman Ladder: Team Development Stages and Management Focus}
 \label{fig:tuckman}
 \end{figure}
 
-\subsubsection{8.2.2 Personnel Development Measures}
+\subsubsection{Personnel Development Measures}
 \begin{itemize}
   \item \textbf{Project-Specific Training}:
   \begin{itemize}
@@ -1100,7 +1130,7 @@ The team will go through the following five development stages in sequence, adop
   \end{itemize}
   \item \textbf{Knowledge Sharing Mechanism}: A 1-hour technical sharing session is held every Friday afternoon, where team members take turns presenting technical difficulties, best practices and learning experiences. A project knowledge base is established, with all design documents, technical solutions and problem solutions uploaded to a unified platform for team access, and simultaneously synchronized to Luckin Coffee's project contact person.
   \item \textbf{Mentoring and Job Shadowing}: Each junior member is assigned a dedicated mentor for daily guidance and problem resolution. For complex modules, job shadowing is adopted, with experienced engineers leading junior engineers to complete tasks together, ensuring knowledge transfer and skill improvement.
-  \item \textbf{Incentive Mechanism}: Establish a multi-level reward system based on **Maslow's Hierarchy of Needs**:
+  \item \textbf{Incentive Mechanism}: Establish a multi-level reward system based on \textbf{Maslow's Hierarchy of Needs}:
   \begin{itemize}
     \item Physiological/Safety Needs: Provide reasonable working hours and working environment
     \item Social Needs: Organize regular team building activities
@@ -1109,7 +1139,7 @@ The team will go through the following five development stages in sequence, adop
   \end{itemize}
 \end{itemize}
 
-\subsubsection{8.2.3 Conflict Management}
+\subsubsection{Conflict Management}
 More than 50% of conflicts in projects arise from resources, priorities and schedules. The following five conflict resolution methods are adopted:
 \begin{itemize}[leftmargin=*]
     \item \textbf{Collaborate/Problem Solve}: Preferred method, confront the problem directly and work together to find a win-win solution
@@ -1153,14 +1183,14 @@ This project's procurement management follows the principles of compliance, effi
 Firm Fixed Price (FFP) & Low & High & Standard products with clear requirements and scope \\
 Fixed Price Incentive Fee (FPIF) & Medium & Medium & Products with clear performance indicators \\
 Cost Plus Fixed Fee (CPFF) & High & Low & Exploratory projects with unclear requirements \\
-Time and Materials (T&M) & Medium & Medium & Short-term, small-scale service procurement \\
+Time and Materials (T\&M) & Medium & Medium & Short-term, small-scale service procurement \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/fig9-1_contract_risk.png}
+\missingfig{Contract Type Risk Comparison}
 \caption{Contract Type Risk Comparison and Applicable Scenarios}
 \label{fig:contract_risk}
 \end{figure}
@@ -1168,7 +1198,7 @@ Time and Materials (T&M) & Medium & Medium & Short-term, small-scale service pro
 Specific contract type applications for this project:
 \begin{itemize}
   \item Firm Fixed Price (FFP) Contracts: Applicable to standard products such as cloud servers, domain names, SSL certificates and software licenses. Contract terms must follow Luckin Coffee's standard contract template
-  \item Time and Materials (T&M) Contracts: Applicable to ESG consulting services, settled based on actual service hours. Service content and deliverables must be confirmed by Luckin Coffee
+  \item Time and Materials (T\&M) Contracts: Applicable to ESG consulting services, settled based on actual service hours. Service content and deliverables must be confirmed by Luckin Coffee
 \end{itemize}
 
 \textbf{Procurement Schedule}:
@@ -1179,11 +1209,13 @@ Specific contract type applications for this project:
   \item Week 8: Complete procurement of production environment cloud servers, SSL certificates and MySQL Enterprise Edition licenses. Production environment configuration must comply with Luckin Coffee's information security requirements
 \end{itemize}
 
-The procurement process strictly follows Luckin Coffee's procurement management system, including four phases: **Plan Procurement Management → Conduct Procurements → Control Procurements → Close Procurements**:
-1. Plan Procurement Management: Develop procurement plan, clarify procurement content, time and budget
-2. Conduct Procurements: Issue procurement requirements, select vendors, sign contracts
-3. Control Procurements: Monitor vendor performance, manage contract changes
-4. Close Procurements: Complete acceptance, conduct procurement audits, archive contract documents
+The procurement process strictly follows Luckin Coffee's procurement management system, including four phases: \textbf{Plan Procurement Management} $\to$ \textbf{Conduct Procurements} $\to$ \textbf{Control Procurements} $\to$ \textbf{Close Procurements}:
+\begin{enumerate}[leftmargin=*]
+  \item Plan Procurement Management: Develop procurement plan, clarify procurement content, time and budget
+  \item Conduct Procurements: Issue procurement requirements, select vendors, sign contracts
+  \item Control Procurements: Monitor vendor performance, manage contract changes
+  \item Close Procurements: Complete acceptance, conduct procurement audits, archive contract documents
+\end{enumerate}
 
 % ============================================================
 %  SECTION 10: COMMUNICATIONS MANAGEMENT
@@ -1195,7 +1227,7 @@ This plan establishes a standardized and efficient communication mechanism to en
 % --- 10.1 ---
 \subsection{Stakeholder Analysis}
 
-Classify project stakeholders using the **Power/Interest Grid** and develop targeted management strategies:
+Classify project stakeholders using the \textbf{Power/Interest Grid} and develop targeted management strategies:
 
 % [Chart to be added 8]: Power/Interest Grid
 % Content: Draw a two-dimensional grid with horizontal axis "Level of Interest" (Low→High) and vertical axis "Level of Power" (Low→High), divided into four quadrants:
@@ -1271,54 +1303,363 @@ To effectively manage communication channels, establish the following standardiz
 \vspace{1em}
 Information distribution tools prioritize Luckin Coffee's internal collaboration tools. Enterprise WeChat is used for internal communication, Jira for task management, Confluence for document sharing, GitLab for code management, enterprise email for formal reports, and Tencent Meeting for remote meetings. The use of all tools must comply with Luckin Coffee's information security management regulations, and it is strictly prohibited to upload Luckin Coffee's sensitive data to external platforms.
 
-All communications follow the **Communication Model** (Encode → Transmit → Decode → Feedback):
-1. Encode: The sender converts information into clear and accurate language
-2. Transmit: Send information through appropriate channels
-3. Decode: The receiver correctly understands the information content
-4. Feedback: The receiver confirms to the sender that the information has been received and understood
+All communications follow the \textbf{Communication Model} (Encode $\to$ Transmit $\to$ Decode $\to$ Feedback):
+\begin{enumerate}[leftmargin=*]
+  \item Encode: The sender converts information into clear and accurate language
+  \item Transmit: Send information through appropriate channels
+  \item Decode: The receiver correctly understands the information content
+  \item Feedback: The receiver confirms to the sender that the information has been received and understood
+\end{enumerate}
 
-All communications follow these specifications: Meeting notices are sent 1 day in advance with clear agendas and participant lists. Meeting minutes are issued within 24 hours after the meeting, clarifying resolution items, responsible persons and completion times, and synchronized to all participants and Luckin Coffee's contact person. Formal emails use Luckin Coffee's standard format with clear subjects and concise content. Problems are communicated immediately without delay to avoid affecting project progress. A communication conflict resolution mechanism is established: parties first negotiate independently, then the project manager mediates if negotiation fails, and unresolved issues are escalated to Luckin Coffee's Project Steering Committee for decision-making.s after the meeting, clarifying resolution items, responsible persons and completion times, and synchronized to all participants and Luckin Coffee's contact person. Formal emails use Luckin Coffee's standard format with clear subjects and concise content. Problems are communicated immediately without delay to avoid affecting project progress. A communication conflict resolution mechanism is established: parties first negotiate independently, then the project manager mediates if negotiation fails, and unresolved issues are escalated to Luckin Coffee's Project Steering Committee for decision-making.
+All communications follow these specifications: Meeting notices are sent 1 day in advance with clear agendas and participant lists. Meeting minutes are issued within 24 hours after the meeting, clarifying resolution items, responsible persons and completion times, and synchronized to all participants and Luckin Coffee's contact person. Formal emails use Luckin Coffee's standard format with clear subjects and concise content. Problems are communicated immediately without delay to avoid affecting project progress. A communication conflict resolution mechanism is established: parties first negotiate independently, then the project manager mediates if negotiation fails, and unresolved issues are escalated to Luckin Coffee's Project Steering Committee for decision-making.
 
 % ============================================================
 %  SECTION 11: RISK MANAGEMENT
 % ============================================================
 \section{Risk Management}
 
-\instr{Specify the plan for identifying, analyzing, and prioritizing
-project risks. It should describe the procedures for contingency
-planning and the methods used in tracking risks, evaluating changes in
-individual risk exposures, and responding to those changes. Include a
-plan for ongoing risk identification throughout the project's life
-cycle. Document the risks in a separate risk register. A large project
-should create a separate risk management plan. Identify the risk
-management tasks to be performed, the risk OPI (Office of Primary
-Interest), and the target date for completion of each task. Estimate
-the percentage of project effort or the number of hours planned for
-risk management activities. Incorporate risk management tasks into the
-project schedule and budget.}
+Risk Management for the Luckin Coffee Sustainability Platform is structured around the six processes defined in PMBOK and Chapter~8 of the course materials: \textbf{Plan Risk Management}, \textbf{Identify Risks}, \textbf{Perform Qualitative Risk Analysis}, \textbf{Perform Quantitative Risk Analysis}, \textbf{Plan Risk Responses}, and \textbf{Control Risks}. The objectives are to increase the likelihood and impact of positive events, and to decrease the likelihood and impact of negative events on the project's scope, schedule, cost, and quality baselines.
+
+% --- 11.1 ---
+\subsection{Plan Risk Management}
+
+The Risk Management Plan defines how risk activities will be conducted on this project. It is structured around the seven planning elements taught in the course: methodology, roles and responsibilities, budgeting, timing, risk categories, definitions of probability and impact, and the probability and impact matrix.
+
+\subsubsection{Methodology, Roles, and Timing}
+
+\textbf{Methodology.} Risk management on this project follows the PMBOK process model presented in the course. The team applies the following tools and techniques across the six processes: brainstorming, SWOT analysis, structured interviews, and root cause analysis for identification; the Probability and Impact (P--I) Matrix for qualitative analysis; Expected Monetary Value (EMV) analysis with decision tree and Sensitivity Analysis (Tornado Diagram) for quantitative analysis; the eight PMBOK response strategies for response planning; and risk reassessment, risk audits, variance and trend analysis, technical performance measurement, reserve analysis, and meetings for control. All risk records are maintained in a Risk Register stored in Confluence and version-controlled in GitLab.
+
+\textbf{Roles and Responsibilities.} The Project Manager is the overall risk owner, accountable for risk planning, escalation, and reserve approval below the management threshold. Each work package lead is the primary risk owner for risks within their scope and is responsible for monitoring triggers and executing approved response actions. Every team member is required to identify and report new risks during the daily stand-up. The ESG Compliance Consultant supports identification and analysis of compliance-related risks during Weeks~2--4. The Project Sponsor (Head of Luckin Coffee IT Department) approves use of the management reserve and authorises responses to severe risks beyond the project manager's authority.
+
+\textbf{Timing.} Risk management activities are integrated into the project rhythm: a five-minute risk check is included in every daily stand-up; the Risk Register is reviewed and updated during every Friday team meeting (15 minutes); a full risk reassessment, including P--I matrix re-scoring, is conducted at every milestone gate (M1--M6); a formal risk audit is performed at the M3 and M5 gates by an independent reviewer.
+
+\textbf{Effort Allocation.} Approximately 5\% of total project effort is budgeted for risk management activities, distributed across identification, analysis, response planning, and control.
+
+\subsubsection{Risk Budgeting}
+
+Risk budgeting is integrated with the cost and schedule baselines defined in Sections~4 and~5. Two reserve layers are maintained:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Contingency Reserve} (within the cost and schedule baselines, managed by the Project Manager): covers identified ``known-unknown'' risks listed in the Risk Register. Schedule contingency is 15~working days, as defined in Section~\ref{subsec:estimate_duration}; cost contingency is sized to cover the aggregate Expected Monetary Value of negative risks plus a 20\% safety margin (see Section~11.4). The Project Manager may draw on this reserve without sponsor approval, provided the use is documented in the Risk Register and reported at the next milestone gate.
+    \item \textbf{Management Reserve} (outside the baselines, controlled by the Project Sponsor): covers ``unknown-unknown'' risks that cannot be identified at planning time. Schedule management reserve is 8~working days. Use of the management reserve requires a formal change request approved by the sponsor.
+\end{itemize}
+
+\subsubsection{Risk Categories: Risk Breakdown Structure}
+
+Risks are organised using a Risk Breakdown Structure (RBS) following the three top-level categories taught in the course --- \textbf{Technical Risks}, \textbf{External Risks}, and \textbf{Organizational Risks} --- with sub-categories tailored to the Luckin Coffee Sustainability Platform.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+    every node/.style={rectangle, draw, align=center, font=\footnotesize},
+    level 1/.style={sibling distance=42mm, level distance=12mm},
+    level 2/.style={sibling distance=22mm, level distance=14mm}]
+\node[fill=blue!15] {Project Risks (RBS)}
+    child {node[fill=red!15] {Technical Risks}
+        child {node {Architecture\\\& Integration}}
+        child {node {Performance\\\& Scalability}}
+        child {node {Data Accuracy\\\& Security}}
+    }
+    child {node[fill=orange!20] {External Risks}
+        child {node {Customer\\(Luckin Coffee)}}
+        child {node {ESG / Regulatory\\Updates}}
+        child {node {Vendor \&\\Third-Party APIs}}
+    }
+    child {node[fill=green!15] {Organizational Risks}
+        child {node {Staff\\Attrition}}
+        child {node {Project Priority\\Changes}}
+        child {node {Funding\\Cuts}}
+    };
+\end{tikzpicture}
+\caption{Risk Breakdown Structure (RBS) for the Luckin Coffee Sustainability Platform}
+\label{fig:rbs}
+\end{figure}
+
+\subsubsection{Definitions of Probability and Impact}
+
+The project uses a five-level scale for both probability and impact, consistent with the PMBOK standard taught in the course. The definitions are calibrated against the project's cost baseline (Section~5.3) and schedule baseline (Section~4.5).
+
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{Probability and Impact Definitions (5-Level Scale)}
+\label{tab:pi_definitions}
+\begin{tabular}{@{}c l c l@{}}
+\toprule
+\textbf{Level} & \textbf{Probability} & \textbf{Numeric P} & \textbf{Impact (Schedule / Cost / Quality)} \\
+\midrule
+1 & Very Low  & 0.10 & $<$2 days delay; $<$2\% cost; cosmetic quality issue \\
+2 & Low       & 0.30 & 2--5 days delay; 2--5\% cost; minor functional defect \\
+3 & Medium    & 0.50 & 5--10 days delay; 5--10\% cost; module-level rework \\
+4 & High      & 0.70 & 10--15 days delay; 10--20\% cost; milestone at risk \\
+5 & Very High & 0.90 & $>$15 days delay; $>$20\% cost; project objective at risk \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Probability and Impact Matrix}
+
+The 5$\times$5 P--I Matrix in Table~\ref{tab:pi_matrix} maps the combined probability and impact scores to three priority tiers. Cells with a Risk Score $\geq 0.30$ are coloured red (high priority --- mandatory active response), $0.15 \leq$ Risk Score $< 0.30$ amber (medium priority --- monitored response), and Risk Score $< 0.15$ green (low priority --- accept and monitor).
+
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{Probability and Impact Matrix (5$\times$5)}
+\label{tab:pi_matrix}
+\begin{tabular}{@{}c|ccccc@{}}
+\toprule
+\textbf{P\textbackslash I} & \textbf{1 (0.05)} & \textbf{2 (0.10)} & \textbf{3 (0.20)} & \textbf{4 (0.40)} & \textbf{5 (0.80)} \\
+\midrule
+\textbf{5 (0.90)} & \cellcolor{green!30}0.05 & \cellcolor{yellow!40}0.09 & \cellcolor{orange!40}0.18 & \cellcolor{red!40}0.36 & \cellcolor{red!60}0.72 \\
+\textbf{4 (0.70)} & \cellcolor{green!30}0.04 & \cellcolor{yellow!40}0.07 & \cellcolor{orange!40}0.14 & \cellcolor{red!40}0.28 & \cellcolor{red!60}0.56 \\
+\textbf{3 (0.50)} & \cellcolor{green!30}0.03 & \cellcolor{green!30}0.05 & \cellcolor{yellow!40}0.10 & \cellcolor{orange!40}0.20 & \cellcolor{red!40}0.40 \\
+\textbf{2 (0.30)} & \cellcolor{green!30}0.02 & \cellcolor{green!30}0.03 & \cellcolor{yellow!40}0.06 & \cellcolor{yellow!40}0.12 & \cellcolor{orange!40}0.24 \\
+\textbf{1 (0.10)} & \cellcolor{green!30}0.01 & \cellcolor{green!30}0.01 & \cellcolor{green!30}0.02 & \cellcolor{green!30}0.04 & \cellcolor{yellow!40}0.08 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% --- 11.2 ---
+\subsection{Identify Risks}
+
+Risk identification is conducted iteratively throughout the project lifecycle. The team applies the following four information-gathering and analysis techniques taught in the course:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Brainstorming} (the first technique recommended in the course): the entire team holds a structured brainstorming session at project kickoff and at the start of each major phase. Risks are captured without judgement, then grouped against the RBS categories.
+    \item \textbf{SWOT Analysis}: applied during the planning phase to systematically examine project Strengths, Weaknesses, Opportunities, and Threats. Threats and Weaknesses translate into negative risks; Opportunities translate into positive risks (handled with exploit/enhance/share strategies, see Section~11.5).
+    \item \textbf{Interviews}: structured interviews are conducted with the Head of Luckin Coffee IT Department, the Head of Luckin Coffee ESG Department, and the external ESG Compliance Consultant during Week~1, focusing on customer expectations, regulatory updates, and historical project pain points.
+    \item \textbf{Root Cause Analysis}: applied to recurring defects and identified risks during the execution phase, using the 5-Why method and the fishbone diagram introduced in Section~7. The output feeds back into the Risk Register as updated triggers and improved response plans.
+\end{itemize}
+
+The output of this process is the \textbf{Risk Register} (Table~\ref{tab:risk_register}), which records 15~identified risks distributed across the three RBS categories (5 Technical, 5 External, 5 Organizational), including 12 negative risks (threats) and 3 positive risks (opportunities).
+
+\begin{longtable}{@{}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.7cm}>{\raggedright\arraybackslash}p{4.6cm}>{\centering\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{0.7cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.6cm}@{}}
+\caption{Risk Register --- Identified Risks with P--I Scores and Owners}\label{tab:risk_register}\\
+\toprule
+\textbf{ID} & \textbf{Type} & \textbf{Risk Description} & \textbf{P} & \textbf{I} & \textbf{Score} & \textbf{Owner} & \textbf{Trigger / Indicator} \\
+\midrule
+\endfirsthead
+\multicolumn{8}{l}{\footnotesize\textit{(Continued from previous page)}}\\
+\toprule
+\textbf{ID} & \textbf{Type} & \textbf{Risk Description} & \textbf{P} & \textbf{I} & \textbf{Score} & \textbf{Owner} & \textbf{Trigger / Indicator} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{\footnotesize\textit{(Continued on next page)}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+T1 & $-$ & System architecture instability under high concurrent loads from $>$5{,}000 stores reporting simultaneously & 3 & 4 & 0.20 & System Architect & API timeout rate $>$1\% \\
+T2 & $-$ & ECharts visualisation performance degradation when rendering large multi-store ESG datasets & 3 & 3 & 0.10 & Frontend Lead (Vis.) & Page load $>$3s on dashboards \\
+T3 & $-$ & Cross-module integration defects causing data inconsistency between carbon-tracking and reporting modules & 4 & 4 & 0.28 & WP2 Lead & Integration test failure rate $>$5\% \\
+T4 & $-$ & MySQL query performance bottlenecks for ESG report aggregation across all stores & 3 & 3 & 0.10 & Backend Developer & Query latency $>$500ms \\
+T5 & $+$ & Reusable open-source ESG calculation library (with pre-validated GRI/ISO~14064 formulas) becomes available, reducing custom development & 2 & 4 & 0.12 & ESG Consultant & Library released by Week~6 \\
+\midrule
+E1 & $-$ & Mid-project scope expansion request from Luckin Coffee to add additional store regions or new ESG metrics & 4 & 4 & 0.28 & Project Manager & Formal change request from Luckin Coffee CCB \\
+E2 & $-$ & Cloud service vendor SLA breach (downtime, performance degradation) affecting development or production environment & 2 & 4 & 0.12 & DevOps Engineer & Vendor incident notification \\
+E3 & $-$ & ESG regulatory framework update (GRI/ISO~14064 revision) requiring rework of compliance modules mid-project & 3 & 4 & 0.20 & ESG Consultant & GRI/ISO official announcement \\
+E4 & $-$ & Third-party OCR/SMS API instability or deprecation affecting data ingestion and notification flows & 3 & 3 & 0.10 & Backend Developer & API error rate $>$2\% \\
+E5 & $+$ & ESG Consultant identifies a more efficient compliance reporting framework, reducing report-generation effort & 3 & 3 & 0.10 & ESG Consultant & Recommendation submitted by Week~3 \\
+\midrule
+O1 & $-$ & Staff attrition: a key team member leaves the project during the development phase & 2 & 5 & 0.18 & Project Manager & Resignation notice; reduced velocity \\
+O2 & $-$ & Project priority changes: team member partially reallocated to another Luckin Coffee project & 3 & 4 & 0.20 & Project Manager & Reallocation request from Luckin IT Dept \\
+O3 & $-$ & Funding cuts: sponsor reduces project budget mid-cycle due to corporate cost-control measures & 2 & 5 & 0.18 & Project Sponsor & Budget revision notification \\
+O4 & $-$ & Project Manager unable to dedicate sufficient time during peak weeks (M3--M5) due to overlapping responsibilities & 3 & 3 & 0.10 & Project Sponsor & PM weekly availability $<$80\% \\
+O5 & $+$ & Team's modular architecture pattern is adopted by Luckin Coffee as a reference for other internal ESG projects & 3 & 3 & 0.10 & Project Manager & Adoption interest from other Luckin teams \\
+\end{longtable}
+
+\noindent\textit{Note:} Type ``$-$'' denotes a negative risk (threat); ``$+$'' denotes a positive risk (opportunity). Risk Score $=$ P (numeric, Table~\ref{tab:pi_definitions}) $\times$ I (impact weight from Table~\ref{tab:pi_matrix}).
+
+% --- 11.3 ---
+\subsection{Perform Qualitative Risk Analysis}
+
+Each identified risk is assessed using the P--I Matrix in Table~\ref{tab:pi_matrix} and assigned to a priority tier based on its Risk Score:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{High Priority (Risk Score $\geq 0.20$, red)}: T3 (0.28), E1 (0.28), T1 (0.20), E3 (0.20), O2 (0.20). These risks receive an active response strategy (avoid, mitigate, or transfer for threats; exploit or enhance for opportunities) and are reviewed at every Friday team meeting.
+    \item \textbf{Medium Priority (0.10 $\leq$ Risk Score $< 0.20$, amber)}: O1 (0.18), O3 (0.18), T5 (0.12), E2 (0.12), T2 (0.10), T4 (0.10), E4 (0.10), E5 (0.10), O4 (0.10), O5 (0.10). These risks receive a monitored response and are reviewed at every milestone gate.
+    \item \textbf{Low Priority (Risk Score $< 0.10$, green)}: none of the 15~identified risks fall into this tier.
+\end{itemize}
+
+The qualitative analysis output is an updated Risk Register with each risk ranked, prioritised, and assigned a Risk Owner. The five high-priority risks proceed to quantitative analysis (Section~11.4) for further numerical assessment.
+
+% --- 11.4 ---
+\subsection{Perform Quantitative Risk Analysis}
+
+Quantitative risk analysis is performed on the high-priority risks identified in Section~11.3 to produce numerical inputs for reserve sizing and decision making. Two of the three quantitative techniques taught in the course are applied: \textbf{Expected Monetary Value (EMV) analysis} and \textbf{Sensitivity Analysis (Tornado Diagram)}. Data is gathered through structured interviews with the Project Manager and work package leads, supplemented by expert judgement from the ESG Consultant.
+
+\subsubsection{Expected Monetary Value (EMV) Analysis}
+
+EMV is calculated for each high-priority risk as $EMV = P \times I_{\text{cost}}$, where $I_{\text{cost}}$ is the estimated monetary impact in CNY. EMV of opportunities is expressed as a positive value; EMV of threats is expressed as negative. The total EMV of all 15~risks is used to size the cost contingency reserve.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{EMV Analysis for High-Priority Risks (CNY)}
+\label{tab:emv}
+\begin{tabular}{@{}clcrr@{}}
+\toprule
+\textbf{ID} & \textbf{Risk Description} & \textbf{P} & \textbf{Impact (CNY)} & \textbf{EMV (CNY)} \\
+\midrule
+T3 & Cross-module integration defects                & 0.70 & $-$30{,}000 & $-$21{,}000 \\
+E1 & Luckin Coffee scope expansion request            & 0.70 & $-$50{,}000 & $-$35{,}000 \\
+T1 & Architecture instability under high load         & 0.50 & $-$25{,}000 & $-$12{,}500 \\
+E3 & ESG regulatory framework update                  & 0.50 & $-$20{,}000 & $-$10{,}000 \\
+O2 & Team-member partial reallocation                 & 0.50 & $-$15{,}000 & $-$7{,}500 \\
+\midrule
+\multicolumn{4}{r}{\textbf{Sub-total EMV (high-priority threats):}} & $-$86{,}000 \\
+\midrule
+\multicolumn{4}{r}{\textit{Aggregate EMV across all 15 risks (incl.\ medium tier and opportunities):}} & $-$98{,}500 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The aggregate EMV of $-$¥98{,}500 across all 15~risks is used as the basis for sizing the project's cost contingency reserve. Applying a 20\% safety margin (consistent with the $\pm$10\% control threshold in Section~5.1 and the typical PMBOK guidance), the cost contingency reserve is set at \textbf{¥120{,}000}.
+
+\subsubsection{Sensitivity Analysis (Tornado Diagram)}
+
+A Sensitivity Analysis is conducted to determine which uncertainties have the greatest potential impact on the project's overall objectives. The team estimates the project's total cost variance under best-case and worst-case scenarios for each high-priority risk, holding all other variables constant. The results, in descending order of sensitivity, are summarised below (a Tornado Diagram visualisation will be added before the M2 milestone gate):
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{E1 --- Luckin Coffee scope expansion}: cost swing range \textpm¥45{,}000. The largest single source of variance.
+    \item \textbf{T3 --- Cross-module integration defects}: cost swing range \textpm¥28{,}000.
+    \item \textbf{T1 --- Architecture instability under high load}: cost swing range \textpm¥22{,}000.
+    \item \textbf{E3 --- ESG regulatory framework update}: cost swing range \textpm¥18{,}000.
+    \item \textbf{O2 --- Team-member partial reallocation}: cost swing range \textpm¥14{,}000.
+\end{enumerate}
+
+The sensitivity analysis confirms that customer-driven scope expansion (E1) and integration defects (T3) are the dominant drivers of cost uncertainty, justifying the prioritised response strategies in Section~11.5.
+
+% --- 11.5 ---
+\subsection{Plan Risk Responses}
+
+Risk responses are planned using the eight strategies taught in the course: four for negative risks (\textbf{Avoid, Transfer, Mitigate, Accept}) and four for positive risks (\textbf{Exploit, Enhance, Share, Accept}). Each risk is assigned a primary response strategy, an action plan, and a responsible owner. Contingent response plans are prepared for the high-priority risks to be triggered if the risk materialises.
+
+\begin{longtable}{@{}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{12.5cm}@{}}
+\caption{Risk Response Plan --- Strategies and Actions}\label{tab:risk_response}\\
+\toprule
+\textbf{ID} & \textbf{Strategy} & \textbf{Action Plan / Contingent Response} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{\footnotesize\textit{(Continued from previous page)}}\\
+\toprule
+\textbf{ID} & \textbf{Strategy} & \textbf{Action Plan / Contingent Response} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\footnotesize\textit{(Continued on next page)}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+T1 & Mitigate & Conduct early-stage load testing at M2; design horizontal scaling into architecture; pre-allocate buffer capacity. Contingent: scale up cloud instance class within 24~hours if API timeout exceeds threshold. \\
+T2 & Mitigate & Implement front-end pagination, lazy loading, and ECharts dataset sampling for large dashboards; benchmark performance at every milestone gate. \\
+T3 & Avoid & Define explicit module interface contracts at design phase (M1) and enforce automated contract tests in CI/CD; the strategy eliminates the threat by design rather than mitigating after occurrence. \\
+T4 & Mitigate & Add database indexes on high-frequency aggregation columns; introduce a Redis caching layer for ESG report queries. \\
+T5 & \textbf{Enhance} & Track open-source ESG library releases weekly; if a suitable library is published, accelerate evaluation and integrate it to reduce custom-development effort. (Positive risk strategy.) \\
+\midrule
+E1 & Transfer & All Luckin Coffee scope-expansion requests are routed through the formal Change Control Board (Section~2.6); cost and schedule impact are quantified and re-baselined before acceptance, transferring impact responsibility to the customer's CCB decision. \\
+E2 & Transfer & Cloud-vendor SLA contractually requires $\geq$99.9\% availability with credit compensation for breaches; risk impact is contractually transferred to the vendor. \\
+E3 & Mitigate & ESG Consultant monitors GRI/ISO official channels weekly; the compliance module is designed with a pluggable rule-engine pattern so that new regulatory rules can be applied without core rework. \\
+E4 & Accept (active) & Maintain a documented fallback adapter for OCR/SMS APIs and switch providers within 4~hours if the primary API fails; reserve allocated for the switch effort. \\
+E5 & \textbf{Exploit} & The ESG Consultant is contractually tasked with proactively recommending efficiency improvements; any accepted recommendation triggers a positive change request to capture the saved effort. (Positive risk strategy.) \\
+\midrule
+O1 & Mitigate & Apply the mentoring and job-shadowing mechanism in Section~8.2 to ensure $\geq$2~team members are familiar with each module; document all design decisions in Confluence to enable rapid handover. \\
+O2 & Mitigate & Project Manager confirms 100\% allocation in writing with the Head of Luckin Coffee IT Department at M1; any reallocation request triggers a formal change request via the Steering Committee. \\
+O3 & Accept (active) & Funding cuts beyond the contingency reserve trigger immediate scope re-prioritisation to deliver the M3 minimum viable product; sponsor approval recorded as risk acceptance. \\
+O4 & Mitigate & Project Manager pre-blocks calendar for M3--M5 critical weeks; appoints a deputy (System Architect) to chair the daily stand-up if availability falls below 80\%. \\
+O5 & \textbf{Share} & Architecture documentation is co-authored with Luckin Coffee's IT Architecture team; the resulting reusable patterns are co-owned, sharing the opportunity for organisation-wide adoption with the customer. (Positive risk strategy.) \\
+\end{longtable}
+
+The response plan covers all eight PMBOK strategies: Avoid (T3), Mitigate (T1, T2, T4, E3, O1, O2, O4), Transfer (E1, E2), Accept (E4, O3) for negative risks; and Enhance (T5), Exploit (E5), Share (O5) for positive risks.
+
+% --- 11.6 ---
+\subsection{Control Risks}
+
+Risk control is performed throughout the project lifecycle using the six tools and techniques taught in the course:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Risk Reassessment}: the Risk Register is reassessed at every Friday team meeting (15~minutes) and at every milestone gate. New risks are added; closed risks are archived; P--I scores of remaining risks are updated based on latest information.
+    \item \textbf{Risk Audits}: an independent reviewer (the Quality Manager from Luckin Coffee's IT Department) conducts a formal risk audit at the M3 and M5 gates, examining the effectiveness of risk responses and the discipline of risk identification. Audit findings are documented in the Risk Register.
+    \item \textbf{Variance and Trend Analysis}: weekly Cost Performance Index (CPI) and Schedule Performance Index (SPI), defined in Sections~5.4 and~4.1, are tracked as risk indicators. A two-week trend with CPI or SPI $<$0.9 triggers a focused risk reassessment, since negative cost or schedule trends often signal an emerging risk.
+    \item \textbf{Technical Performance Measurement}: technical metrics including API response time, page load time, integration test pass rate, and defect density (defined in Section~6.1) are measured at each milestone gate. Underperformance against targets is escalated as a potential risk trigger.
+    \item \textbf{Reserve Analysis}: the remaining contingency reserve (in CNY and working days) is reviewed weekly. If reserve consumption exceeds the linear schedule (e.g., 40\% of reserve consumed by M2 when only 25\% of work is complete), the Project Manager initiates a formal corrective review with the sponsor.
+    \item \textbf{Status Meetings}: a five-minute risk discussion is included in every daily stand-up; risk status is a standing agenda item at every Friday team meeting and every milestone review with Luckin Coffee.
+\end{enumerate}
+
+The Risk Register is the single source of truth for all risk control activities, maintained in Confluence with version control via GitLab. Every approved response action, every triggered contingent plan, and every reserve drawdown is recorded against its risk ID for end-of-project lessons-learned analysis.
 
 % ============================================================
 %  SECTION 12: REFERENCES
 % ============================================================
 \section{References}
 
-The following documents are attached to this Project Plan for
-immediate reference.
+This section consolidates all supporting documents that complement this Project Management Plan. The references are organised in two groups: (i) \textbf{Project Appendices} --- internal artefacts produced by the project team and stored in the project repository; and (ii) \textbf{Normative References} --- external standards, methodologies, and guidelines that govern the project's planning and execution.
+
+\subsection{Project Appendices}
+
+The following documents are attached to this Project Plan for immediate reference. All appendices are version-controlled in GitLab and indexed in Confluence under the \textit{Luckin Coffee Sustainability Platform / PMP} space.
 
 \vspace{0.5em}
 \noindent
-\begin{tabularx}{\linewidth}{|C{2.2cm}|X|C{3cm}|C{2.5cm}|}
+\begin{tabularx}{\linewidth}{|C{1.4cm}|X|C{2.6cm}|C{2.4cm}|}
   \hline
-  \thead{Appendix} & \thead{Document Name} & \thead{E-DRM \# / Version} & \thead{Date}\\
+  \thead{Appendix} & \thead{Document Name} & \thead{Version} & \thead{Issue Date}\\
   \hline
-  A & & & \\[6pt]
+  A & Project Charter --- Luckin Coffee Sustainability Platform & v1.0 & 2026-03-14 \\
   \hline
-  B & & & \\[6pt]
+  B & Work Breakdown Structure (WBS) and WBS Dictionary & v1.0 & 2026-03-21 \\
   \hline
-  C & & & \\[6pt]
+  C & Project Schedule --- Gantt Chart, Milestone Schedule, and Network Diagram & v1.0 & 2026-03-28 \\
   \hline
-  Etc. & & & \\[6pt]
+  D & Cost Baseline and Earned Value Management (EVM) Worksheet & v1.0 & 2026-03-28 \\
+  \hline
+  E & Quality Management Plan --- Standards, Metrics, and Cost of Quality & v1.0 & 2026-03-28 \\
+  \hline
+  F & RACI Responsibility Assignment Matrix & v1.0 & 2026-03-21 \\
+  \hline
+  G & Stakeholder Register and Power/Interest Grid & v1.0 & 2026-03-14 \\
+  \hline
+  H & Communications Matrix and Reporting Schedule & v1.0 & 2026-03-28 \\
+  \hline
+  I & Risk Register, Probability/Impact Matrix, and EMV Worksheet & v1.1 & 2026-04-04 \\
+  \hline
+  J & Procurement Plan, Vendor List, and Contract Templates & v1.0 & 2026-03-28 \\
+  \hline
+  K & Change Request Log (live document) & live & from 2026-03-21 \\
+  \hline
+  L & Lessons-Learned Register (live document) & live & from 2026-03-21 \\
   \hline
 \end{tabularx}
+
+\subsection{Normative References}
+
+This Project Management Plan applies the methodologies and standards listed below. All planning artefacts and process choices in Sections~2--11 trace back to these references.
+
+\vspace{0.5em}
+\noindent
+\begin{tabularx}{\linewidth}{|C{1.4cm}|X|C{3.2cm}|}
+  \hline
+  \thead{Ref.} & \thead{Source / Standard} & \thead{Edition / Year}\\
+  \hline
+  R1 & Project Management Institute. \textit{A Guide to the Project Management Body of Knowledge (PMBOK\textregistered{} Guide)}. & 6th edition, 2017 \\
+  \hline
+  R2 & Course materials, \textit{Software Project Management}, Chapters~1--10 (Beijing University of Technology, Spring~2026). & 2026 lecture set \\
+  \hline
+  R3 & Global Reporting Initiative. \textit{GRI Sustainability Reporting Standards} --- Universal, Topic, and Sector Standards. & 2021 revision \\
+  \hline
+  R4 & ISO 14064-1:2018, \textit{Greenhouse gases --- Part~1: Specification with guidance at the organization level for quantification and reporting of greenhouse gas emissions and removals}. & 2018 \\
+  \hline
+  R5 & ISO/IEC 27001:2022, \textit{Information security, cybersecurity and privacy protection --- Information security management systems --- Requirements}. & 2022 \\
+  \hline
+  R6 & United Nations. \textit{Sustainable Development Goal 12: Responsible Consumption and Production}. & 2015--2030 framework \\
+  \hline
+  R7 & Luckin Coffee Internal IT System Development Specifications and Information Security Management Regulations. & current version \\
+  \hline
+  R8 & Luckin Coffee Procurement Management System and Standard Contract Templates. & current version \\
+  \hline
+\end{tabularx}
+
+\vspace{0.5em}
+\noindent\textit{Document control:} the live appendices (K, L) are updated continuously throughout project execution. All other appendices are re-baselined at each milestone gate (M1--M6) following the change control authority levels defined in Section~2.6.
 
 \end{document}
