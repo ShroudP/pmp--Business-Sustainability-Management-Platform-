@@ -34,6 +34,7 @@
 \usepackage{longtable}
 \usepackage{multirow}
 \usepackage{tikz}
+\usetikzlibrary{fit, backgrounds, positioning, calc, trees}
 \usepackage{float}
 \usepackage{amsmath}
 % Allow the Unicode characters ≤ and ≥ used in some tables
@@ -245,24 +246,33 @@ The project adopts a strong matrix organisational structure, granting the projec
 
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}[node distance=1.5cm, every node/.style={rectangle, draw, align=center, minimum width=3cm, minimum height=0.8cm}]
+\resizebox{0.95\textwidth}{!}{%
+\begin{tikzpicture}[
+    node distance=2.0cm and 1.0cm,
+    every node/.style={rectangle, draw, align=center, font=\footnotesize,
+                       minimum width=3.2cm, minimum height=1.1cm,
+                       inner sep=3pt, rounded corners=1pt}]
     \node (corp) {Luckin Coffee Corporate Steering Group};
-    \node (steering) [below of=corp, yshift=-0.5cm, fill=blue!20, minimum width=8cm] {Project Steering Committee};
+    \node (steering) [below=0.8cm of corp, fill=blue!20, minimum width=8cm] {Project Steering Committee};
 
-    \node (senior) [below of=steering, xshift=-4cm] {Senior User\\(Head of Luckin Coffee\\ESG Dept)};
-    \node (sponsor) [below of=steering] {Executive / Sponsor\\(Head of Luckin Coffee\\IT Dept)};
-    \node (supplier) [below of=steering, xshift=4cm] {Senior Supplier\\(Cloud \& ESG\\Consulting Vendors)};
+    \node (sponsor) [below=1cm of steering] {Executive / Sponsor\\(Head of Luckin Coffee IT Dept)};
+    \node (senior) [left=1cm of sponsor] {Senior User\\(Head of Luckin Coffee ESG Dept)};
+    \node (supplier) [right=1cm of sponsor] {Senior Supplier\\(Cloud \& ESG Consulting Vendors)};
 
-    \node (pm) [below of=sponsor, yshift=-1cm] {Project Manager\\(Liu Haopu)};
+    \node (pm) [below=1.4cm of sponsor] {Project Manager\\(Liu Haopu)};
 
-    \node (pmt) [below of=pm, yshift=0.5cm, dashed, draw, minimum width=9.5cm, minimum height=3.8cm] {};
-    \node at (pmt.north) [above=0.1cm, draw=none] {Project Management Team};
+    \node (tl1) [below=1.6cm of pm, xshift=-3.8cm] {WP Lead --- Requirements\\(Yao Tianren)};
+    \node (tl2) [below=1.6cm of pm, xshift=3.8cm] {WP Lead --- Frontend \& Integration\\(Gong Zhijian)};
 
-    \node (tl1) [below of=pm, xshift=-3cm, yshift=-0.5cm] {WP Lead --- Requirements\\(Yao Tianren)};
-    \node (tl2) [below of=pm, xshift=3cm, yshift=-0.5cm] {WP Lead --- Frontend \& Integration\\(Gong Zhijian)};
+    \node (ug)  [below=0.8cm of tl1] {WP Lead --- Frontend Foundation\\(Li Sihang)};
+    \node (sme) [below=0.8cm of tl2] {Subject Matter Experts\\(ESG Consultant, All Members)};
 
-    \node (ug) [below of=tl1, yshift=-0.5cm] {WP Lead --- Frontend Foundation\\(Li Sihang)};
-    \node (sme) [below of=tl2, yshift=-0.5cm] {Subject Matter Experts\\(ESG Consultant, All Members)};
+    % Dashed bounding box around PM team (drawn last to capture all coordinates)
+    \begin{scope}[on background layer]
+      \node (pmt) [draw, dashed, rounded corners=4pt, inner sep=10pt,
+                   fit=(pm) (tl1) (tl2) (ug) (sme)] {};
+    \end{scope}
+    \node[draw=none, fill=white, font=\footnotesize\itshape] at (pmt.north) {Project Management Team};
 
     \draw[->] (corp) -- (steering);
     \draw[->] (steering) -- (sponsor);
@@ -271,7 +281,8 @@ The project adopts a strong matrix organisational structure, granting the projec
     \draw[->] (pm) -- (tl2);
     \draw[->] (tl1) -- (ug);
     \draw[->] (tl2) -- (sme);
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \caption{Project Team Structure and Governance}
 \label{fig:team_structure}
 \end{figure}
@@ -773,30 +784,30 @@ The sum of all activity cost estimates and the contingency reserve constitutes t
 \footnotesize
 \caption{Project Budget Summary (CNY)}
 \label{tab:budget_summary}
-\begin{tabular}{@{}lrr@{}}
+\begin{tabularx}{\linewidth}{@{}X r r@{}}
 \toprule
 \textbf{Budget Component} & \textbf{Amount (¥)} & \textbf{Share} \\
 \midrule
 Direct labour --- 6 internal engineers, 16~weeks (approx.\ 480 person-days) & 576{,}000 & 48.0\% \\
 Management and quality overhead (22\% of direct labour) & 127{,}000 & 10.6\% \\
-ESG consultant (Weeks~2--4, approx.\ 20 person-days) & 40{,}000 & 3.3\% \\
+ESG consultant (Weeks~2--4, approx.\ 20 person-days) & 40{,}000 & \phantom{0}3.3\% \\
 \midrule
-\textbf{Total direct cost} & \textbf{743{,}000} & 61.9\% \\
+\textbf{Total direct cost} & \textbf{743{,}000} & \textbf{61.9\%} \\
 \midrule
 Indirect cost --- infrastructure, tools, communications, admin (30\% of direct) & 223{,}000 & 18.6\% \\
-Procurement --- cloud VM, DeepSeek API, monitoring, software licences (per Section~9) & 114{,}000 & 9.5\% \\
+Procurement --- cloud VM, DeepSeek API, monitoring, software licences (per Section~9) & 114{,}000 & \phantom{0}9.5\% \\
 \midrule
-\textbf{Activity Cost Estimates (sum of work-package costs)} & \textbf{1{,}080{,}000} & 90.0\% \\
+\textbf{Activity Cost Estimates (sum of work-package costs)} & \textbf{1{,}080{,}000} & \textbf{90.0\%} \\
 \midrule
 Contingency Reserve (known-unknown risks; see Section~11.4) & 120{,}000 & 10.0\% \\
 \midrule
 \textbf{Cost Baseline (BAC)} & \textbf{1{,}200{,}000} & \textbf{100.0\%} \\
 \midrule
-Management Reserve (sponsor-controlled; outside the baseline) & 80{,}000 & --- \\
+Management Reserve (sponsor-controlled; outside the baseline) & \phantom{0}80{,}000 & --- \\
 \midrule
 \textbf{Total Project Budget} & \textbf{1{,}280{,}000} & --- \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 The Cost Baseline is displayed as an S-curve that plots cumulative planned expenditure against the project timeline, tied to the six milestone dates listed in Table~\ref{tab:milestone_schedule}. The S-curve is maintained in the project cost tracking spreadsheet in GitLab and serves as the reference against which actual expenditure is compared each week.
@@ -1010,30 +1021,31 @@ Establish a quantitative process performance index system based on the \textbf{C
 
 \begin{table}[h]
 \centering
+\small
 \caption{Core Process Performance Measurement Indicators}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{5cm}>{\raggedright\arraybackslash}p{7cm}c@{}}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.2cm} X >{\centering\arraybackslash}p{2.3cm}@{}}
 \toprule
 \textbf{Process Name} & \textbf{Key Quantitative Indicators} & \textbf{Target Value} \\
 \midrule
-\multirow{3}{*}{Requirements Management} & Requirements Change Rate & ≤8\% \\
-& One-time Requirements Review Pass Rate & ≥90\% \\
+\multirow{3}{=}{Requirements Management} & Requirements Change Rate & $\leq$8\% \\
+& One-time Requirements Review Pass Rate & $\geq$90\% \\
 & Requirements Traceability Coverage & 100\% \\
 \midrule
-\multirow{3}{*}{Development Management} & Defects per 1000 Lines of Code & ≤3 \\
+\multirow{3}{=}{Development Management} & Defects per 1000 Lines of Code & $\leq$3 \\
 & Code Review Coverage & 100\% \\
-& Module Delivery Timeliness & ≥95\% \\
+& Module Delivery Timeliness & $\geq$95\% \\
 \midrule
-\multirow{3}{*}{Test Management} & Test Case Coverage & ≥95\% \\
-& Defect Repair Timeliness & ≥98\% \\
-& Defect Escape Rate & ≤2\% \\
+\multirow{3}{=}{Test Management} & Test Case Coverage & $\geq$95\% \\
+& Defect Repair Timeliness & $\geq$98\% \\
+& Defect Escape Rate & $\leq$2\% \\
 \midrule
-\multirow{2}{*}{Deployment Management} & Deployment Success Rate & ≥99\% \\
-& Mean Time to Recovery (MTTR) & ≤30 minutes \\
+\multirow{2}{=}{Deployment Management} & Deployment Success Rate & $\geq$99\% \\
+& Mean Time to Recovery (MTTR) & $\leq$30~min \\
 \midrule
-\multirow{2}{*}{Operation and Maintenance Management} & System Availability & ≥99.9\% \\
-& Mean Time Between Failures (MTBF) & ≥720 hours \\
+\multirow{2}{=}{Operation \& Maintenance Management} & System Availability & $\geq$99.9\% \\
+& Mean Time Between Failures (MTBF) & $\geq$720~h \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \subsection{Improvement Objectives and Implementation Strategies}
@@ -1194,8 +1206,9 @@ This project's procurement management follows the principles of compliance, effi
 
 \begin{table}[h]
 \centering
+\small
 \caption{Contract Type Risk Comparison Table}
-\begin{tabular}{@{}lccc@{}}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.2cm} >{\centering\arraybackslash}p{1.8cm} >{\centering\arraybackslash}p{1.8cm} X@{}}
 \toprule
 \textbf{Contract Type} & \textbf{Buyer Risk} & \textbf{Seller Risk} & \textbf{Applicable Scenarios} \\
 \midrule
@@ -1204,7 +1217,7 @@ Fixed Price Incentive Fee (FPIF) & Medium & Medium & Products with clear perform
 Cost Plus Fixed Fee (CPFF) & High & Low & Exploratory projects with unclear requirements \\
 Time and Materials (T\&M) & Medium & Medium & Short-term, small-scale service procurement \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{figure}[h]
@@ -1362,31 +1375,36 @@ Risks are organised using a Risk Breakdown Structure (RBS) following the three t
 
 \begin{figure}[h]
 \centering
-\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
-    every node/.style={rectangle, draw, align=center, font=\footnotesize,
-                       inner sep=3pt, minimum height=8mm},
-    level 1/.style={sibling distance=68mm, level distance=14mm},
-    level 2/.style={sibling distance=26mm, level distance=16mm},
-    edge from parent/.style={draw, -latex}]
-\node[fill=blue!15] {Project Risks (RBS)}
+    grow'=right,
+    level distance=32mm,
+    every node/.style={rectangle, draw, align=left, font=\footnotesize,
+                       inner sep=4pt, rounded corners=2pt,
+                       text width=42mm, minimum height=7mm},
+    level 1/.style={sibling distance=32mm,
+                    every node/.style={rectangle, draw, align=center, font=\footnotesize\bfseries,
+                                       inner sep=4pt, rounded corners=2pt,
+                                       text width=32mm, minimum height=8mm}},
+    level 2/.style={sibling distance=11mm},
+    edge from parent/.style={draw, -latex, thick, rounded corners=2pt},
+    edge from parent path={(\tikzparentnode.east) -| ($(\tikzparentnode.east)!0.5!(\tikzchildnode.west)$) |- (\tikzchildnode.west)}]
+\node[fill=blue!15, font=\footnotesize\bfseries, text width=30mm, align=center] {Project Risks\\(RBS)}
     child {node[fill=red!15] {Technical Risks}
-        child {node {Architecture\\\& Integration}}
-        child {node {Performance\\\& Scalability}}
-        child {node {Data Accuracy\\\& Security}}
+        child {node {Architecture \& Integration}}
+        child {node {Performance \& Scalability}}
+        child {node {Data Accuracy \& Security}}
     }
     child {node[fill=orange!20] {External Risks}
-        child {node {Customer\\(Luckin Coffee)}}
-        child {node {ESG / Regulatory\\Updates}}
-        child {node {Vendor \&\\Third-Party APIs}}
+        child {node {Customer (Luckin Coffee)}}
+        child {node {ESG / Regulatory Updates}}
+        child {node {Vendor \& Third-Party APIs}}
     }
     child {node[fill=green!15] {Organizational Risks}
-        child {node {Staff\\Attrition}}
-        child {node {Project Priority\\Changes}}
-        child {node {Funding\\Cuts}}
+        child {node {Staff Attrition}}
+        child {node {Project Priority Changes}}
+        child {node {Funding Cuts}}
     };
-\end{tikzpicture}%
-}
+\end{tikzpicture}
 \caption{Risk Breakdown Structure (RBS) for the Luckin Coffee Sustainability Platform}
 \label{fig:rbs}
 \end{figure}
