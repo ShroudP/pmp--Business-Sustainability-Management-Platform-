@@ -477,28 +477,17 @@ Scope control involves continuously monitoring the project status to manage chan
 
 % ============================================================
 \section{Schedule Management}
-% ============================================================
 
-\subsection{4.1 Schedule Management Plan}
+
+\subsection{Schedule Management Plan}
 
 The Schedule Management Plan defines how the project schedule will be planned, developed, monitored, and controlled throughout the project lifecycle. It establishes the methods, tools, responsibilities, and procedures used to manage schedule activities and track project progress. The main purpose of this plan is to ensure that the project remains on schedule and that any delays or deviations can be identified and addressed in a timely manner.
 
-\subsubsection{4.1.1 Milestone Progress Measurement}
+\subsubsection{Milestone Progress Measurement}
 
 Progress is formally assessed at each of the six milestones during the Friday team meeting. A milestone is recorded as complete only when all acceptance criteria for that phase---as specified in the WBS Dictionary---are fully satisfied. Between milestones, weekly task completion is compared against the Jira board to provide an ongoing progress signal.
 
-\subsubsection{4.1.2 Methods and Tools for Schedule Performance Comparison}
-
-The project uses three complementary methods to compare actual performance to planned performance:
-
-\textbf{Gantt Chart.} The primary schedule tool is Jira (Timeline view), where a Gantt chart displays all activities on the vertical axis, dates on the horizontal axis, and activity durations as horizontal bars placed according to planned start and finish dates. Actual completion dates are logged weekly, making deviations immediately visible. The Gantt chart is updated every Friday before 17:00 and serves as the shared reference for all team members.
-
-\textbf{Critical Path Method (CPM).} During schedule development, the Critical Path Method was applied to identify the longest path through the project network---the sequence of activities that determines the minimum possible project duration. Activities on the critical path carry zero total float, because any delay directly extends the project end date. Activities off the critical path carry total float and free float, providing scheduling flexibility. CPM guides prioritization: deviations on critical-path activities (e.g., backend API development, core module integration) trigger immediate corrective action, while deviations on non-critical activities are evaluated against their remaining float before action is taken.
-
-\textbf{Schedule Variance Tracking.} Consistent with the EVM principles applied in Section 2.5, Schedule Variance (\(SV = EV - PV\)) and the Schedule Performance Index (\(SPI = EV / PV\)) are calculated weekly. An SPI below 0.9 for two consecutive weeks triggers a formal corrective action review.
-
-% ============================================================
-\subsection{4.2 Define Activities}
+\subsection{Activitity List}
 % ============================================================
 
 The following activity list covers all project tasks from planning through final acceptance:
@@ -539,49 +528,15 @@ The following activity list covers all project tasks from planning through final
 \end{itemize}
 
 % ============================================================
-\subsection{4.3 Sequence Activities}
+\subsection{Project Duration}
 % ============================================================
 
-In this process, the relationships and dependencies between project activities are identified and arranged in a logical order. This helps the project team organise tasks more efficiently, coordinate parallel activities, and reduce unnecessary delays during the project lifecycle.
 
-\subsubsection{4.3.1 Tools and Techniques for Sequence Activities}
 
-\textbf{Precedence Diagramming Method (PDM).} This method is used to create a project schedule model by representing activities as nodes and linking them with logical dependencies to illustrate the order in which the activities should be carried out. Four logical relationships are used:
 
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Finish-to-Start (FS)}: the successor activity cannot begin until the predecessor activity is complete.
-    \item \textbf{Start-to-Start (SS)}: the successor activity cannot begin until the predecessor activity has started.
-    \item \textbf{Finish-to-Finish (FF)}: the successor activity cannot finish until the predecessor activity has finished.
-    \item \textbf{Start-to-Finish (SF)}: the successor activity cannot finish until the predecessor activity has started.
-\end{itemize}
+\subsubsection{Project Duration Time}
 
-\textbf{Dependency Attributes.} Activities are classified according to the following dependency types:
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Mandatory Dependency}: inherent in the nature of the work and cannot be altered.
-    \item \textbf{Discretionary Dependency}: established based on best practice or team preference.
-    \item \textbf{External Dependency}: involves a relationship between project activities and non-project activities.
-    \item \textbf{Internal Dependency}: involves a precedence relationship between project activities.
-\end{itemize}
-
-\textbf{Leads and Lags.}
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Leads}: allow a successor activity to begin before its predecessor activity is fully completed, helping reduce the overall project duration through overlapping work. Leads are represented as negative values.
-    \item \textbf{Lags}: introduce a delay between two related activities, requiring a certain amount of time to pass before the successor activity can begin. Lags are represented as positive values.
-\end{itemize}
-
-% ============================================================
-\subsection{4.4 Estimate Activities Duration}
-% ============================================================
-
-In this process, the estimated time required to complete each project activity is determined based on the assigned resources and expected workload. The duration estimates are then used as an important input when developing the overall project schedule.
-
-\subsubsection{4.4.1 Tools and Techniques for Estimating Activities Duration}
-
-\textbf{4.4.1.1 Three-Point Estimating}
-
-The three-point estimating technique is applied to the overall project duration:
+The three-point estimating technique is applied to the overall project duration Time:
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Optimistic estimate (O)}: 95 working days
@@ -591,56 +546,35 @@ The three-point estimating technique is applied to the overall project duration:
 
 Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated activities duration is \textbf{111 $\pm$ 10 working days}, with a 10\% probability of exceeding 120 days.
 
-\textbf{4.4.1.2 Reserve Analysis}
+\textbf{Reserve Plan}
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Contingency Reserve: 15 Days.} A contingency reserve of 15 working days is included in the project schedule baseline to address identified risks such as integration defects, testing rework, performance optimisation delays, and cross-browser compatibility issues. The reserve may be used by the project manager when necessary during project execution.
+
     \item \textbf{Management Reserve: 8 Days.} A management reserve of 8 working days is allocated for unforeseen risks and unexpected issues that cannot be identified during project planning. The reserve is not included in the schedule baseline and requires sponsor approval before use.
 \end{itemize}
 
+
 % ============================================================
-\subsection{4.5 Develop Schedule}
+\subsection{Schedule Baseline}
 % ============================================================
 
-In this process, activity sequences, duration estimates, resource requirements, and scheduling constraints are analysed to develop the overall project schedule. By combining task relationships, resource availability, and planned durations within the scheduling tool, the project team produces a schedule model with planned start and finish dates for all activities.
 
-\subsubsection{4.5.1 Tools and Techniques for Developing Schedule}
+\subsubsection{Gantt Chart}
 
-\textbf{Schedule Network Analysis.}
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Critical Path Method}: The duration of the critical path for this project is 111 days. The total float for the non-critical paths is 12 days and 15 days respectively.
-    \item \textbf{Critical Chain Method}: The project's 15 working day contingency reserve is implemented in the schedule as one project buffer and two feeding buffers. A \textbf{10-day} project buffer is placed at the end of the critical chain to protect the final delivery milestone; a \textbf{3-day} and \textbf{2-day} feeding buffer are inserted before major integration and testing merge points to prevent delays on non-critical paths from affecting the critical path.
-\end{itemize}
-
-\textbf{Resource Optimisation Techniques.}
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Resource Levelling}: If resource conflicts occur during the project---such as several critical activities requiring the same developers simultaneously---resource levelling will be applied by delaying or rescheduling some activities to balance the workload and avoid over-allocation. This method is used only when necessary, as it may affect the critical path or delay the project.
-    \item \textbf{Resource Smoothing}: If workload pressure becomes too high during certain periods, resource smoothing will be used by adjusting non-critical activities within their available float so that team workload remains stable without affecting the project deadline.
-\end{itemize}
-
-\subsubsection{4.5.2 Project Schedule}
-
-\textbf{4.5.2.1 Gantt Chart}
-
-The project Gantt chart is maintained in Jira (Timeline view) and updated weekly. The schedule baseline was locked at M1 (March 28, 2026). A milestone chart summarising all six gate events is provided in Section 4.5.2.2.
-\begin{figure}[h]
+The project Gantt chart is maintained in Jira (Timeline view) and updated weekly. The schedule baseline was locked at M1 (March 28, 2026). A milestone chart summarising all six gate events is provided in Section.
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{Milestone.png}
+    \includegraphics[width=0.7\textwidth]{Milestone.png}
     \caption{Milestone}
     \label{Milestone}
 \end{figure}
 
-\textbf{4.5.2.2 Milestone Chart}
+\subsubsection{Milestone Chart}
 
 The project is organised around six milestones, each representing a significant gate event that confirms a major phase of work is complete and approved before the next phase begins. All milestones carry zero duration and serve as objective checkpoints against which actual progress is measured.
 
 % 导言区需要加入
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{booktabs}
-\usepackage{array}
 
 % ========================= TABLE =========================
 
@@ -695,27 +629,25 @@ Platform deployed to production virtual machine; all documentation and user manu
 }
 \end{table}
 
-\textbf{4.5.2.3 Project Schedule Network Diagram}
-\begin{figure}[h]
+\subsubsection{Project Schedule Network Diagram}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Project schedule network diagram.png}
-    \caption{schedule network diagram}
+    \includegraphics[width=0.6\textwidth]{Project schedule Network Diagram.png}
+    \caption{Project Schedule Network Diagram}
     \label{Milestone}
 \end{figure}
 
-The project's critical chain is as follows:
+The project's critical path is as follows:
 
 \begin{center}
 A1 $\to$ A2 $\to$ A3 $\to$ A5 $\to$ A6 $\to$ A13 $\to$ A14 $\to$ A15 $\to$ A16 $\to$ A17 $\to$ A18 $\to$ A20 $\to$ A21 $\to$ A22 $\to$ A23 $\to$ A24 $\to$ A25 $\to$ A28 $\to$ A29 $\to$ A31 $\to$ A32
 \end{center}
 
 % ============================================================
-\subsection{4.6 Control Schedule}
+\subsection{Schedule Control Policy}
 % ============================================================
 
-Schedule control is the process of monitoring the status of project activities to update project progress and manage changes to the schedule baseline to achieve the plan. The key benefit of this process is that it provides the means to recognize deviation from the plan and take corrective and preventive actions, thus minimizing risk.
-
-\subsubsection{4.6.1 Corrective Action When Performance Deviates}
+\subsubsection{Corrective Action When Performance Deviates}
 
 When actual progress deviates from the planned schedule, corrective and preventive actions are applied according to the severity of the deviation. The primary recovery tools are two schedule compression techniques---crashing and fast tracking.
 
@@ -735,20 +667,6 @@ Contingency reserves built into the schedule baseline may be drawn upon to absor
 \subsubsection{4.6.2 Schedule Modification and Commitment}
 
 The schedule baseline may be formally revised when a milestone is missed, when an approved scope change materially affects the critical path, or when a verified technical blocker cannot be absorbed by available float or contingency reserve. The project manager prepares the revised schedule in Jira, presents it at the Wednesday CCB meeting, and obtains approval per the authority levels in Section 2.6. Each work package lead acknowledges revised task dates within 24 hours via Jira comment. The previous baseline is archived in GitLab as a tagged release. Formal revisions are limited to three over the project lifecycle.
-
-% ============================================================
-\subsection{4.7 Schedule Responsibility and Accountability}
-% ============================================================
-
-All team members are responsible for completing assigned activities according to the approved schedule baseline and for updating task progress in Jira on time. Each work package lead is responsible for monitoring the progress of activities within their area and reporting any potential delays during the weekly project meeting.
-
-If an activity is expected to miss its planned finish date, the responsible team member must inform the project manager as early as possible and provide the reason for the delay together with a proposed recovery plan. Failure to communicate schedule risks in a timely manner will be recorded during project reviews.
-
-When schedule deviations affect milestone dates or critical-path activities, the project manager will review the cause of the delay with the relevant work package lead. Corrective actions---such as task reassignment, fast tracking, or schedule compression---may then be applied to recover the schedule.
-
-Repeated failure to meet agreed task deadlines without reasonable justification may result in responsibilities being reassigned by the project manager to protect overall project delivery.
-
-
 % ============================================================
 \section{Cost Management}
 % ============================================================
