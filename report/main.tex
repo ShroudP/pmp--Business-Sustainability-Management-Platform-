@@ -476,14 +476,13 @@ Scope control involves continuously monitoring the project status to manage chan
 % ============================================================
 
 % ============================================================
-\section{Schedule Management}
+\clearpage
+\section{Schedule Management Plan}
 
-
-\subsection{Schedule Management Plan}
 
 The Schedule Management Plan defines how the project schedule will be planned, developed, monitored, and controlled throughout the project lifecycle. It establishes the methods, tools, responsibilities, and procedures used to manage schedule activities and track project progress. The main purpose of this plan is to ensure that the project remains on schedule and that any delays or deviations can be identified and addressed in a timely manner.
 
-\subsubsection{Milestone Progress Measurement}
+\subsection{Milestone Progress Measurement}
 
 Progress is formally assessed at each of the six milestones during the Friday team meeting. A milestone is recorded as complete only when all acceptance criteria for that phase---as specified in the WBS Dictionary---are fully satisfied. Between milestones, weekly task completion is compared against the Jira board to provide an ongoing progress signal.
 
@@ -539,12 +538,12 @@ The following activity list covers all project tasks from planning through final
 The three-point estimating technique is applied to the overall project duration Time:
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Optimistic estimate (O)}: 95 working days
-    \item \textbf{Most likely estimate (M)}: 110 working days
-    \item \textbf{Pessimistic estimate (P)}: 130 working days
+    \item \textbf{Optimistic estimate (O)}: 90 working days
+    \item \textbf{Most likely estimate (M)}: 105 working days
+    \item \textbf{Pessimistic estimate (P)}: 120 working days
 \end{itemize}
 
-Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated activities duration is \textbf{111 $\pm$ 10 working days}, with a 10\% probability of exceeding 120 days.
+Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated activities duration is \textbf{105 $\pm$ 15 working days}, with a 10\% probability of exceeding 120 days.
 
 \textbf{Reserve Plan}
 
@@ -636,13 +635,6 @@ Platform deployed to production virtual machine; all documentation and user manu
     \caption{Project Schedule Network Diagram}
     \label{Milestone}
 \end{figure}
-
-The project's critical path is as follows:
-
-\begin{center}
-A1 $\to$ A2 $\to$ A3 $\to$ A5 $\to$ A6 $\to$ A13 $\to$ A14 $\to$ A15 $\to$ A16 $\to$ A17 $\to$ A18 $\to$ A20 $\to$ A21 $\to$ A22 $\to$ A23 $\to$ A24 $\to$ A25 $\to$ A28 $\to$ A29 $\to$ A31 $\to$ A32
-\end{center}
-
 % ============================================================
 \subsection{Schedule Control Policy}
 % ============================================================
@@ -664,67 +656,115 @@ Contingency reserves built into the schedule baseline may be drawn upon to absor
 
 \textbf{Severe deviation} (a milestone missed, or SPI $<$ 0.9 for four or more consecutive weeks): Failure to achieve any milestone is considered a severe deviation and requires a formal schedule revision to be initiated.
 
-\subsubsection{4.6.2 Schedule Modification and Commitment}
+\subsubsection{Schedule Modification and Commitment}
 
 The schedule baseline may be formally revised when a milestone is missed, when an approved scope change materially affects the critical path, or when a verified technical blocker cannot be absorbed by available float or contingency reserve. The project manager prepares the revised schedule in Jira, presents it at the Wednesday CCB meeting, and obtains approval per the authority levels in Section 2.6. Each work package lead acknowledges revised task dates within 24 hours via Jira comment. The previous baseline is archived in GitLab as a tagged release. Formal revisions are limited to three over the project lifecycle.
-% ============================================================
-\section{Cost Management}
-% ============================================================
-
-Project Cost Management for the Luckin Coffee Sustainability Platform covers four processes: Plan Cost Management, Estimate Costs, Determine Budget, and Control Costs. The goal is to ensure the project is completed within the approved budget while maintaining full transparency on cost performance at every milestone gate.
 
 % ============================================================
-\subsection{5.1 Plan Cost Management}
+
+
+% ============================================================
+\clearpage
+\section{Cost Management Plan}
 % ============================================================
 
-The Cost Management Plan defines the following parameters that govern how all cost-related activities are conducted:
+Project Cost Management for the Luckin Coffee Sustainability Platform covers three processes: Software Project Cost Estimate,Cost Baseline, and Control Costs. The goal is to ensure the project is completed within the approved budget while maintaining full transparency on cost performance at every milestone gate.
+
+% ============================================================
+
+\subsection{Software Project Cost Estimate}
+% ============================================================
+\begin{table}[h]
+\centering
+\caption{Complexity Weights}
+\begin{tabular}{lccc}
+\toprule
+Feature Count Items & Simple & Medium & Complex \\
+\midrule
+External Input & 3 & 4 & 6 \\
+External Output & 4 & 5 & 7 \\
+External Inquiry & 4 & 5 & 6 \\
+External Interface File & 6 & 8 & 10 \\
+Internal Documents & 8 & 11 & 16 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\caption{Unadjusted Function point Count}
+\begin{tabular}{ll}
+\toprule
+Feature Count Items & Counts \\
+\midrule
+External Input & 2 simple, 4 medium \\
+External Output & 3 medium, 2 complex \\
+External Inquiry & 1 simple, 6 medium \\
+External Interface File & 5 medium, 2 complex \\
+Internal Documents & 2 simple, 1 medium, 1 complex \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Technical Complexity Factors}
+\begin{tabular}{clcclc}
+\toprule
+ & Factor & Weight &  & Factor & Weight \\
+\midrule
+F1  & Reliable backup and recovery & 1 &
+F2  & Data communication & 5 \\
+
+F3  & Distributed function & 2 &
+F4  & Performance & 3 \\
+
+F5  & Large use of configuration & 1 &
+F6  & On-line data entry & 5 \\
+
+F7  & Simplicity of operation & 2 &
+F8  & Online upgrade & 2 \\
+
+F9  & Complex interface & 1 &
+F10 & Complex data processing & 4 \\
+
+F11 & Reusability & 5 &
+F12 & Installation simplicity & 2 \\
+
+F13 & Multiple sites & 4 &
+F14 & Easy to modify & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Units of measure}: Chinese Yuan (CNY) is used for all monetary costs; person-days is used for labour effort to eliminate the effect of currency fluctuations when comparing workload across phases.
-    \item \textbf{Level of precision and accuracy}: all monetary cost figures are rounded to the nearest hundred yuan (e.g., ¥10,049 is recorded as ¥10,000); estimates carry an acceptance range of $\pm$10\%.
-    \item \textbf{Organisational procedures link}: costs are tracked at the WBS work package level. Each of the 32 activities is mapped to a control account maintained in the project cost tracking spreadsheet in GitLab.
-    \item \textbf{Control threshold}: a Cost Variance (CV) or Schedule Variance (SV) exceeding $\pm$10\% of the planned baseline triggers a formal corrective action review, consistent with the EVM thresholds applied in Section 5.4.
-    \item \textbf{Rules of performance measurement}: Earned Value Management (EVM) is applied weekly to assess cost efficiency. The CPI and SPI are the primary performance indicators reported at each Friday team meeting and at every milestone gate.
+    \item \textbf{Unadjusted Function Point Count (UFC)}: 188
+    \item \textbf{Techinical Complexity Factor (TCF)}: 1.08
+    \item \textbf{Fuction Point (FP)}: 203
+    \item \textbf{Cost for each labor hour:}: ¥100/hour
+    \item \textbf{Productivity of this project}: 12 hours/FP
+    \item \textbf{Budget at completion (BAC)}: ¥243600
 \end{itemize}
 
-% ============================================================
-\subsection{5.2 Estimate Costs}
-% ============================================================
-
-Cost estimation for this project was conducted during the planning phase by the project manager in collaboration with all work package leads. The team applied the practical software cost estimation process structured in five steps:
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Task decomposition}: the 32 activities in the WBS are used as the unit of cost estimation. Each activity is assigned to the responsible work package lead, who provides the cost estimate for their scope.
-    \item \textbf{Estimate the cost of each task}: each work package lead estimates the workload ($E_i$, in person-days) using the Expert Estimation (Delphi) method. Each estimator provides three values---optimistic (O), most likely (M), and pessimistic (P)---and the expected workload is derived using the Beta Distribution formula: $E = (O + 4M + P) / 6$. Task cost ($C_i$) is then calculated as $C_i = E_i \times$ human cost parameter (¥/person-day).
-    \item \textbf{Direct cost estimation}: development cost is aggregated across all 32 activities using the bottom-up estimating approach. Management and quality overhead is added at 20--25\% of development workload, yielding the total direct cost.
-    \item \textbf{Indirect cost estimation}: indirect costs (infrastructure, tools, communications, and administrative support) are calculated as 30\% of total direct cost (indirect cost coefficient = 0.3).
-    \item \textbf{Total project cost estimate}: Total estimated cost = workload $\times$ cost coefficient, where cost coefficient = human cost parameter $\times$ (1 + indirect cost coefficient).
-\end{itemize}
-
-All activity cost estimates are documented in the project cost tracking spreadsheet stored in GitLab, including the estimation method used, the three-point values, and the derived expected cost. Cost estimates were reviewed and approved at the M1 milestone gate (March 28, 2026) and will be re-evaluated at each subsequent milestone if material scope changes occur.
 
 % ============================================================
-\subsection{5.3 Determine Budget}
+\subsection{Cost Baseline}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{S-curve.png}
+    \caption{S-curve}
+    \label{Milestone}
+\end{figure}
 % ============================================================
 
-The project budget is determined by aggregating all activity cost estimates and adding reserve provisions. The budget is structured in the following layers:
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Activity Cost Estimates}: the rolled-up direct and indirect costs from Section 5.2, summed across all 32 WBS activities.
-    \item \textbf{Contingency Reserve}: an amount corresponding to identified ``known-unknown'' risks (consistent with the 15-day schedule contingency reserve defined in Section 4.4.1.2), held within the Cost Baseline and managed by the project manager. This reserve may be drawn upon without a formal change request when cost overruns fall within this buffer.
-    \item \textbf{Management Reserve}: a budget held by the project sponsor for unforeseen ``unknown-unknown'' risks that cannot be identified at planning time. The management reserve is excluded from the Cost Baseline and requires sponsor approval before use.
-\end{itemize}
-
-The sum of all activity cost estimates and the contingency reserve constitutes the \textbf{Cost Baseline (BAC)}. The Cost Baseline is displayed as an S-curve that plots cumulative planned expenditure against the project timeline, tied to the six milestone dates defined in Section 4.5.2.2. The S-curve is maintained in the project cost tracking spreadsheet in GitLab and serves as the reference against which actual expenditure is compared each week.
-
-Project funding requirements are released by milestone gate: the sponsor confirms the release of funds for the next phase at each milestone review. The Cost Baseline may only be revised through formal change control procedures, consistent with the authority levels defined in Section 2.6. Formal revisions are limited to three over the project lifecycle.
-
-% ============================================================
-\subsection{5.4 Control Costs}
+%============================================================
+\subsection{Control Costs}
 % ============================================================
 
+
+\subsubsection{Earned Value Management (EVM) Policy}
 Cost control is carried out throughout the project lifecycle using Earned Value Management (EVM). The project manager calculates the following EVM indicators weekly and reports them at the Friday team meeting and at each milestone gate:
-
 \begin{itemize}[leftmargin=*]
     \item \textbf{PV (Planned Value)} = BAC $\times$ planned \% complete, derived from the Cost Baseline S-curve at the current data date.
     \item \textbf{EV (Earned Value)} = BAC $\times$ actual \% complete, where actual \% complete is assessed based on milestone acceptance criteria and Jira task completion status.
@@ -747,7 +787,7 @@ The following thresholds govern when corrective action is required:
     \item \textbf{CPI $<$ 0.9 for two consecutive weeks}: a corrective action review is convened within 48 hours. The project manager and relevant work package leads conduct a root cause analysis and adjust resource allocation, reduce scope within approved boundaries, or apply schedule compression techniques to recover cost and schedule performance. Contingency reserve may be drawn upon if the overrun falls within the reserved amount.
     \item \textbf{CPI $<$ 0.9 for four or more consecutive weeks, or a milestone missed due to cost issues}: a formal Cost Baseline revision is prepared by the project manager, presented at the Wednesday CCB meeting, and submitted to the sponsor for approval per the authority levels in Section 2.6.
 \end{itemize}
-
+\subsubsection{Forecasting and To-Complete Performance Index (TCPI) Policy}
 Forecasting is applied each week to project the final cost at completion. When a persistent CPI trend is observed, the following EVM forecasting metrics are calculated:
 
 \begin{itemize}[leftmargin=*]
@@ -756,22 +796,25 @@ Forecasting is applied each week to project the final cost at completion. When a
     \item \textbf{VAC (Variance at Completion)} = BAC $-$ EAC
     \item \textbf{TCPI (To-Complete Performance Index)} = (BAC $-$ EV) / (BAC $-$ AC)
 \end{itemize}
+Given the critical nature of this project, quality assurance is our foremost priority. We acknowledge that the current Cost Performance Index (CPI) may reflect increased expenditure resulting from elevated quality standards and rigorous testing procedures. Rather than assuming we can recover past cost overruns, we accept the current spending efficiency as the baseline for all future work. This approach ensures that our forecast remains realistic and grounded in actual project performance.
 
 The TCPI is monitored alongside the CPI to understand the cost efficiency level that must be maintained on all remaining work to complete within the approved budget. If the TCPI significantly exceeds the current CPI, the project manager escalates to the sponsor for a budget revision review.
-
-All EVM data (PV, EV, AC, CV, SV, CPI, SPI, EAC, ETC, VAC, TCPI) is recorded weekly in the project cost tracking spreadsheet in GitLab. The S-curve is updated every Friday before 17:00. A full cost performance review is conducted at each of the six milestone gates, with findings documented in the milestone review report submitted to the sponsor.
+\subsubsection{Cost Data Retention Policy}
+All cost data (PV, EV, AC, CV, SV, CPI, SPI, EAC, ETC, VAC, TCPI) is recorded weekly in the project cost tracking spreadsheet. The S-curve is updated every Friday before 17:00. A full cost performance review is conducted at each of the six milestone gates, with findings documented in the milestone review report submitted to the sponsor.
 
 
 % ============================================================
 %  SECTION 6: QUALITY MANAGEMENT
 % ============================================================
+\clearpage
+\section{ Quality Management Plan}
 % ============================================================
-\subsection{6.2 Perform Quality Assurance}
-% ============================================================
+The purpose of this Quality Management is to define the quality objectives, standards, assurance activities, and control activities for this ESG Digital Management Platform project. The plan ensures that the project deliverables satisfy stakeholder requirements and meet the expected quality standards throughout the project lifecycle.
 
-Quality assurance focuses on evaluating whether the project processes are effective and whether the team is consistently following the defined quality standards throughout project execution.
 
-\subsubsection{6.2.1 Quality Assurance Activities}
+\subsection{Quality Assurance Plan}
+Quality Assurance focuses on preventing quality problems before they occur. It is mainly carried out during the planning and execution phases to ensure that project processes are followed correctly and that stakeholder requirements are likely to be satisfied.
+\subsubsection{Quality Assurance Activities}
 
 The following quality assurance activities are performed during the project lifecycle:
 
@@ -785,7 +828,30 @@ The following quality assurance activities are performed during the project life
 
 Quality assurance activities are primarily preventive and are intended to identify process weaknesses early before they affect final deliverables.
 
-\subsubsection{6.2.2 Continuous Improvement}
+\subsubsection{Quality Attributes}
+\begin{table}[H]
+\centering
+\caption{Software Quality Attributes}
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Attribute} & \textbf{Requirement} \\
+\hline
+Functionality & 100\% of approved functional requirements shall be implemented and tested. \\
+\hline
+Reliability & No critical defects shall remain unresolved before system release. \\
+\hline
+Usability & All major user tasks shall be completed successfully during user acceptance testing. \\
+\hline
+Efficiency & Average response time for key operations shall be less than 3 seconds. \\
+\hline
+Maintainability & Source code shall be documented and reviewed before integration into the main branch. \\
+\hline
+Portability & The system shall operate correctly on all target deployment environments. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{ Continuous Improvement}
 
 The project applies the PDCA (Plan--Do--Check--Act) cycle throughout the development lifecycle:
 
@@ -798,7 +864,7 @@ The project applies the PDCA (Plan--Do--Check--Act) cycle throughout the develop
 
 At the end of each milestone, the project team conducts a short retrospective meeting to identify process improvements for the next phase of work.
 
-\subsubsection{6.2.3 Quality Governance and Responsibilities}
+\subsubsection{Quality Governance and Responsibilities}
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Project Manager}: responsible for overall quality governance, milestone quality approval, and escalation of major quality issues.
@@ -811,12 +877,12 @@ At the end of each milestone, the project team conducts a short retrospective me
 If recurring quality issues significantly affect schedule or cost performance, corrective actions or formal change requests may be initiated according to the procedures defined in Sections 4.6 and 5.4.
 
 % ============================================================
-\subsection{6.3 Control Quality}
+\subsection{Control Quality}
 % ============================================================
 
-Quality control focuses on monitoring project deliverables and verifying that completed work satisfies the defined quality requirements before formal acceptance.
+Quality Control focuses on verifying whether project deliverables meet the required quality standards. It is mainly performed during the execution and closing phases to demonstrate that the completed work satisfies the defined acceptance criteria.
 
-\subsubsection{6.3.1 Quality Control Activities}
+\subsubsection{Quality Control Activities}
 
 The project applies multiple quality control mechanisms throughout development and testing:
 
@@ -832,7 +898,7 @@ The project applies multiple quality control mechanisms throughout development a
 
 All identified defects are recorded in Jira, assigned to responsible developers, prioritized according to severity, and tracked until closure.
 
-\subsubsection{6.3.2 Defect Reporting and Corrective Action}
+\subsubsection{Defect Reporting and Corrective Action}
 
 Defects are classified into three severity levels:
 
@@ -844,7 +910,7 @@ Defects are classified into three severity levels:
 
 If defect trends indicate recurring process problems, the project manager initiates a root cause analysis using quality management tools such as Pareto analysis or cause-and-effect diagrams. Corrective actions may include additional testing, process adjustments, code refactoring, or reassignment of technical resources.
 
-\subsubsection{6.3.3 Verified Deliverables and Acceptance}
+\subsubsection{Verified Deliverables and Acceptance}
 
 A deliverable is considered verified only when:
 
@@ -855,8 +921,7 @@ A deliverable is considered verified only when:
     \item the responsible reviewer formally approves the deliverable in Jira or GitLab.
 \end{itemize}
 
-Verified deliverables are then submitted for milestone acceptance review by the Project Manager, Client Representative, or Sponsor according to the milestone approval structure defined in Section 4.5.2.2.
-
+Verified deliverables are then submitted for milestone acceptance review by the Project Manager, Client Representative, or Sponsor.
 % ============================================================
 %  SECTION 7: PROCESS IMPROVEMENT PLAN
 % ============================================================
