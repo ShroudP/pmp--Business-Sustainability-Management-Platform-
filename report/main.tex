@@ -254,13 +254,7 @@ Charter.}
 %  SECTION 2: INTEGRATION MANAGEMENT
 % ============================================================
 \section{Integration Management}
-Integration Management includes all of the processes required to unify, coordinate and manage all project elements to completion. This section describes how integration activities will be accomplished for the \textit{Business Sustainability Management Platform} developed by Group 5.
-
-\subsection{Integration Management Overview and Approach}
-The primary objective of integration management for this project is to coordinate six work packages and unify ten functional modules to deliver a fully functional web-based ESG management platform. The integration strategy employs a modular blueprint architecture implemented in Flask. This ensures each business module, such as carbon tracking and waste management, operates independently while sharing a unified data layer, authentication system, and frontend framework. All subsidiary plans are integrated into this comprehensive project management plan. The scope baseline encompasses the ten functional modules detailed in the System Documentation. The schedule baseline aligns with a 16-week timeline from March to June, featuring monthly milestones for design, development, and testing. As a zero-cost academic endeavor, the cost baseline is constrained to team labor hours and university-provided virtual machine infrastructure.
-
-\subsection{Project Team Structure and Governance}
-The project adopts a strong matrix organizational structure, granting the project manager moderate to high authority over resource allocation and task prioritization. The internal team consists of six members, supported by the course instructor acting as the project sponsor, and the university IT department providing virtual machine hosting. External stakeholders include compliance standard bodies like GRI and ISO 14064, open-source software communities, and hypothetical end-users such as Five Guys regional managers. Communication is maintained through weekly progress reports submitted to the sponsor, ensuring adherence to GRI Standards and UN SDG 12. The corporate governance structure, illustrated in Figure \ref{fig:team_structure}, involves a Project Steering Committee that conducts weekly reviews and cross-module coordination.
+This section includes all of the processes required to unify, coordinate and manage all project elements to completion for the \textit{Business Sustainability Management Platform} developed by Group 5.
 
 \begin{figure}[h]
 \centering
@@ -297,7 +291,14 @@ The project adopts a strong matrix organizational structure, granting the projec
 \label{fig:team_structure}
 \end{figure}
 
-The work package-based team structure is defined as follows, with clear integration points between packages:
+\subsection{Integration Management Overview and Approach}
+The primary objective of integration management for this project is to coordinate six work packages and unify ten functional modules to deliver a fully functional web-based ESG management platform. The integration strategy employs a modular blueprint architecture implemented in Flask. This ensures each business module, such as carbon tracking and waste management, operates independently while sharing a unified data layer, authentication system, and frontend framework. All subsidiary plans are integrated into this comprehensive project management plan. The scope baseline encompasses the ten functional modules detailed in the System Documentation. The schedule baseline aligns with a 16-week timeline from March to June, featuring monthly milestones for design, development, and testing.
+
+\subsection{Project Team Structure and Governance}
+The project adopts a strong matrix organizational structure, granting the project manager moderate to high authority over resource allocation and task prioritization. The internal team consists of 4 members, supported by the course instructor acting as the project sponsor and the \textbf{university IT department providing virtual machine hosting}. External stakeholders include compliance standard bodies like GRI and ISO 14064, open-source software communities, and hypothetical end-users. Communication is maintained through weekly progress reports submitted to the sponsor, ensuring adherence to GRI Standards and UN SDG 12. The corporate governance structure, illustrated in Figure \ref{fig:team_structure}, involves a Project Steering Committee that conducts weekly reviews and cross-module coordination.
+
+
+The work package-based team structure is defined in Table \ref{workpackage} as follows, with clear integration points between packages:
 \begin{table}[h]
 \centering
 \small
@@ -319,6 +320,7 @@ WP6 & Liu Haopu & Delivery \& Documentation & System documentation, user manual,
 \hline
 \end{tabularx}
 \caption{Work Package Structure and Integration Responsibilities}
+\label{workpackage}
 \end{table}
 
 \subsection{Roles and Responsibilities}
@@ -351,16 +353,16 @@ Project Sponsor & Approves the project charter, resolves organizational resource
 \end{table}
 
 \subsection{Direct and Manage Project Execution}
-Execution activities are driven by a structured workflow where all code and documentation are managed via GitLab. A main branch is maintained for stable releases alongside feature branches for specific work packages, with peer reviews required before merging. Weekly synchronization meetings are held every Monday to review progress, identify blockers, and align upcoming tasks. Work performance data, including completed tasks, bug resolution rates, and test coverage, is collected weekly and integrated into status reports. Approved change requests are assigned to relevant work package leads, and their implementation is verified by the project manager before closure. The Project Management Information System (PMIS) comprises GitLab for version control, Discord for real-time communication, Google Docs for collaborative documentation, and MySQL Workbench for database management.
+Execution activities are driven by a structured workflow where all code and documentation are managed via GitHub. A main branch is maintained for stable releases alongside feature branches for specific work packages, with peer reviews required before merging. Weekly synchronization meetings are held every Monday to review progress, identify blockers, and align upcoming tasks. Work performance data is collected weekly and integrated into status reports, including completed tasks, bug resolution rates, and test coverage. Approved change requests are assigned to relevant work package leads, and their implementation is verified by the project manager before closure. The Project Management Information System (PMIS) comprises GitHub for version control, Wechat for real-time communication, Google Docs for collaborative documentation, and MySQL Workbench for database management.
 
 \subsection{Monitor and Control Project Work}
 Project performance is continuously monitored against the 16-week schedule baseline. Key performance indicators include schedule variance, defect density, and cross-module integration resolution time. Earned Value Management (EVM) principles are applied to quantify progress, triggering corrective actions if the Schedule Performance Index (SPI) falls below 0.9 for two consecutive weeks. A three-tiered information flow ensures consistent reporting: raw work performance data is analyzed into performance information, which is then compiled into weekly status reports for the team and monthly updates for the sponsor. When deviations occur, the root cause is analyzed to develop corrective actions that minimize schedule disruption. Furthermore, technical risks and data anomalies are tracked during weekly reviews, utilizing the platform's built-in anomaly detection module to maintain data integrity.
 
 \subsection{Change Management}
-The formal change control process governs all modifications affecting the project's scope, schedule, or quality baselines. Any team member can identify a change, which must be documented via a GitLab Issue template. The relevant work package lead then conducts a comprehensive impact analysis. The Change Control Board (CCB), chaired by the project manager, reviews these requests during weekly Wednesday meetings. Minor changes, such as defect repairs, are approved by the project manager, while major scope additions require sponsor authorization. Emergency critical bug fixes may be implemented immediately but must undergo CCB review within three business days. All changes are tracked in a living change log, ensuring that only approved modifications are integrated into the main codebase.
+The formal change control process governs all modifications affecting the project's scope, schedule, or quality baselines. Any team member can identify a change, which must be documented via a GitHub Issue template. The relevant work package lead then conducts a comprehensive impact analysis. The Change Control Board (CCB), chaired by the project manager, reviews these requests during weekly Wednesday meetings. Minor changes, such as defect repairs, are approved by the project manager, while major scope additions require sponsor authorization. Emergency critical bug fixes may be implemented immediately but must undergo CCB review within three business days. All changes are tracked in a living change log, ensuring that only approved modifications are integrated into the main codebase.
 
 \subsection{Project Close Out}
-The project close-out phase ensures a systematic transition of the final deliverables to the sponsor. This process begins with scope verification to confirm all baseline requirements are met, followed by a final system quality acceptance test. Upon successful validation, the fully functional platform, comprehensive system documentation, user manuals, and presentation materials are formally transitioned to the sponsor, culminating in a signed acceptance certificate. Following the handover, team members are released from their primary responsibilities but remain available for a two-week support period. All project artifacts, including source code, design documents, and test results, are archived in the GitLab repository for future reference. Finally, a post-mortem meeting is conducted to document lessons learned, evaluating the effectiveness of the modular architecture and team structure to update organizational process assets.
+The project close-out phase ensures a systematic transition of the final deliverables to the sponsor. This process begins with scope verification to confirm all baseline requirements are met, followed by a final system quality acceptance test. Upon successful validation, the fully functional platform, comprehensive system documentation, user manuals, and presentation materials are formally transitioned to the sponsor, culminating in a signed acceptance certificate. Following the handover, team members are released from their primary responsibilities but remain available for a two-week support period. All project artifacts, including source code, design documents, and test results, are archived in the GitHub repository for future reference. Finally, a post-mortem meeting is conducted to document lessons learned, evaluating the effectiveness of the modular architecture and team structure to update organizational process assets.
 
 % ============================================================
 %  SECTION 3: SCOPE MANAGEMENT
@@ -390,10 +392,10 @@ Project Sponsor & Final scope baseline approval, major change request authorizat
 Requirements are systematically categorized into business, stakeholder, solution, transition, project, and quality requirements. Business requirements focus on centralized ESG data management and compliance with GRI Standards. Stakeholder needs range from simple data entry for store staff to comprehensive analytics for headquarters managers. Solution requirements dictate the functional modules, such as carbon tracking and supplier assessment, alongside non-functional targets like supporting 1000 concurrent users and ensuring sub-two-second page load times. These requirements are elicited through interviews with restaurant managers, focus groups, prototyping, and document analysis. Prioritization follows the MoSCoW method, distinguishing essential features like carbon tracking from optional enhancements like OCR-assisted input. A Requirements Traceability Matrix (RTM) is maintained to link each requirement to its source, WBS component, and test case, ensuring comprehensive coverage and facilitating impact analysis during change requests.
 
 \subsection{Project Scope Statement}
-The primary objective is to develop and deploy a web-based Business Sustainability Management Platform for multi-store restaurant chains by June 30, 2026. The product scope encompasses core modules for carbon tracking, waste management, and ESG governance, featuring role-based access control. The project scope includes all design, development, testing, deployment, and documentation activities. Out-of-scope items include native mobile application development, real-time IoT sensor integration, legacy data migration, and long-term post-delivery maintenance. Deliverables are accepted based on the successful implementation of all functional requirements, resolution of critical bugs, and successful deployment on the designated virtual machine. The project is constrained by a fixed June 2026 deadline, a five-member team, and the mandatory use of the Flask and MySQL technology stack, assuming continuous availability of team members and virtual machine infrastructure.
+The primary objective is to develop and deploy a web-based Business Sustainability Management Platform for multi-store restaurant chains by June 30, 2026. The product scope encompasses core modules for carbon tracking, waste management, and ESG governance, featuring role-based access control. The project scope includes all design, development, testing, deployment, and documentation activities. Out-of-scope items include native mobile application development, real-time IoT sensor integration, legacy data migration, and long-term post-delivery maintenance. Deliverables are accepted based on the successful implementation of all functional requirements, resolution of critical bugs, and successful deployment on the designated virtual machine. The project is constrained by a fixed June 2026 deadline, a four-member team, and the mandatory use of the Flask and MySQL technology stack, assuming continuous availability of team members and virtual machine infrastructure.
 
 \subsection{Work Breakdown Structure (WBS)}
-The Work Breakdown Structure (WBS) decomposes the project scope into manageable work packages, adhering to the 100\% rule to ensure all project work is captured. The decomposition is limited to seven hierarchical levels, with the lowest level representing work packages that require 8 to 80 hours of effort. A hierarchical encoding system is utilized, starting from the project level down to specific tasks. For instance, Work Package 1.4.1 involves developing the carbon emission tracking module, which includes implementing frontend pages, integrating backend APIs, and conducting module tests. The approved Project Scope Statement, WBS, and WBS Dictionary collectively form the scope baseline, which is strictly controlled against unauthorized changes.
+The Work Breakdown Structure (WBS) decomposes the project scope into manageable work packages, adhering to the 100\% rule to ensure all project work is captured. A hierarchical encoding system is utilized, starting from the project level down to specific tasks. For instance, Work Package 1.4.1 involves developing the carbon emission tracking module, which includes implementing frontend pages, integrating backend APIs, and conducting module tests. The approved Project Scope Statement, WBS, and WBS Dictionary collectively form the scope baseline, which is strictly controlled against unauthorized changes.
 
 \subsubsection{WBS Hierarchical Structure}
 \begin{verbatim}
@@ -440,7 +442,8 @@ The Work Breakdown Structure (WBS) decomposes the project scope into manageable 
 \end{verbatim}
 
 \subsubsection{WBS Dictionary Example}
-\begin{table}[h!]
+This subsection illustrates the standardized WBS dictionary specification, which standardizes the definition of each work package to unify scope cognition among all project stakeholders and avoid ambiguous task boundaries. We take Work Package 1.4.1 about carbon emission tracking module development as a typical sample, with full parameterized definitions organized in Table \ref{WBSDictionary} below:
+\begin{table}[h]
 \centering
 \caption{WBS Dictionary Entry for Work Package 1.4.1}
 \begin{tabularx}{\linewidth}{@{}lX@{}}
@@ -454,13 +457,14 @@ The Work Breakdown Structure (WBS) decomposes the project scope into manageable 
 \textbf{Dependencies} & 1.2.3 (Core business interfaces), 1.3.2 (Reusable components) \\
 \textbf{Acceptance Criteria} & All carbon tracking functions work correctly, data is saved and retrieved accurately, interface is responsive and user-friendly \\ \bottomrule
 \end{tabularx}
+\label{WBSDictionary}
 \end{table}
 
 \subsection{Validate Scope}
 Scope validation formalizes the acceptance of completed project deliverables. Once the development team completes a deliverable and performs internal quality control, it is submitted to the client representative for review. The client evaluates the deliverable against predefined acceptance criteria. If accepted, a formal acceptance document is signed; if rejected, the team addresses the provided feedback and resubmits the deliverable. This process involves the Project Manager coordinating the review, the Development Team demonstrating the functionality, and the Client Representative making the acceptance decision. All acceptance documentation, including signed forms and test reports, is archived in the project repository.
 
 \subsection{Control Scope}
-Scope control involves continuously monitoring the project status to manage changes to the scope baseline. Progress is assessed weekly by comparing actual completed work against the WBS, with any variance exceeding 5\% triggering a formal review. All proposed scope modifications must follow a strict change control process: a written request is submitted, evaluated for impact by the Project Manager, and subsequently reviewed by the Change Control Board (CCB). To prevent scope creep, all client requests for new features require formal CCB approval. Similarly, gold plating is strictly prohibited; team members must not implement unauthorized enhancements without submitting them through the formal change request process.
+Scope control involves continuously monitoring the project status to manage changes to the scope baseline. Progress is assessed weekly by comparing actual completed work against the WBS, with any variance exceeding 5\% triggering a formal review. All proposed scope modifications must follow a strict change control process: a written request is submitted, evaluated for impact by the Project Manager Liu Haopu, and subsequently reviewed by the external Change Control Board (CCB). To prevent scope creep, all client requests for new features require formal CCB approval. Similarly, gold plating is strictly prohibited; team members must not implement unauthorized enhancements without submitting them through the formal change request process.
 
 % ============================================================
 %  SECTION 4: SCHEDULE MANAGEMENT
@@ -476,7 +480,6 @@ Scope control involves continuously monitoring the project status to manage chan
 % ============================================================
 
 % ============================================================
-\clearpage
 \section{Schedule Management Plan}
 
 
@@ -564,7 +567,7 @@ Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated a
 The project Gantt chart is maintained in Jira (Timeline view) and updated weekly. The schedule baseline was locked at M1 (March 28, 2026). A milestone chart summarising all six gate events is provided in Section.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Milestone.png}
+    \includegraphics[width=0.7\textwidth]{figures/Milestone.png}
     \caption{Milestone}
     \label{Milestone}
 \end{figure}
@@ -658,7 +661,7 @@ Contingency reserves built into the schedule baseline may be drawn upon to absor
 
 \subsubsection{Schedule Modification and Commitment}
 
-The schedule baseline may be formally revised when a milestone is missed, when an approved scope change materially affects the critical path, or when a verified technical blocker cannot be absorbed by available float or contingency reserve. The project manager prepares the revised schedule in Jira, presents it at the Wednesday CCB meeting, and obtains approval per the authority levels in Section 2.6. Each work package lead acknowledges revised task dates within 24 hours via Jira comment. The previous baseline is archived in GitLab as a tagged release. Formal revisions are limited to three over the project lifecycle.
+The schedule baseline may be formally revised when a milestone is missed, when an approved scope change materially affects the critical path, or when a verified technical blocker cannot be absorbed by available float or contingency reserve. The project manager prepares the revised schedule in Jira, presents it at the Wednesday CCB meeting, and obtains approval per the authority levels in Section 2.6. Each work package lead acknowledges revised task dates within 24 hours via Jira comment. The previous baseline is archived in GitHub as a tagged release. Formal revisions are limited to three over the project lifecycle.
 
 % ============================================================
 
@@ -822,7 +825,7 @@ The following quality assurance activities are performed during the project life
     \item Weekly peer reviews are conducted for backend APIs, frontend modules, database scripts, and technical documentation.
     \item Design review sessions are held before implementation begins for major system modules and integration interfaces.
     \item The project manager reviews Jira workflow status, defect trends, and testing progress every Friday before milestone evaluation.
-    \item GitLab merge requests require code review approval before changes can be merged into the main branch.
+    \item GitHub merge requests require code review approval before changes can be merged into the main branch.
     \item Test coverage and defect resolution progress are reviewed during integration and system testing phases.
 \end{itemize}
 
@@ -918,7 +921,7 @@ A deliverable is considered verified only when:
     \item all planned testing activities are completed,
     \item no unresolved severe defects remain open,
     \item milestone acceptance criteria are satisfied, and
-    \item the responsible reviewer formally approves the deliverable in Jira or GitLab.
+    \item the responsible reviewer formally approves the deliverable in Jira or GitHub.
 \end{itemize}
 
 Verified deliverables are then submitted for milestone acceptance review by the Project Manager, Client Representative, or Sponsor.
@@ -993,7 +996,7 @@ Carry out process improvement using the **Seven Basic Quality Tools** and **Seve
     \item \textbf{Root Cause Analysis}: Use the **5-Why Method** and **Fishbone Diagram (Ishikawa Diagram)** to analyze the root cause of problems
     \item \textbf{Defect Priority Analysis}: Use the **Pareto Chart** to identify the 20% of main causes that lead to 80% of defects
     \item \textbf{Value Stream Analysis}: Identify and eliminate non-value-added activities in the process
-    \item \textbf{Tool Support}: Use Jira for task and defect management, GitLab for code management and CI/CD, Prometheus+Grafana for system monitoring. All tools must comply with Luckin Coffee's information security requirements
+    \item \textbf{Tool Support}: Use Jira for task and defect management, GitHub for code management and CI/CD, Prometheus+Grafana for system monitoring. All tools must comply with Luckin Coffee's information security requirements
 \end{itemize}
 
 \begin{figure}[h]
@@ -1252,7 +1255,7 @@ To effectively manage communication channels, establish the following standardiz
 \end{tabular}}
 
 \vspace{1em}
-Information distribution tools prioritize Luckin Coffee's internal collaboration tools. Enterprise WeChat is used for internal communication, Jira for task management, Confluence for document sharing, GitLab for code management, enterprise email for formal reports, and Tencent Meeting for remote meetings. The use of all tools must comply with Luckin Coffee's information security management regulations, and it is strictly prohibited to upload Luckin Coffee's sensitive data to external platforms.
+Information distribution tools prioritize Luckin Coffee's internal collaboration tools. Enterprise WeChat is used for internal communication, Jira for task management, Confluence for document sharing, GitHub for code management, enterprise email for formal reports, and Tencent Meeting for remote meetings. The use of all tools must comply with Luckin Coffee's information security management regulations, and it is strictly prohibited to upload Luckin Coffee's sensitive data to external platforms.
 
 All communications follow the **Communication Model** (Encode → Transmit → Decode → Feedback):
 1. Encode: The sender converts information into clear and accurate language
