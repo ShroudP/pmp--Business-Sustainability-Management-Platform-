@@ -340,7 +340,74 @@ Execution activities are driven by a structured workflow where all code and docu
 Project performance is continuously monitored against the 16-week schedule baseline. Key performance indicators include schedule variance, defect density, and cross-module integration resolution time. Earned Value Management (EVM) principles are applied to quantify progress, triggering corrective actions if the Schedule Performance Index (SPI) falls below 0.9 for two consecutive weeks. A three-tiered information flow ensures consistent reporting: raw work performance data is analyzed into performance information, which is then compiled into weekly status reports for the team and monthly updates for the sponsor. When deviations occur, the root cause is analyzed to develop corrective actions that minimize schedule disruption. Furthermore, technical risks and data anomalies are tracked during weekly reviews, utilizing the platform's built-in anomaly detection module to maintain data integrity.
 
 \subsection{Change Management}
-The formal change control process governs all modifications affecting the project's scope, schedule, or quality baselines. Any team member can identify a change, which must be documented via a GitHub Issue template. The relevant work package lead then conducts a comprehensive impact analysis. The Change Control Board (CCB), chaired by the project manager, reviews these requests during weekly Wednesday meetings. Minor changes, such as defect repairs, are approved by the project manager, while major scope additions require sponsor authorization. Emergency critical bug fixes may be implemented immediately but must undergo CCB review within three business days. All changes are tracked in a living change log, ensuring that only approved modifications are integrated into the main codebase.
+
+\subsubsection{Change Governance}
+The formal change control process governs all modifications affecting the project's scope, schedule, or quality baselines. The Change Control Board (CCB) is the central governing body responsible for reviewing, evaluating, approving, delaying, or rejecting changes to the project. The CCB is chaired by the Project Manager and includes the Project Sponsor and Work Package Leads.
+
+\subsubsection{Change Identification and Request Management}
+Any team member or stakeholder can identify a need for a change. Once identified, the change must be formally documented via a standardized GitLab Issue template, which serves as the formal Change Request (CR). The CR must include a clear description of the proposed change, the rationale behind it, and the expected benefits.
+
+\subsubsection{Impact Analysis}
+Upon submission of a Change Request, the relevant Work Package Lead conducts a comprehensive impact analysis. This analysis evaluates the potential effects of the change on the project's scope, schedule, budget, quality, and risks. The impact analysis results are appended to the GitLab Issue to provide the CCB with sufficient information for decision-making.
+
+\subsubsection{Change Approval Process}
+The CCB reviews pending change requests during weekly Wednesday meetings. The approval authority depends on the change's magnitude:
+As for minor changes, defect repairs or minor adjustments with negligible impact are approved directly by the Project Manager.
+As for major changes, scope additions or changes significantly affecting the schedule or budget require authorization from the Project Sponsor.
+As for emergency changes, critical bug fixes may be implemented immediately to restore system functionality but must undergo retrospective CCB review within three business days.
+
+\subsubsection{Change Tracking}
+All change requests, regardless of their approval status, are tracked in a living Change Log maintained within GitLab. The Change Log records the CR status (e.g., Submitted, Under Review, Approved, Rejected, Implemented), the approver, and the implementation date. This ensures traceability and guarantees that only approved modifications are integrated into the main codebase.
+
+\subsubsection{Change Control Board (CCB)}
+The Change Control Board is structured to ensure comprehensive evaluation of change requests from both technical and business perspectives.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw=heading, thick, rounded corners, align=center, fill=rowalt, minimum width=4.2cm, minimum height=1.2cm, text=heading, font=\small\bfseries},
+  line/.style={-latex, thick, draw=heading}
+]
+
+% Nodes — absolute coordinates to guarantee spacing
+\node[box] (chair) at (0,0) {CCB Chair \\ (Project Manager: Liu Haopu)};
+\node[box] (sponsor) at (0,3.5) {Project Sponsor \\ (Head of IT Dept)};
+\node[box] (wp1) at (-5.5,-3.5) {WP1 Lead \\ (Yao Tianren)};
+\node[box] (wp3) at (0,-3.5) {WP3 Lead \\ (Li Sihang)};
+\node[box] (wp45) at (5.5,-3.5) {WP4/WP5 Lead \\ (Gong Zhijian)};
+
+% Lines
+\draw[line] (chair) -- (sponsor) node[midway, right, font=\footnotesize, text=heading] {Escalates major changes};
+\draw[line] (wp1) -- (chair) node[midway, left, font=\footnotesize, text=heading] {Impact Analysis};
+\draw[line] (wp3) -- (chair);
+\draw[line] (wp45) -- (chair) node[midway, right, font=\footnotesize, text=heading] {Impact Analysis};
+
+\end{tikzpicture}
+\caption{Change Control Board (CCB) Structure}
+\label{fig:ccb_structure}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{7cm}@{}}
+\toprule
+\textbf{CCB Member} & \textbf{Role} & \textbf{Responsibilities} \\
+\midrule
+Liu Haopu & CCB Chair / Project Manager & Facilitates CCB meetings, approves minor changes, and ensures approved changes are implemented and tracked. \\
+\addlinespace
+Head of Luckin Coffee IT Dept & Project Sponsor & Provides final authorization for major changes affecting project scope, budget, or timeline. \\
+\addlinespace
+Yao Tianren & WP1 Lead & Assesses impact on system architecture and requirements. \\
+\addlinespace
+Li Sihang & WP3 Lead & Assesses impact on frontend infrastructure and UI/UX consistency. \\
+\addlinespace
+Gong Zhijian & WP4/WP5 Lead & Assesses impact on business frontend, integration, and deployment. \\
+\bottomrule
+\end{tabular}
+\caption{Change Control Board (CCB) Composition and Responsibilities}
+\label{tab:ccb}
+\end{table}
 
 \subsection{Project Close Out}
 The project close-out phase ensures a systematic transition of the final deliverables to the sponsor. This process begins with scope verification to confirm all baseline requirements are met, followed by a final system quality acceptance test. Upon successful validation, the fully functional platform, comprehensive system documentation, user manuals, and presentation materials are formally transitioned to the sponsor, culminating in a signed acceptance certificate. Following the handover, team members are released from their primary responsibilities but remain available for a two-week support period. All project artifacts, including source code, design documents, and test results, are archived in the GitHub repository for future reference. Finally, a post-mortem meeting is conducted to document lessons learned, evaluating the effectiveness of the modular architecture and team structure to update organizational process assets.
@@ -539,7 +606,7 @@ Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated a
 The project Gantt chart is maintained in Jira (Timeline view) and updated weekly. The schedule baseline was locked at M1 (March 28, 2026). A milestone chart summarising all six gate events is provided below.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/Milestone.png}
+    \includegraphics[width=1\textwidth]{figures/Milestone.png}
     \caption{Milestone}
     \label{Milestone}
 \end{figure}
