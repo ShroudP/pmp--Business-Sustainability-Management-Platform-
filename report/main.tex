@@ -10,6 +10,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{microtype}
+\usepackage{textcomp}
 
 % ---- Page layout ----
 \usepackage[left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm,
@@ -25,7 +26,6 @@
 \definecolor{rowalt}{RGB}{220,230,242}      % alternate row shading
 
 % ---- Graphics & tables ----
-\usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{booktabs}
@@ -34,6 +34,7 @@
 \usepackage{longtable}
 \usepackage{multirow}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 \usepackage{float}
 \usepackage{amsmath}
 % Allow the Unicode characters ≤ and ≥ used in some tables
@@ -71,10 +72,11 @@
             linkcolor=heading,urlcolor=accent,
             pdftitle={Project Management Plan}]{hyperref}
 
-% ---- Paragraph spacing ----
+% ---- Paragraph & line spacing ----
 \usepackage{parskip}
 \setlength{\parskip}{5pt}
 \setlength{\parindent}{0pt}
+\linespread{1.15}
 
 % ---- Enumeration ----
 \usepackage{enumitem}
@@ -84,6 +86,7 @@
 % Instruction placeholder (grey italic, shown in angle brackets)
 \newcommand{\instr}[1]{%
   \textcolor{instrcolor}{\textit{\textless{}#1\textgreater{}}}}
+\newcommand{\yen}{\ifmmode\mbox{\textyen}\else\textyen\fi}
 
 % Table header row macro
 \newcommand{\thead}[1]{%
@@ -280,57 +283,52 @@ The project adopts a strong matrix organizational structure, granting the projec
 
 
 The work package-based team structure is defined in Table \ref{workpackage} as follows, with clear integration points between packages:
-\begin{table}[h]
+\begin{table}[H]
 \centering
-\small
-\begin{tabularx}{\linewidth}{|c|c|c|X|}
-\hline
-\textbf{WP ID} & \textbf{Lead} & \textbf{Focus Area} & \textbf{Key Integration Deliverables} \\
-\hline
-WP1 & Yao Tianren & Requirements \& Design & System architecture, database schema, prototype \\
-\hline
-WP2 & Liu Haopu & Backend Development & Core APIs, business logic, database migrations \\
-\hline
-WP3 & Li Sihang & Frontend Foundation & Auth system, reusable components, role-based navigation \\
-\hline
-WP4 & Gong Zhijian & Business Frontend & Carbon/waste/report pages, dashboard visualization \\
-\hline
-WP5 & Gong Zhijian & Integration \& Testing & End-to-end flow validation, deployment, performance optimization \\
-\hline
-WP6 & Liu Haopu & Delivery \& Documentation & System documentation, user manual, final presentation \\
-\hline
-\end{tabularx}
+\footnotesize
 \caption{Work Package Structure and Integration Responsibilities}
 \label{workpackage}
+\begin{tabularx}{\linewidth}{@{}c c l X@{}}
+\toprule
+\textbf{WP ID} & \textbf{Lead} & \textbf{Focus Area} & \textbf{Key Integration Deliverables} \\
+\midrule
+WP1 & Yao Tianren & Requirements \& Design & System architecture, database schema, prototype \\
+WP2 & Liu Haopu & Backend Development & Core APIs, business logic, database migrations \\
+WP3 & Li Sihang & Frontend Foundation & Auth system, reusable components, role-based navigation \\
+WP4 & Gong Zhijian & Business Frontend & Carbon/waste/report pages, dashboard visualization \\
+WP5 & Gong Zhijian & Integration \& Testing & End-to-end flow validation, deployment, performance optimization \\
+WP6 & Liu Haopu & Delivery \& Documentation & System documentation, user manual, final presentation \\
+\bottomrule
+\end{tabularx}
 \end{table}
 
 \subsection{Roles and Responsibilities}
 Table \ref{tab:roles} defines the major roles in the project team, their core integration management responsibilities, and external resource dependencies.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
-\small
-\begin{tabular}{|p{2.5cm}|p{8.5cm}|p{3cm}|}
-\hline
-\textbf{Project Position} & \textbf{Integration Management Responsibilities} & \textbf{External Resource} \\
-\hline
-Project Manager (Liu Haopu) & Holds ultimate responsibility for integration activities, coordinates cross-work package dependencies, chairs Change Control Board (CCB) meetings, and integrates performance data into status reports. & Project Sponsor, IT Department \\
-\hline
-Change Control Board & Reviews baseline change requests, assesses their impact on scope, schedule, and quality, and monitors the implementation of approved changes. & None \\
-\hline
-WP1 Lead (Yao Tianren) & Integrates user requirements into system design, ensures the database schema supports all modules, and resolves architectural conflicts. & None \\
-\hline
-WP2 Lead (Liu Haopu) & Integrates backend APIs with frontend modules, ensures data consistency, and implements cross-module business logic such as compliance scoring. & None \\
-\hline
-WP3 Lead (Li Sihang) & Integrates the authentication system with business modules, ensures consistent UI/UX, and implements role-based access control. & None \\
-\hline
-WP4/WP5 Lead (Gong Zhijian) & Integrates frontend pages with backend APIs, ensures end-to-end data flow, validates cross-browser compatibility, and manages system deployment. & IT Operations (VM Deployment) \\
-\hline
-Project Sponsor & Approves the project charter, resolves organizational resource conflicts, and authorizes major scope changes affecting project objectives. & None \\
-\hline
-\end{tabular}
+\footnotesize
 \caption{Roles and Responsibilities for Integration Management}
 \label{tab:roles}
+\begin{tabularx}{\linewidth}{@{}l X l@{}}
+\toprule
+\textbf{Project Position} & \textbf{Integration Management Responsibilities} & \textbf{External Resource} \\
+\midrule
+Project Manager (Liu Haopu) & Holds ultimate responsibility for integration activities, coordinates cross-work package dependencies, chairs CCB meetings, and integrates performance data into status reports. & Sponsor, IT Dept \\
+\addlinespace
+Change Control Board & Reviews baseline change requests, assesses their impact on scope, schedule, and quality, and monitors the implementation of approved changes. & None \\
+\addlinespace
+WP1 Lead (Yao Tianren) & Integrates user requirements into system design, ensures the database schema supports all modules, and resolves architectural conflicts. & None \\
+\addlinespace
+WP2 Lead (Liu Haopu) & Integrates backend APIs with frontend modules, ensures data consistency, and implements cross-module business logic such as compliance scoring. & None \\
+\addlinespace
+WP3 Lead (Li Sihang) & Integrates the authentication system with business modules, ensures consistent UI/UX, and implements role-based access control. & None \\
+\addlinespace
+WP4/WP5 Lead (Gong Zhijian) & Integrates frontend pages with backend APIs, ensures end-to-end data flow, validates cross-browser compatibility, and manages system deployment. & IT Operations \\
+\addlinespace
+Project Sponsor & Approves the project charter, resolves organizational resource conflicts, and authorizes major scope changes affecting project objectives. & None \\
+\bottomrule
+\end{tabularx}
 \end{table}
 
 \subsection{Direct and Manage Project Execution}
@@ -389,7 +387,7 @@ The Change Control Board is structured to ensure comprehensive evaluation of cha
 
 \begin{table}[H]
 \centering
-\small
+\footnotesize
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{7cm}@{}}
 \toprule
 \textbf{CCB Member} & \textbf{Role} & \textbf{Responsibilities} \\
@@ -491,7 +489,7 @@ The Work Breakdown Structure (WBS) decomposes the project scope into manageable 
 
 \subsubsection{WBS Dictionary Entry}
 This subsection defines the standardized WBS dictionary specification used to align scope understanding among project stakeholders and avoid ambiguous task boundaries. Work Package 1.4.1, Carbon Emission Tracking Module Development, is documented in Table \ref{WBSDictionary} with its work package parameters, deliverables, dependencies, and acceptance criteria:
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{WBS Dictionary Entry for Work Package 1.4.1}
 \begin{tabularx}{\linewidth}{@{}lX@{}}
@@ -525,40 +523,66 @@ Scope control involves continuously monitoring the project status to manage chan
 This subsidiary plan presents the schedule management approach for the development of the Sustainability Platform. It describes the project’s milestone plan, activity list, overall duration estimation, schedule baseline, and project schedule network used to organise and monitor development activities. The chapter also explains how schedule performance will be measured and how corrective actions will be taken when delays occur, ensuring the timely delivery of core functions such as carbon emission tracking, waste management, sustainability reporting, and frontend-backend integration.
 
 
-\subsection{Activitity List}
+\subsection{Activity List}
 % ============================================================
 
 The following activity list covers all project tasks from planning through final acceptance:
 
-\begin{itemize}[leftmargin=*]
-    \item A: Elicit and document core functional requirements from enterprise stakeholders
-    \item B: Evaluate and confirm technology stack selection and coding standards
-    \item C: Produce overall system architecture design and define module boundaries
-    \item D: Model database schema and define inter-table relationships and data flow
-    \item E: Create wireframe prototypes and draft key design documentation
-    \item F: Conduct design review sessions and incorporate revision feedback
-    \item G: Provision database instance and create all required table structures
-    \item H:Build user account management and authentication API endpoints
-    \item I: Implement core business-logic API interfaces for all functional modules
-    \item J: Apply input validation rules and define exception-handling mechanisms
-    \item K: Author and execute unit test cases against all backend interfaces
-    \item L: Produce comprehensive backend API reference documentation
-    \item M: Build a library of reusable UI components for consumption by business modules
-    \item N: Develop login, registration, and session-authentication pages
-    \item O: Implement the Carbon Emission Tracking module (data entry, calculation, visualisation)
-    \item P: Implement the Waste Management module (recording, recycling rate computation, alerting)
-    \item Q: Implement the Sustainability Reporting module (report generation, PDF export, SDG mapping)
-    \item R: Connect all frontend module pages to their corresponding backend API endpoints
-    \item S: Refine cross-module interaction covering all business module features
-    \item T: Conduct end-to-end integration of all system modules into a unified platform
-    \item U: Execute full-coverage system functional test suite
-    \item V: Perform cross-browser and cross-device compatibility validation
-    \item W: rofile and optimise database query performance and API response times
-    \item X: Triage, assign, and resolve all defects identified during testing
-    \item Y: Package and deploy the platform to the designated production virtual machine
-    \item Z: Consolidate and finalise all technical and process documentation produced during development
-    \item AA: Obtain formal acceptance from the sponsor
-\end{itemize}
+{\footnotesize
+\begin{longtable}{@{}c p{13.5cm}@{}}
+\caption{Project Activity List}\label{tab:activity_list}\\
+\toprule
+\textbf{ID} & \textbf{Activity Description} \\
+\midrule
+\endfirsthead
+\caption[]{Project Activity List (cont'd)}\\
+\toprule
+\textbf{ID} & \textbf{Activity Description} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\multicolumn{2}{@{}l}{\textbf{Planning}} \\
+A & Elicit and document core functional requirements from enterprise stakeholders \\
+B & Evaluate and confirm technology stack selection and coding standards \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Design}} \\
+C & Produce overall system architecture design and define module boundaries \\
+D & Model database schema and define inter-table relationships and data flow \\
+E & Create wireframe prototypes and draft key design documentation \\
+F & Conduct design review sessions and incorporate revision feedback \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Development}} \\
+G & Provision database instance and create all required table structures \\
+H & Build user account management and authentication API endpoints \\
+I & Implement core business-logic API interfaces for all functional modules \\
+J & Apply input validation rules and define exception-handling mechanisms \\
+K & Author and execute unit test cases against all backend interfaces \\
+L & Produce comprehensive backend API reference documentation \\
+M & Build a library of reusable UI components for consumption by business modules \\
+N & Develop login, registration, and session-authentication pages \\
+O & Implement the Carbon Emission Tracking module (data entry, calculation, visualisation) \\
+P & Implement the Waste Management module (recording, recycling rate computation, alerting) \\
+Q & Implement the Sustainability Reporting module (report generation, PDF export, SDG mapping) \\
+R & Connect all frontend module pages to their corresponding backend API endpoints \\
+S & Refine cross-module interaction covering all business module features \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Testing}} \\
+T & Conduct end-to-end integration of all system modules into a unified platform \\
+U & Execute full-coverage system functional test suite \\
+V & Perform cross-browser and cross-device compatibility validation \\
+W & Profile and optimise database query performance and API response times \\
+X & Triage, assign, and resolve all defects identified during testing \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Deployment \& Closeout}} \\
+Y & Package and deploy the platform to the designated production virtual machine \\
+Z & Consolidate and finalise all technical and process documentation \\
+AA & Obtain formal acceptance from the sponsor \\
+\end{longtable}
+}
 
 % ============================================================
 \subsection{Project Duration}
@@ -607,11 +631,7 @@ The project Gantt chart is maintained in Jira (Timeline view) and updated weekly
 
 The project schedule is organised around six milestones derived from the major work packages defined in the Work Breakdown Structure (WBS). Each milestone represents the completion of a logical group of related project activities and deliverables, marking the transition from one development phase to the next. By structuring the schedule around WBS-based work packages, the project ensures that all key deliverables are completed in a systematic and well-defined sequence throughout the development lifecycle.
 
-\medskip
-
-\noindent\textbf{\large Milestone Chart}
-
-\smallskip
+\subsection{Milestone Chart}
 
 % 导言区需要加入
 
@@ -740,7 +760,7 @@ This subsidiary plan describes the cost management approach for the development 
 \subsection{Software Project Cost Estimate}
 % ============================================================
 % ─── Table 6: Complexity Weights ───────────────────────────────────────────
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Complexity Weights}
 \begin{tabular}{lccc}
@@ -757,7 +777,7 @@ Internal Documents      & 8 & 11 & 16 \\
 \end{table}
 
 % ─── Table 7: Unadjusted Function Point Count ──────────────────────────────
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Unadjusted Function Point Count}
 \begin{tabular}{ll}
@@ -774,12 +794,13 @@ Internal Documents      & 2 simple, 1 medium, 1 complex \\
 \end{table}
 
 % ─── Table 8: Technical Complexity Factors ─────────────────────────────────
-\begin{table}[h]
+\begin{table}[H]
 \centering
+\footnotesize
 \caption{Technical Complexity Factors}
-\begin{tabular}{clcclc}
+\begin{tabularx}{\linewidth}{@{}c X c c X c@{}}
 \toprule
- & Factor & Weight & & Factor & Weight \\
+ & \textbf{Factor} & \textbf{Weight} & & \textbf{Factor} & \textbf{Weight} \\
 \midrule
 F1  & Reliable backup and recovery & 1 & F2  & Data communication      & 5 \\
 F3  & Distributed function         & 2 & F4  & Performance             & 3 \\
@@ -789,7 +810,7 @@ F9  & Complex interface            & 1 & F10 & Complex data processing & 4 \\
 F11 & Reusability                  & 5 & F12 & Installation simplicity & 2 \\
 F13 & Multiple sites               & 4 & F14 & Easy to modify          & 3 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{itemize}[leftmargin=*]
@@ -823,11 +844,12 @@ F13 & Multiple sites               & 4 & F14 & Easy to modify          & 3 \\
 % All values verified: FP × ¥1,200 = Estimate Cost.
 % ───────────────────────────────────────────────────────────────────────────
 
-\begin{longtable}{p{4cm} r r r}
+{\footnotesize
+\begin{longtable}{p{3.4cm} r r r}
 \caption{Milestone Cost Estimate with Function Point Calculation}\\
 \toprule
 \textbf{Milestone} &
-\textbf{Calculation} (UFC \times \text{TCF}) &
+\textbf{Calculation} ($\mathrm{UFC} \times \mathrm{TCF}$) &
 \textbf{Function Points} &
 \textbf{Estimate Cost} \\
 \midrule
@@ -835,7 +857,7 @@ F13 & Multiple sites               & 4 & F14 & Easy to modify          & 3 \\
 \caption[]{Milestone Cost Estimate with Function Point Calculation (cont'd)}\\
 \toprule
 \textbf{Milestone} &
-\textbf{Calculation} (UFC \times \text{TCF}) &
+\textbf{Calculation} ($\mathrm{UFC} \times \mathrm{TCF}$) &
 \textbf{Function Points} &
 \textbf{Estimate Cost} \\
 \midrule
@@ -893,12 +915,14 @@ M6: Project documentation and final delivery
   & $\mathbf{187.96 \times 1.08}$ & \textbf{203.00} & \textbf{\yen243,600} \\
 
 \end{longtable}
+}
 
-\noindent\footnotesize
-\textbf{Notes:} TCF (Technical Complexity Factor) = 1.08.
+{\footnotesize
+\noindent\textbf{Notes:} TCF (Technical Complexity Factor) = 1.08.
 $Q$ = UFC contribution per milestone = FP $\div$ TCF.
 Function Points = $Q \times$ TCF.
 Estimate Cost = Function Points $\times$ 12\,h/FP $\times$ \yen100/h = FP $\times$ \yen1,200.
+}
 
 
 
@@ -975,24 +999,20 @@ Quality assurance activities are primarily preventive and are intended to identi
 \subsubsection{Quality Attributes}
 \begin{table}[H]
 \centering
+\footnotesize
 \caption{Software Quality Attributes}
-\begin{tabular}{|p{4cm}|p{10cm}|}
-\hline
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule
 \textbf{Attribute} & \textbf{Requirement} \\
-\hline
+\midrule
 Functionality & 100\% of approved functional requirements shall be implemented and tested. \\
-\hline
 Reliability & No critical defects shall remain unresolved before system release. \\
-\hline
 Usability & All major user tasks shall be completed successfully during user acceptance testing. \\
-\hline
 Efficiency & Average response time for key operations shall be less than 3 seconds. \\
-\hline
 Maintainability & Source code shall be documented and reviewed before integration into the main branch. \\
-\hline
 Portability & The system shall operate correctly on all target deployment environments. \\
-\hline
-\end{tabular}
+\bottomrule
+\end{tabularx}
 \end{table}
 
 \subsubsection{ Continuous Improvement}
@@ -1087,7 +1107,7 @@ This process optimization covers 6 core processes throughout the project lifecyc
 \subsection{Process Quantitative Indicator System}
 A quantitative performance appraisal indicator system is established based on the Cost of Quality (COQ) model, all indicators are aligned with Luckin Coffee's enterprise project delivery standards:
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Core Process Performance Measurement Indicators}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{5cm}>{\raggedright\arraybackslash}p{7cm}c@{}}
@@ -1282,19 +1302,19 @@ Analyze based on four dimensions: cost, schedule, technical capability and risk.
 \subsection{Contract Type Selection}
 Choose appropriate contract types based on the characteristics of the procurement content. The risk allocation of different contract types is as follows:
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Contract Type Risk Comparison Table}
-\begin{tabular}{@{}lccc@{}}
+\begin{tabularx}{\linewidth}{@{}lccX@{}}
 \toprule
 \textbf{Contract Type} & \textbf{Buyer Risk} & \textbf{Seller Risk} & \textbf{Applicable Scenarios} \\
 \midrule
 Firm Fixed Price (FFP) & Low & High & Standard products with clear requirements and scope \\
 Fixed Price Incentive Fee (FPIF) & Medium & Medium & Products with clear performance indicators \\
 Cost Plus Fixed Fee (CPFF) & High & Low & Exploratory projects with unclear requirements \\
-Time and Materials (T&M) & Medium & Medium & Short-term, small-scale service procurement \\
+Time \& Materials (T\&M) & Medium & Medium & Short-term, small-scale service procurement \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{figure}[h]
@@ -1307,7 +1327,7 @@ Time and Materials (T&M) & Medium & Medium & Short-term, small-scale service pro
 Specific contract type applications for this project:
 \begin{itemize}
   \item Firm Fixed Price (FFP) Contracts: Applicable to standard products such as cloud servers, domain names, SSL certificates, software licenses and third-party API services. Contract terms must follow Luckin Coffee's standard contract template. FP-EPA, CPIF and CPAF contracts are not used in this project due to the short project cycle (16 weeks) and clear requirements.
-  \item Time and Materials (T&M) Contracts: Applicable to ESG consulting services, settled based on actual service hours. Service content and deliverables must be confirmed by Luckin Coffee.
+  \item Time and Materials (T\&M) Contracts: Applicable to ESG consulting services, settled based on actual service hours. Service content and deliverables must be confirmed by Luckin Coffee.
 \end{itemize}
 
 \subsection{Procurement Schedule}
@@ -1341,33 +1361,38 @@ Classify project stakeholders using the Power/Interest Grid and develop targeted
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/fig10-1_power_interest_grid.png}
+\includegraphics[width=0.65\textwidth]{figures/fig10-1_power_interest_grid.png}
 \caption{Stakeholder Power/Interest Grid}
 \label{fig:power}
 \end{figure}
 
 \vspace{0.5em}
-\noindent
-\begin{tabularx}{\linewidth}{|L{3cm}|X|X|L{3.5cm}|}
-  \hline
-  \thead{Stakeholder Name}
-    & \thead{How they will impact the project}
-    & \thead{How they will be impacted by the project}
-    & \thead{Communication Requirements}\\
-  \hline
-  Head of Luckin Coffee IT Dept & Provides project funding and business requirements, approves major decisions, determines project acceptance results & Obtains a qualified ESG management platform, enhances enterprise sustainable development management capability & Monthly formal report, immediate communication on major issues, submit project documents and demonstrations in accordance with Luckin Coffee's specifications\\
-  \hline
-  Head of Luckin Coffee ESG Dept & Provides ESG business requirements and compliance requirements, participates in requirement review and acceptance & Obtains a standardized ESG data management tool, simplifies daily work processes & Biweekly business communication, participates in requirement review and acceptance testing, provides business guidance\\
-  \hline
-  Project Team Members & Responsible for specific project implementation, determines project progress and quality & Gains project experience and skill improvement, completes project delivery tasks & Daily stand-up, weekly meeting, instant messaging communication\\
-  \hline
-  Cloud Service Vendor & Provides infrastructure and technical support, affects system stability and performance & Obtains sales revenue and customer cases & On-demand communication, immediate response to fault handling, regular service quality follow-up\\
-  \hline
-  ESG Consultant & Provides professional guidance and advice, affects project compliance and professionalism & Obtains consulting fees and industry experience & Weekly communication, phased achievement review, provision of consulting reports\\
-  \hline
-  Luckin Coffee Store Employees & End users of the system, provide feedback, affects system practicality & Simplifies daily ESG data entry work, improves work efficiency & User training, online support, regular feedback collection\\
-  \hline
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Stakeholder Register and Communication Requirements}
+\label{tab:stakeholder_register}
+\begin{tabularx}{\linewidth}{@{}L{2.5cm} X X L{3.2cm}@{}}
+\toprule
+\textbf{Stakeholder Name}
+  & \textbf{Project Impact}
+  & \textbf{Stakeholder Impact}
+  & \textbf{Communication Requirements}\\
+\midrule
+Head of Luckin Coffee IT Dept & Provides project funding and business requirements, approves major decisions, determines project acceptance results & Obtains a qualified ESG management platform, enhances enterprise sustainable development management capability & Monthly formal report, immediate communication on major issues, submit project documents and demonstrations in accordance with Luckin Coffee's specifications\\
+\addlinespace
+Head of Luckin Coffee ESG Dept & Provides ESG business requirements and compliance requirements, participates in requirement review and acceptance & Obtains a standardized ESG data management tool, simplifies daily work processes & Biweekly business communication, participates in requirement review and acceptance testing, provides business guidance\\
+\addlinespace
+Project Team Members & Responsible for specific project implementation, determines project progress and quality & Gains project experience and skill improvement, completes project delivery tasks & Daily stand-up, weekly meeting, instant messaging communication\\
+\addlinespace
+Cloud Service Vendor & Provides infrastructure and technical support, affects system stability and performance & Obtains sales revenue and customer cases & On-demand communication, immediate response to fault handling, regular service quality follow-up\\
+\addlinespace
+ESG Consultant & Provides professional guidance and advice, affects project compliance and professionalism & Obtains consulting fees and industry experience & Weekly communication, phased achievement review, provision of consulting reports\\
+\addlinespace
+Luckin Coffee Store Employees & End users of the system, provide feedback, affects system practicality & Simplifies daily ESG data entry work, improves work efficiency & User training, online support, regular feedback collection\\
+\bottomrule
 \end{tabularx}
+\end{table}
 
 \noindent Establish and maintain a stakeholder register, recording all stakeholders' roles, contact information, main requirements and communication preferences, updated quarterly.
 
@@ -1381,34 +1406,30 @@ This project has 9 core stakeholders in total (1 Project Manager + 5 Team Member
 
 To effectively manage communication channels, establish the following standardized communication mechanisms:
 
-\vspace{0.5em}
-{\setlength{\tabcolsep}{4pt}%
-\noindent
-\begin{tabular}{|L{2.8cm}|L{2.8cm}|L{3.2cm}|L{2.8cm}|L{2.8cm}|}
-  \hline
-  \thead{Type of Communication}
-    & \thead{Communication Schedule}
-    & \thead{Communication Mechanism}
-    & \thead{Initiator}
-    & \thead{Recipient}\\
-  \hline
-  Daily Stand-up & Daily 9:00-9:15 & Offline/Tencent Meeting (Informal) & Project Manager & All Project Team Members\\
-  \hline
-  Weekly Status Report & Every Friday before 17:00 & Email+Jira (Formal) & Module Leaders & Project Manager\\
-  \hline
-  Weekly Team Meeting & Every Friday 16:00-17:30 & Offline/Tencent Meeting (Formal) & Project Manager & All Project Team Members\\
-  \hline
-  Biweekly Business Meeting & Every 2 weeks Wednesday 14:00-15:00 & Tencent Meeting+PPT (Formal) & Project Manager & Head of Luckin Coffee ESG Dept\\
-  \hline
-  Monthly Formal Report & Last Friday of every month 10:00-11:00 & Tencent Meeting+PPT (Formal) & Project Manager & Head of Luckin Coffee IT Dept, Head of Luckin Coffee ESG Dept\\
-  \hline
-  Requirements/Technical Review & On Demand & Offline/Tencent Meeting (Formal) & Requirements/Technical Lead & Luckin Coffee Representatives, Relevant Dev/Test Personnel\\
-  \hline
-  Change Control Meeting & On Demand & Offline/Tencent Meeting (Formal) & Project Manager & Luckin Coffee Change Control Board\\
-  \hline
-  Emergency Meeting & On Demand & Phone/Tencent Meeting (Informal) & Project Manager & Relevant Personnel\\
-  \hline
-\end{tabular}}
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Communication Matrix}
+\label{tab:comm_matrix}
+\begin{tabularx}{\linewidth}{@{}L{2.2cm} L{2.5cm} X L{2.2cm} X@{}}
+\toprule
+\textbf{Type of Communication}
+  & \textbf{Schedule}
+  & \textbf{Mechanism}
+  & \textbf{Initiator}
+  & \textbf{Recipient}\\
+\midrule
+Daily Stand-up & Daily 9:00--9:15 & Offline/Tencent Meeting (Informal) & Project Manager & All Project Team Members\\
+Weekly Status Report & Every Friday before 17:00 & Email+Jira (Formal) & Module Leaders & Project Manager\\
+Weekly Team Meeting & Every Friday 16:00--17:30 & Offline/Tencent Meeting (Formal) & Project Manager & All Project Team Members\\
+Biweekly Business Meeting & Every 2 weeks Wed 14:00--15:00 & Tencent Meeting+PPT (Formal) & Project Manager & Head of Luckin Coffee ESG Dept\\
+Monthly Formal Report & Last Friday of month 10:00--11:00 & Tencent Meeting+PPT (Formal) & Project Manager & Head of IT Dept, Head of ESG Dept\\
+Requirements / Technical Review & On Demand & Offline/Tencent Meeting (Formal) & Req./Tech. Lead & Luckin Coffee Reps, Dev/Test Personnel\\
+Change Control Meeting & On Demand & Offline/Tencent Meeting (Formal) & Project Manager & CCB Members\\
+Emergency Meeting & On Demand & Phone/Tencent Meeting (Informal) & Project Manager & Relevant Personnel\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \vspace{1em}
 Information distribution tools prioritize Luckin Coffee's internal collaboration tools. Enterprise WeChat is used for internal communication, Jira for task management, Confluence for document sharing, GitHub for code management, enterprise email for formal reports, and Tencent Meeting for remote meetings. The use of all tools must comply with Luckin Coffee's information security management regulations, and it is strictly prohibited to upload Luckin Coffee's sensitive data to external platforms.
@@ -1462,15 +1483,15 @@ Risks are organised using a Risk Breakdown Structure (RBS) following three top-l
 \centering
 \begin{tikzpicture}[
     grow'=right,
-    level distance=32mm,
+    level distance=50mm,
     every node/.style={rectangle, draw, align=left, font=\footnotesize,
                        inner sep=4pt, rounded corners=2pt,
-                       text width=42mm, minimum height=7mm},
-    level 1/.style={sibling distance=32mm,
+                       text width=38mm, minimum height=7mm},
+    level 1/.style={sibling distance=38mm,
                     every node/.style={rectangle, draw, align=center, font=\footnotesize\bfseries,
                                        inner sep=4pt, rounded corners=2pt,
                                        text width=32mm, minimum height=8mm}},
-    level 2/.style={sibling distance=11mm},
+    level 2/.style={sibling distance=14mm},
     edge from parent/.style={draw, -latex, thick, rounded corners=2pt},
     edge from parent path={(\tikzparentnode.east) -| ($(\tikzparentnode.east)!0.5!(\tikzchildnode.west)$) |- (\tikzchildnode.west)}]
 \node[fill=blue!15, font=\footnotesize\bfseries, text width=30mm, align=center] {Project Risks\\(RBS)}
@@ -1498,7 +1519,7 @@ Risks are organised using a Risk Breakdown Structure (RBS) following three top-l
 
 The project uses a five-level scale for both probability and impact, consistent with the PMBOK standard. The definitions are calibrated against the project's cost baseline (Section~5.3) and schedule baseline (Section~4.5).
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \footnotesize
 \caption{Probability and Impact Definitions (5-Level Scale)}
@@ -1520,7 +1541,7 @@ The project uses a five-level scale for both probability and impact, consistent 
 
 The 5$\times$5 P--I Matrix in Table~\ref{tab:pi_matrix} maps the combined probability and impact scores to three priority tiers. Cells with a Risk Score $\geq 0.30$ are coloured red (high priority --- mandatory active response), $0.15 \leq$ Risk Score $< 0.30$ amber (medium priority --- monitored response), and Risk Score $< 0.15$ green (low priority --- accept and monitor).
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \footnotesize
 \caption{Probability and Impact Matrix (5$\times$5)}
@@ -1552,42 +1573,44 @@ Risk identification is conducted iteratively throughout the project lifecycle. T
 
 The output of this process is the \textbf{Risk Register} (Table~\ref{tab:risk_register}), which records 15~identified risks distributed across the three RBS categories (5 Technical, 5 External, 5 Organizational), including 12 negative risks (threats) and 3 positive risks (opportunities).
 
-\begin{longtable}{@{}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.7cm}>{\raggedright\arraybackslash}p{4.6cm}>{\centering\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{0.7cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.6cm}@{}}
-\caption{Risk Register --- Identified Risks with P--I Scores and Owners}\label{tab:risk_register}\\
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\centering\arraybackslash}p{0.5cm}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{2.6cm}>{\centering\arraybackslash}p{1.3cm}>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.2cm}@{}}
+\caption{Risk Register}\label{tab:risk_register}\\
 \toprule
-\textbf{ID} & \textbf{Type} & \textbf{Risk Description} & \textbf{P} & \textbf{I} & \textbf{Score} & \textbf{Owner} & \textbf{Trigger / Indicator} \\
+\textbf{ID} & \textbf{Identified Risk} & \textbf{Potential Response} & \textbf{Root Cause} & \textbf{Cate\-gory} & \textbf{Prio\-rity} & \textbf{Ur\-gency} \\
 \midrule
 \endfirsthead
-\multicolumn{8}{l}{\footnotesize\textit{(Continued from previous page)}}\\
+\multicolumn{7}{l}{\footnotesize\textit{(Continued from previous page)}}\\
 \toprule
-\textbf{ID} & \textbf{Type} & \textbf{Risk Description} & \textbf{P} & \textbf{I} & \textbf{Score} & \textbf{Owner} & \textbf{Trigger / Indicator} \\
+\textbf{ID} & \textbf{Identified Risk} & \textbf{Potential Response} & \textbf{Root Cause} & \textbf{Cate\-gory} & \textbf{Prio\-rity} & \textbf{Ur\-gency} \\
 \midrule
 \endhead
 \midrule
-\multicolumn{8}{r}{\footnotesize\textit{(Continued on next page)}}\\
+\multicolumn{7}{r}{\footnotesize\textit{(Continued on next page)}}\\
 \endfoot
 \bottomrule
 \endlastfoot
-T1 & $-$ & System architecture instability under high concurrent loads from $>$5{,}000 stores reporting simultaneously & 3 & 4 & 0.20 & System Architect & API timeout rate $>$1\% \\
-T2 & $-$ & ECharts visualisation performance degradation when rendering large multi-store ESG datasets & 3 & 3 & 0.10 & Frontend Lead (Vis.) & Page load $>$3s on dashboards \\
-T3 & $-$ & Cross-module integration defects causing data inconsistency between carbon-tracking and reporting modules & 4 & 4 & 0.28 & WP2 Lead & Integration test failure rate $>$5\% \\
-T4 & $-$ & MySQL query performance bottlenecks for ESG report aggregation across all stores & 3 & 3 & 0.10 & Backend Developer & Query latency $>$500ms \\
-T5 & $+$ & Reusable open-source ESG calculation library (with pre-validated GRI/ISO~14064 formulas) becomes available, reducing custom development & 2 & 4 & 0.12 & ESG Consultant & Library released by Week~6 \\
+T1 & Architecture instability under high concurrent loads from 5{,}000+ stores & Mitigate: early load testing at M2; horizontal scaling design; pre-allocate buffer capacity & Insufficient stress testing during architecture design phase & Tech. & High & High \\
+T2 & ECharts visualisation degradation rendering large multi-store ESG datasets & Mitigate: pagination, lazy loading, dataset sampling for large dashboards & No data-volume cap on frontend chart rendering & Tech. & Medium & Medium \\
+T3 & Cross-module integration defects causing data inconsistency between modules & Avoid: define interface contracts at M1; enforce automated contract tests in CI/CD & Undefined module interface specifications between work packages & Tech. & High & High \\
+T4 & MySQL query bottlenecks for ESG report aggregation across all stores & Mitigate: add indexes on aggregation columns; introduce Redis caching layer & Missing indexes and no caching on high-frequency queries & Tech. & Medium & Medium \\
+T5 & Reusable open-source ESG calculation library becomes available (opportunity) & Enhance: track releases weekly; accelerate evaluation and integration if suitable & Active open-source ESG community developing shared libraries & Tech. & Medium & Medium \\
 \midrule
-E1 & $-$ & Mid-project scope expansion request from Luckin Coffee to add additional store regions or new ESG metrics & 4 & 4 & 0.28 & Project Manager & Formal change request from Luckin Coffee CCB \\
-E2 & $-$ & Cloud service vendor SLA breach (downtime, performance degradation) affecting development or production environment & 2 & 4 & 0.12 & DevOps Engineer & Vendor incident notification \\
-E3 & $-$ & ESG regulatory framework update (GRI/ISO~14064 revision) requiring rework of compliance modules mid-project & 3 & 4 & 0.20 & ESG Consultant & GRI/ISO official announcement \\
-E4 & $-$ & Third-party OCR/SMS API instability or deprecation affecting data ingestion and notification flows & 3 & 3 & 0.10 & Backend Developer & API error rate $>$2\% \\
-E5 & $+$ & ESG Consultant identifies a more efficient compliance reporting framework, reducing report-generation effort & 3 & 3 & 0.10 & ESG Consultant & Recommendation submitted by Week~3 \\
+E1 & Mid-project scope expansion request from Luckin Coffee for new ESG metrics & Transfer: route through CCB; quantify cost/schedule impact before acceptance & Evolving Luckin Coffee business strategy and ESG scope & Ext. & High & High \\
+E2 & Cloud vendor SLA breach affecting development or production environment & Transfer: vendor SLA requires $\geq$99.9\% availability with credit compensation & Shared cloud infrastructure with limited redundancy & Ext. & Medium & Medium \\
+E3 & ESG regulatory framework update (GRI/ISO~14064 revision) requiring rework & Mitigate: weekly GRI/ISO monitoring; pluggable rule-engine architecture & Ongoing international ESG standard revision cycle & Ext. & High & High \\
+E4 & Third-party OCR/SMS API instability affecting data ingestion flows & Accept (active): maintain fallback adapter; switch providers within 4 hours & Vendor deprecation and maintenance policy changes & Ext. & Medium & Medium \\
+E5 & Consultant identifies more efficient compliance reporting framework (opportunity) & Exploit: consultant contractually tasked with proactive efficiency recommendations & ESG Consultant's deep domain expertise and advisory role & Ext. & Medium & Low \\
 \midrule
-O1 & $-$ & Staff attrition: a key team member leaves the project during the development phase & 2 & 5 & 0.18 & Project Manager & Resignation notice; reduced velocity \\
-O2 & $-$ & Project priority changes: team member partially reallocated to another Luckin Coffee project & 3 & 4 & 0.20 & Project Manager & Reallocation request from Luckin IT Dept \\
-O3 & $-$ & Funding cuts: sponsor reduces project budget mid-cycle due to corporate cost-control measures & 2 & 5 & 0.18 & Project Sponsor & Budget revision notification \\
-O4 & $-$ & Project Manager unable to dedicate sufficient time during peak weeks (M3--M5) due to overlapping responsibilities & 3 & 3 & 0.10 & Project Sponsor & PM weekly availability $<$80\% \\
-O5 & $+$ & Team's modular architecture pattern is adopted by Luckin Coffee as a reference for other internal ESG projects & 3 & 3 & 0.10 & Project Manager & Adoption interest from other Luckin teams \\
+O1 & Key team member leaves the project during development phase & Mitigate: job-shadowing; $\geq$2 members per module; decisions documented in Confluence & Competitive job market; limited team redundancy & Org. & Medium & High \\
+O2 & Team member partially reallocated to another Luckin Coffee project & Mitigate: written 100\% allocation at M1; formal change request for any reallocation & Luckin Coffee multi-project portfolio competing for resources & Org. & High & High \\
+O3 & Sponsor reduces project budget mid-cycle due to cost-control measures & Accept (active): scope re-prioritisation to M3 MVP; sponsor approval recorded & Corporate cost-control measures during economic uncertainty & Org. & Medium & Medium \\
+O4 & PM unable to dedicate sufficient time during peak weeks (M3--M5) & Mitigate: pre-block calendar; appoint deputy to chair daily stand-up & PM's overlapping responsibilities across multiple projects & Org. & Medium & High \\
+O5 & Modular architecture adopted by Luckin Coffee for other ESG projects (opportunity) & Share: co-author architecture docs with Luckin IT Architecture team & Architecture aligned with Luckin Coffee IT standardisation goals & Org. & Medium & Low \\
 \end{longtable}
+}
 
-\noindent\textit{Note:} Type ``$-$'' denotes a negative risk (threat); ``$+$'' denotes a positive risk (opportunity). Risk Score $=$ P (numeric, Table~\ref{tab:pi_definitions}) $\times$ I (impact weight from Table~\ref{tab:pi_matrix}).
+\noindent\textit{Note:} Priority is derived from the P--I Score in Tables~\ref{tab:pi_definitions}--\ref{tab:pi_matrix} (High $\geq 0.20$, Medium $0.10$--$0.19$, Low $< 0.10$). Urgency reflects how soon the risk requires action based on milestone proximity.
 
 % --- 11.3 ---
 \subsection{Perform Qualitative Risk Analysis}
@@ -1611,7 +1634,7 @@ Quantitative risk analysis is performed on the high-priority risks identified in
 
 EMV is calculated for each high-priority risk as $EMV = P \times I_{\text{cost}}$, where $I_{\text{cost}}$ is the estimated monetary impact in CNY. EMV of opportunities is expressed as a positive value; EMV of threats is expressed as negative. The total EMV of all 15~risks is used to size the cost contingency reserve.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \footnotesize
 \caption{EMV Analysis for High-Priority Risks (CNY)}
@@ -1652,42 +1675,7 @@ The sensitivity analysis confirms that customer-driven scope expansion (E1) and 
 % --- 11.5 ---
 \subsection{Plan Risk Responses}
 
-Risk responses are planned using the eight PMBOK strategies: four for negative risks (\textbf{Avoid, Transfer, Mitigate, Accept}) and four for positive risks (\textbf{Exploit, Enhance, Share, Accept}). Each risk is assigned a primary response strategy, an action plan, and a responsible owner. Contingent response plans are prepared for the high-priority risks to be triggered if the risk materialises.
-
-\begin{longtable}{@{}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{12.5cm}@{}}
-\caption{Risk Response Plan --- Strategies and Actions}\label{tab:risk_response}\\
-\toprule
-\textbf{ID} & \textbf{Strategy} & \textbf{Action Plan / Contingent Response} \\
-\midrule
-\endfirsthead
-\multicolumn{3}{l}{\footnotesize\textit{(Continued from previous page)}}\\
-\toprule
-\textbf{ID} & \textbf{Strategy} & \textbf{Action Plan / Contingent Response} \\
-\midrule
-\endhead
-\midrule
-\multicolumn{3}{r}{\footnotesize\textit{(Continued on next page)}}\\
-\endfoot
-\bottomrule
-\endlastfoot
-T1 & Mitigate & Conduct early-stage load testing at M2; design horizontal scaling into architecture; pre-allocate buffer capacity. Contingent: scale up cloud instance class within 24~hours if API timeout exceeds threshold. \\
-T2 & Mitigate & Implement front-end pagination, lazy loading, and ECharts dataset sampling for large dashboards; benchmark performance at every milestone gate. \\
-T3 & Avoid & Define explicit module interface contracts at design phase (M1) and enforce automated contract tests in CI/CD; the strategy eliminates the threat by design rather than mitigating after occurrence. \\
-T4 & Mitigate & Add database indexes on high-frequency aggregation columns; introduce a Redis caching layer for ESG report queries. \\
-T5 & \textbf{Enhance} & Track open-source ESG library releases weekly; if a suitable library is published, accelerate evaluation and integrate it to reduce custom-development effort. (Positive risk strategy.) \\
-\midrule
-E1 & Transfer & All Luckin Coffee scope-expansion requests are routed through the formal Change Control Board (Section~2.6); cost and schedule impact are quantified and re-baselined before acceptance, transferring impact responsibility to the customer's CCB decision. \\
-E2 & Transfer & Cloud-vendor SLA contractually requires $\geq$99.9\% availability with credit compensation for breaches; risk impact is contractually transferred to the vendor. \\
-E3 & Mitigate & ESG Consultant monitors GRI/ISO official channels weekly; the compliance module is designed with a pluggable rule-engine pattern so that new regulatory rules can be applied without core rework. \\
-E4 & Accept (active) & Maintain a documented fallback adapter for OCR/SMS APIs and switch providers within 4~hours if the primary API fails; reserve allocated for the switch effort. \\
-E5 & \textbf{Exploit} & The ESG Consultant is contractually tasked with proactively recommending efficiency improvements; any accepted recommendation triggers a positive change request to capture the saved effort. (Positive risk strategy.) \\
-\midrule
-O1 & Mitigate & Apply the mentoring and job-shadowing mechanism in Section~8.2 to ensure $\geq$2~team members are familiar with each module; document all design decisions in Confluence to enable rapid handover. \\
-O2 & Mitigate & Project Manager confirms 100\% allocation in writing with the Head of Luckin Coffee IT Department at M1; any reallocation request triggers a formal change request via the Steering Committee. \\
-O3 & Accept (active) & Funding cuts beyond the contingency reserve trigger immediate scope re-prioritisation to deliver the M3 minimum viable product; sponsor approval recorded as risk acceptance. \\
-O4 & Mitigate & Project Manager pre-blocks calendar for M3--M5 critical weeks; appoints a deputy (System Architect) to chair the daily stand-up if availability falls below 80\%. \\
-O5 & \textbf{Share} & Architecture documentation is co-authored with Luckin Coffee's IT Architecture team; the resulting reusable patterns are co-owned, sharing the opportunity for organisation-wide adoption with the customer. (Positive risk strategy.) \\
-\end{longtable}
+Risk responses are planned using the eight PMBOK strategies: four for negative risks (\textbf{Avoid, Transfer, Mitigate, Accept}) and four for positive risks (\textbf{Exploit, Enhance, Share, Accept}). Each risk is assigned a primary response strategy and an action plan, as documented in the ``Potential Response'' column of the Risk Register (Table~\ref{tab:risk_register}). Contingent response plans are prepared for the high-priority risks to be triggered if the risk materialises.
 
 The response plan covers all eight PMBOK strategies: Avoid (T3), Mitigate (T1, T2, T4, E3, O1, O2, O4), Transfer (E1, E2), Accept (E4, O3) for negative risks; and Enhance (T5), Exploit (E5), Share (O5) for positive risks.
 
@@ -1721,7 +1709,7 @@ The following documents are attached to this Project Plan for immediate referenc
 \noindent
 \begin{tabularx}{\linewidth}{|C{1.3cm}|X|C{2.7cm}|C{2.5cm}|}
   \hline
-  \thead{Appendix} & \thead{Document Name} & \thead{Version} & \thead{Last Updated}\\
+  \thead{App.} & \thead{Document Name} & \thead{Version} & \thead{Last Updated}\\
   \hline
   A & Project Charter --- Luckin Coffee Sustainability Platform & v1.0 (signed-off) & 2026-03-14 \\
   \hline
