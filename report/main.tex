@@ -518,58 +518,50 @@ Scope control involves continuously monitoring the project status to manage chan
 %  SECTION 4: SCHEDULE MANAGEMENT
 % ============================================================
 % ============================================================
+\clearpage
 \section{Schedule Management Plan}
 
 
-The Schedule Management Plan defines how the project schedule will be planned, developed, monitored, and controlled throughout the project lifecycle. It establishes the methods, tools, responsibilities, and procedures used to manage schedule activities and track project progress. The main purpose of this plan is to ensure that the project remains on schedule and that any delays or deviations can be identified and addressed in a timely manner.
+This subsidiary plan presents the schedule management approach for the development of the Sustainability Platform. It describes the project’s milestone plan, activity list, overall duration estimation, schedule baseline, and project schedule network used to organise and monitor development activities. The chapter also explains how schedule performance will be measured and how corrective actions will be taken when delays occur, ensuring the timely delivery of core functions such as carbon emission tracking, waste management, sustainability reporting, and frontend-backend integration.
 
-\subsection{Milestone Progress Measurement}
 
-Progress is formally assessed at each of the six milestones during the Friday team meeting. A milestone is recorded as complete only when all acceptance criteria for that phase---as specified in the WBS Dictionary---are fully satisfied. Between milestones, weekly task completion is compared against the Jira board to provide an ongoing progress signal.
-
-\subsection{Activity List}
+\subsection{Activitity List}
 % ============================================================
 
 The following activity list covers all project tasks from planning through final acceptance:
 
 \begin{itemize}[leftmargin=*]
-    \item Elicit and document core functional requirements from enterprise stakeholders
-    \item Evaluate and confirm technology stack selection and coding standards
-    \item Produce overall system architecture design and define module boundaries
-    \item Model database schema and define inter-table relationships and data flow
-    \item Create wireframe prototypes and draft key design documentation
-    \item Conduct design review sessions and incorporate revision feedback
-    \item Provision database instance and create all required table structures
-    \item Build user account management and authentication API endpoints
-    \item Implement core business-logic API interfaces for all functional modules
-    \item Apply input validation rules and define exception-handling mechanisms
-    \item Author and execute unit test cases against all backend interfaces
-    \item Produce comprehensive backend API reference documentation
-    \item Initialise and configure the frontend project framework and build toolchain
-    \item Build a library of reusable UI components for consumption by business modules
-    \item Develop login, registration, and session-authentication pages
-    \item Define and apply global style guidelines and responsive layout system
-    \item Validate and performance-tune the frontend infrastructure layer
-    \item Implement the Carbon Emission Tracking module (data entry, calculation, visualisation)
-    \item Implement the Waste Management module (recording, recycling rate computation, alerting)
-    \item Implement the Sustainability Reporting module (report generation, PDF export, SDG mapping)
-    \item Connect all frontend module pages to their corresponding backend API endpoints
-    \item Refine cross-module interaction flows and improve overall user experience
-    \item Execute functional test cases covering all business module features
-    \item Conduct end-to-end integration of all system modules into a unified platform
-    \item Execute full-coverage system functional test suite
-    \item Perform cross-browser and cross-device compatibility validation
-    \item Profile and optimise database query performance and API response times
-    \item Triage, assign, and resolve all defects identified during testing
-    \item Package and deploy the platform to the designated production virtual machine
-    \item Consolidate and finalise all technical and process documentation produced during development
-    \item Author a user operation manual covering all platform features and workflows
-    \item Obtain formal acceptance from the sponsor
+    \item A: Elicit and document core functional requirements from enterprise stakeholders
+    \item B: Evaluate and confirm technology stack selection and coding standards
+    \item C: Produce overall system architecture design and define module boundaries
+    \item D: Model database schema and define inter-table relationships and data flow
+    \item E: Create wireframe prototypes and draft key design documentation
+    \item F: Conduct design review sessions and incorporate revision feedback
+    \item G: Provision database instance and create all required table structures
+    \item H:Build user account management and authentication API endpoints
+    \item I: Implement core business-logic API interfaces for all functional modules
+    \item J: Apply input validation rules and define exception-handling mechanisms
+    \item K: Author and execute unit test cases against all backend interfaces
+    \item L: Produce comprehensive backend API reference documentation
+    \item M: Build a library of reusable UI components for consumption by business modules
+    \item N: Develop login, registration, and session-authentication pages
+    \item O: Implement the Carbon Emission Tracking module (data entry, calculation, visualisation)
+    \item P: Implement the Waste Management module (recording, recycling rate computation, alerting)
+    \item Q: Implement the Sustainability Reporting module (report generation, PDF export, SDG mapping)
+    \item R: Connect all frontend module pages to their corresponding backend API endpoints
+    \item S: Refine cross-module interaction covering all business module features
+    \item T: Conduct end-to-end integration of all system modules into a unified platform
+    \item U: Execute full-coverage system functional test suite
+    \item V: Perform cross-browser and cross-device compatibility validation
+    \item W: rofile and optimise database query performance and API response times
+    \item X: Triage, assign, and resolve all defects identified during testing
+    \item Y: Package and deploy the platform to the designated production virtual machine
+    \item Z: Consolidate and finalise all technical and process documentation produced during development
+    \item AA: Obtain formal acceptance from the sponsor
 \end{itemize}
 
 % ============================================================
 \subsection{Project Duration}
-\label{subsec:estimate_duration}
 % ============================================================
 
 
@@ -603,7 +595,7 @@ Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated a
 
 \subsubsection{Gantt Chart}
 
-The project Gantt chart is maintained in Jira (Timeline view) and updated weekly. The schedule baseline was locked at M1 (March 28, 2026). A milestone chart summarising all six gate events is provided below.
+The project Gantt chart is maintained in Jira (Timeline view) and updated weekly. The schedule baseline was locked at M1 (March 28, 2026). A milestone chart summarising all six gate events is provided in Section.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/Milestone.png}
@@ -611,9 +603,15 @@ The project Gantt chart is maintained in Jira (Timeline view) and updated weekly
     \label{Milestone}
 \end{figure}
 
-\subsubsection{Milestone Chart}
+\subsubsection{Milestone}
 
-The project is organised around six milestones, each representing a significant gate event that confirms a major phase of work is complete and approved before the next phase begins. All milestones carry zero duration and serve as objective checkpoints against which actual progress is measured.
+The project schedule is organised around six milestones derived from the major work packages defined in the Work Breakdown Structure (WBS). Each milestone represents the completion of a logical group of related project activities and deliverables, marking the transition from one development phase to the next. By structuring the schedule around WBS-based work packages, the project ensures that all key deliverables are completed in a systematic and well-defined sequence throughout the development lifecycle.
+
+\medskip
+
+\noindent\textbf{\large Milestone Chart}
+
+\smallskip
 
 % 导言区需要加入
 
@@ -670,13 +668,39 @@ Platform deployed to production virtual machine; all documentation and user manu
 }
 \end{table}
 
+\textbf{Milestone Progress Measurement Policy}
+
+Project progress is formally measured at each of the six predefined milestones using expert judgment. A milestone is considered successfully achieved only when all planned deliverables and acceptance criteria specified in the WBS Dictionary have been completed and independently validated.
+
+To ensure an objective and industry-aligned evaluation process, the project sponsor commissions an External Project Assurance Team from Deloitte Consulting to conduct milestone reviews. The team comprises specialists in software project governance, enterprise digital transformation, ESG information systems, and sustainability consulting. Using Deloitte’s project assurance methodology and industry best practices, the team evaluates each milestone against predefined technical, functional, schedule, and business acceptance criteria before authorising progression to the next project phase.
+
+For the development milestone, the review focuses on verifying the successful implementation and integration of the Carbon Emission Tracking, Waste Management, and Sustainability Reporting modules, ensuring that all core business functions operate correctly and satisfy the documented requirements. For the final milestone, the assurance team confirms that the platform has been successfully deployed, all technical and user documentation has been completed, and the system fully supports the coffee waste recycling management workflow and ESG reporting objectives defined by the project sponsor.
+
+Between formal milestone reviews, schedule performance is monitored weekly through Jira by comparing completed work packages against the approved schedule baseline. Any deviations identified during weekly tracking are addressed before the subsequent milestone review to minimise the risk of schedule slippage and ensure successful milestone achievement.
+
+
+
 \subsubsection{Project Schedule Network Diagram}
+
+\medskip
+The project schedule network diagram is developed using the Precedence Diagramming Method (PDM) and illustrates the complete sequence of project activities and their logical dependencies from project initiation through formal acceptance. The network consists of 27 activities (Activity A to Activity AA) and six key milestone events, with an estimated total project duration of 105 working days.
+\medskip
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/Project schedule network diagram.png}
+    \includegraphics[width=0.65\textwidth]{figures/Project Schedule Network Diagram.png}
     \caption{Project Schedule Network Diagram}
-    \label{fig:project_schedule_network}
+    \label{Milestone}
 \end{figure}
+
+
+\textbf{Schedule Risk Considerations}
+
+Several activities require close monitoring due to their limited scheduling flexibility. Activity H (User Authentication and Account Management API Development) has zero total float and is located at a critical merge point of parallel execution paths. Any delay to this activity will directly postpone subsequent system integration activities and may impact the overall project completion date.
+
+Activity S (Cross-module Interaction Flow and User Experience Optimisation) has a total float of only one working day, providing minimal scheduling flexibility. As a near-critical activity, its progress should be closely monitored to prevent it from becoming part of the critical path.
+
+Although Activity V and Activity W each have 10 working days of total float, they remain schedule-sensitive because both must be completed before Activity X can commence. Excessive consumption of their available float may delay the initiation of project closing activities and adversely affect the planned project completion schedule.
 % ============================================================
 \subsection{Schedule Control Policy}
 % ============================================================
@@ -700,7 +724,7 @@ Contingency reserves built into the schedule baseline may be drawn upon to absor
 
 \subsubsection{Schedule Modification and Commitment}
 
-The schedule baseline may be formally revised when a milestone is missed, when an approved scope change materially affects the critical path, or when a verified technical blocker cannot be absorbed by available float or contingency reserve. The project manager prepares the revised schedule in Jira, presents it at the Wednesday CCB meeting, and obtains approval per the authority levels in Section~2.6. Each work package lead acknowledges revised task dates within 24 hours via Jira comment. The previous baseline is archived in GitHub as a tagged release. Formal revisions are limited to three over the project lifecycle.
+The schedule baseline may be formally revised when a milestone is missed, when an approved scope change materially affects the critical path, or when a verified technical blocker cannot be absorbed by available float or contingency reserve. The project manager prepares the revised schedule in Jira, presents it at the Wednesday CCB meeting, and obtains approval per the authority levels in Section 2.6. Each work package lead acknowledges revised task dates within 24 hours via Jira comment. The previous baseline is archived in GitLab as a tagged release. Formal revisions are limited to three over the project lifecycle.
 
 % ============================================================
 
@@ -709,13 +733,13 @@ The schedule baseline may be formally revised when a milestone is missed, when a
 \clearpage
 \section{Cost Management Plan}
 % ============================================================
-
-Project Cost Management for the Luckin Coffee Sustainability Platform covers three processes: Software Project Cost Estimate, Cost Baseline, and Control Costs. The goal is to ensure the project is completed within the approved budget while maintaining full transparency on cost performance at every milestone gate.
+This subsidiary plan describes the cost management approach for the development of the  ESG management platform. It presents the project cost baseline, including the time-phased S-curve used to monitor planned expenditure throughout the development lifecycle, and explains how project costs will be tracked and controlled during execution. In addition, this chapter defines the Earned Value Management (EVM) policy to ensure that the development of key functions, including Carbon Emission Tracking, Waste Management, Sustainability Reporting, and system integration, remains within the approved budget while maintaining the required quality standards.
 
 % ============================================================
 
 \subsection{Software Project Cost Estimate}
 % ============================================================
+% ─── Table 6: Complexity Weights ───────────────────────────────────────────
 \begin{table}[h]
 \centering
 \caption{Complexity Weights}
@@ -723,59 +747,47 @@ Project Cost Management for the Luckin Coffee Sustainability Platform covers thr
 \toprule
 Feature Count Items & Simple & Medium & Complex \\
 \midrule
-External Input & 3 & 4 & 6 \\
-External Output & 4 & 5 & 7 \\
-External Inquiry & 4 & 5 & 6 \\
-External Interface File & 6 & 8 & 10 \\
-Internal Documents & 8 & 11 & 16 \\
+External Input          & 3 &  4 &  6 \\
+External Output         & 4 &  5 &  7 \\
+External Inquiry        & 4 &  5 &  6 \\
+External Interface File & 6 &  8 & 10 \\
+Internal Documents      & 8 & 11 & 16 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-
+% ─── Table 7: Unadjusted Function Point Count ──────────────────────────────
 \begin{table}[h]
 \centering
-\caption{Unadjusted Function point Count}
+\caption{Unadjusted Function Point Count}
 \begin{tabular}{ll}
 \toprule
 Feature Count Items & Counts \\
 \midrule
-External Input & 2 simple, 4 medium \\
-External Output & 3 medium, 2 complex \\
-External Inquiry & 1 simple, 6 medium \\
+External Input          & 2 simple, 4 medium \\
+External Output         & 3 medium, 2 complex \\
+External Inquiry        & 1 simple, 6 medium \\
 External Interface File & 5 medium, 2 complex \\
-Internal Documents & 2 simple, 1 medium, 1 complex \\
+Internal Documents      & 2 simple, 1 medium, 1 complex \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+% ─── Table 8: Technical Complexity Factors ─────────────────────────────────
 \begin{table}[h]
 \centering
 \caption{Technical Complexity Factors}
 \begin{tabular}{clcclc}
 \toprule
- & Factor & Weight &  & Factor & Weight \\
+ & Factor & Weight & & Factor & Weight \\
 \midrule
-F1  & Reliable backup and recovery & 1 &
-F2  & Data communication & 5 \\
-
-F3  & Distributed function & 2 &
-F4  & Performance & 3 \\
-
-F5  & Large use of configuration & 1 &
-F6  & On-line data entry & 5 \\
-
-F7  & Simplicity of operation & 2 &
-F8  & Online upgrade & 2 \\
-
-F9  & Complex interface & 1 &
-F10 & Complex data processing & 4 \\
-
-F11 & Reusability & 5 &
-F12 & Installation simplicity & 2 \\
-
-F13 & Multiple sites & 4 &
-F14 & Easy to modify & 3 \\
+F1  & Reliable backup and recovery & 1 & F2  & Data communication      & 5 \\
+F3  & Distributed function         & 2 & F4  & Performance             & 3 \\
+F5  & Large use of configuration   & 1 & F6  & On-line data entry      & 5 \\
+F7  & Simplicity of operation      & 2 & F8  & Online upgrade          & 2 \\
+F9  & Complex interface            & 1 & F10 & Complex data processing & 4 \\
+F11 & Reusability                  & 5 & F12 & Installation simplicity & 2 \\
+F13 & Multiple sites               & 4 & F14 & Easy to modify          & 3 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -784,20 +796,132 @@ F14 & Easy to modify & 3 \\
     \item \textbf{Unadjusted Function Point Count (UFC)}: 188
     \item \textbf{Technical Complexity Factor (TCF)}: 1.08
     \item \textbf{Function Point (FP)}: 203
-    \item \textbf{Cost for each labor hour}: ¥100/hour
+    \item \textbf{Cost for each labor hour}: \yen100/hour
     \item \textbf{Productivity of this project}: 12 hours/FP
-    \item \textbf{Budget at completion (BAC)}: ¥243600
+    \item \textbf{Budget at Completion (BAC)}: \yen ¥ 243,600
 \end{itemize}
 
+\bigskip
+\noindent\textit{Cost derivation:}
+\[
+  \text{BAC} = \text{FP} \times \text{Productivity} \times \text{Labor Rate}
+             = 203 \times 12 \;\text{h/FP} \times \yen100/\text{h}
+             = \yen243{,}600
+\]
+\[
+  \text{FP per milestone} = \frac{\text{Estimate Cost}}{\text{Productivity} \times \text{Labor Rate}}
+                          = \frac{\text{Estimate Cost}}{1{,}200}
+                          =
+                           {203}
+\]
 
-% ============================================================
+\bigskip
+
+% ─── Main Integrated Milestone Table ───────────────────────────────────────
+% Calculation column format (same as Image 2):  Q × TCF = FP
+% Parent rows show their own FP independently; sub-items are breakdowns.
+% All values verified: FP × ¥1,200 = Estimate Cost.
+% ───────────────────────────────────────────────────────────────────────────
+
+\begin{longtable}{p{4cm} r r r}
+\caption{Milestone Cost Estimate with Function Point Calculation}\\
+\toprule
+\textbf{Milestone} &
+\textbf{Calculation} (UFC \times \text{TCF}) &
+\textbf{Function Points} &
+\textbf{Estimate Cost} \\
+\midrule
+\endfirsthead
+\caption[]{Milestone Cost Estimate with Function Point Calculation (cont'd)}\\
+\toprule
+\textbf{Milestone} &
+\textbf{Calculation} (UFC \times \text{TCF}) &
+\textbf{Function Points} &
+\textbf{Estimate Cost} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+
+M1: Project requirement analysis and architecture design
+  & $11.96 \times 1.08$ & 12.92 & \yen15,500 \\[3pt]
+
+M2: Database development and backend interface
+  & $9.26 \times 1.08$ & 10.00 & \yen12,000 \\
+\quad M2.1: Database design
+  & $5.17 \times 1.08$ &  5.58 & \yen6,700  \\[3pt]
+
+M3: Frontend infrastructure and common modules
+  & $25.46 \times 1.08$ & 27.50 & \yen33,000 \\
+\quad M3.1: UI design
+  & $10.80 \times 1.08$ & 11.67 & \yen14,000 \\
+\quad M3.2: Authentication mechanism development
+  & $4.32 \times 1.08$ &  4.67 & \yen5,600  \\
+\quad M3.3: Testing and optimization
+  & $2.16 \times 1.08$ &  2.33 & \yen2,800  \\[3pt]
+
+M4: Core business function development
+  & $100.31 \times 1.08$ & 108.33 & \yen130,000 \\
+\quad M4.1: Carbon emission tracking function development
+  & $17.75 \times 1.08$ & 19.17 & \yen23,000 \\
+\quad M4.2: Waste management development
+  & $11.57 \times 1.08$ & 12.50 & \yen15,000 \\
+\quad M4.3: Sustainability reporting development
+  & $14.66 \times 1.08$ & 15.83 & \yen19,000 \\
+\quad M4.4: Anomaly detection development
+  & $34.72 \times 1.08$ & 37.50 & \yen45,000 \\
+\quad M4.5: Alert sending development
+  & $12.35 \times 1.08$ & 13.33 & \yen16,000 \\
+\quad M4.6: Interactive map development
+  & $21.60 \times 1.08$ & 23.33 & \yen28,000 \\[3pt]
+
+M5: Platform integration and performance optimization
+  & $26.23 \times 1.08$ & 28.33 & \yen34,000 \\
+\quad M5.1: White box test
+  & $6.17 \times 1.08$ &  6.67 & \yen8,000  \\
+\quad M5.2: Black box test
+  & $20.06 \times 1.08$ & 21.67 & \yen26,000 \\[3pt]
+
+M6: Project documentation and final delivery
+  & $14.74 \times 1.08$ & 15.92 & \yen19,100 \\
+
+\midrule
+\textbf{Total Cost}
+  & $\mathbf{187.96 \times 1.08}$ & \textbf{203.00} & \textbf{\yen243,600} \\
+
+\end{longtable}
+
+\noindent\footnotesize
+\textbf{Notes:} TCF (Technical Complexity Factor) = 1.08.
+$Q$ = UFC contribution per milestone = FP $\div$ TCF.
+Function Points = $Q \times$ TCF.
+Estimate Cost = Function Points $\times$ 12\,h/FP $\times$ \yen100/h = FP $\times$ \yen1,200.
+
+
+
+
+%============================================================
 \subsection{Cost Baseline}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/S-curve.png}
+    \includegraphics[width=0.9\textwidth]{figures/S- curve.png}
     \caption{S-curve}
-    \label{fig:s_curve}
+    \label{Milestone}
 \end{figure}
+
+\subsubsection{S-curve explanation}
+
+The S-curve indicates that project expenditure is concentrated in the development stage, where the implementation of core business functions accounts for the largest proportion of the total cost. This allocation is consistent with the project scope, as the majority of function points and development effort are delivered during this phase.
+
+The planned Budget at Completion (BAC) is ¥243,600, while the approved project budget is ¥300,000. The remaining ¥56,400 is retained as a management reserve to accommodate unforeseen risks, requirement changes, and potential schedule adjustments. This reserve provides sufficient financial flexibility without affecting the planned execution baseline.
+
+The staged funding requirement shown in the S-curve ensures that capital is released in line with project progress rather than being allocated upfront. Such an approach improves cash flow management, reduces idle funds, and enables more effective financial control throughout the project lifecycle.
+
+Overall, the S-curve demonstrates that the project budget is aligned with the planned development activities and provides an adequate contingency reserve, indicating that the project is financially feasible and capable of absorbing moderate uncertainties while remaining within the approved budget.
+
 % ============================================================
 
 %============================================================
@@ -806,39 +930,18 @@ F14 & Easy to modify & 3 \\
 
 
 \subsubsection{Earned Value Management (EVM) Policy}
-Cost control is carried out throughout the project lifecycle using Earned Value Management (EVM). The project manager calculates the following EVM indicators weekly and reports them at the Friday team meeting and at each milestone gate:
-\begin{itemize}[leftmargin=*]
-    \item \textbf{PV (Planned Value)} = BAC $\times$ planned \% complete, derived from the Cost Baseline S-curve at the current data date.
-    \item \textbf{EV (Earned Value)} = BAC $\times$ actual \% complete, where actual \% complete is assessed based on milestone acceptance criteria and Jira task completion status.
-    \item \textbf{AC (Actual Cost)}: the total expenditure incurred to date, recorded weekly in the cost tracking spreadsheet.
-\end{itemize}
+Cost control is carried out throughout the project lifecycle using Earned Value Management (EVM). The project manager calculates EVM indicators weekly and reports them at each milestone gate:
 
-From these three values, the following performance metrics and variances are derived each week:
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{CV (Cost Variance)} = EV $-$ AC. A negative CV indicates the project is over budget for work completed.
-    \item \textbf{SV (Schedule Variance)} = EV $-$ PV. A negative SV indicates the project is behind schedule.
-    \item \textbf{CPI (Cost Performance Index)} = EV / AC. A CPI below 1.0 indicates cost overrun; above 1.0 indicates cost underrun.
-    \item \textbf{SPI (Schedule Performance Index)} = EV / PV. An SPI below 1.0 indicates less work was completed than planned.
-\end{itemize}
 
 The following thresholds govern when corrective action is required:
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{CPI $\geq$ 0.9}: no corrective action required; performance is monitored weekly.
     \item \textbf{CPI $<$ 0.9 for two consecutive weeks}: a corrective action review is convened within 48 hours. The project manager and relevant work package leads conduct a root cause analysis and adjust resource allocation, reduce scope within approved boundaries, or apply schedule compression techniques to recover cost and schedule performance. Contingency reserve may be drawn upon if the overrun falls within the reserved amount.
-    \item \textbf{CPI $<$ 0.9 for four or more consecutive weeks, or a milestone missed due to cost issues}: a formal Cost Baseline revision is prepared by the project manager, presented at the Wednesday CCB meeting, and submitted to the sponsor for approval per the authority levels in Section~2.6.
+    \item \textbf{CPI $<$ 0.9 for four or more consecutive weeks, or a milestone missed due to cost issues}: a formal Cost Baseline revision is prepared by the project manager, presented at the Wednesday CCB meeting, and submitted to the sponsor for approval per the authority levels in Section 2.6.
 \end{itemize}
 \subsubsection{Forecasting and To-Complete Performance Index (TCPI) Policy}
-Forecasting is applied each week to project the final cost at completion. When a persistent CPI trend is observed, the following EVM forecasting metrics are calculated:
-
-\begin{itemize}[leftmargin=*]
-    \item \textbf{EAC (Estimate at Completion)} = BAC / CPI
-    \item \textbf{ETC (Estimate to Complete)} = EAC $-$ AC
-    \item \textbf{VAC (Variance at Completion)} = BAC $-$ EAC
-    \item \textbf{TCPI (To-Complete Performance Index)} = (BAC $-$ EV) / (BAC $-$ AC)
-\end{itemize}
-Given the critical nature of this project, quality assurance is our foremost priority. We acknowledge that the current Cost Performance Index (CPI) may reflect increased expenditure resulting from elevated quality standards and rigorous testing procedures. Rather than assuming we can recover past cost overruns, we accept the current spending efficiency as the baseline for all future work. This approach ensures that our forecast remains realistic and grounded in actual project performance.
+Forecasting is applied each week to project the final cost at completion. Given the critical nature of this project, quality assurance is our foremost priority. We acknowledge that the current Cost Performance Index (CPI) may reflect increased expenditure resulting from elevated quality standards and rigorous testing procedures. Rather than assuming we can recover past cost overruns, we accept the current spending efficiency as the baseline for all future work. This approach ensures that our forecast remains realistic and grounded in actual project performance.
 
 The TCPI is monitored alongside the CPI to understand the cost efficiency level that must be maintained on all remaining work to complete within the approved budget. If the TCPI significantly exceeds the current CPI, the project manager escalates to the sponsor for a budget revision review.
 \subsubsection{Cost Data Retention Policy}
@@ -849,9 +952,9 @@ All cost data (PV, EV, AC, CV, SV, CPI, SPI, EAC, ETC, VAC, TCPI) is recorded we
 %  SECTION 6: QUALITY MANAGEMENT
 % ============================================================
 \clearpage
-\section{Quality Management Plan}
+\section{ Quality Management Plan}
 % ============================================================
-The purpose of this Quality Management Plan is to define the quality objectives, standards, assurance activities, and control activities for this ESG Digital Management Platform project. The plan ensures that the project deliverables satisfy stakeholder requirements and meet the expected quality standards throughout the project lifecycle.
+This subsidiary plan describes the cost management approach for the development of the  ESG management platform. It presents the project cost baseline, including the time-phased S-curve used to monitor planned expenditure throughout the development lifecycle, and explains how project costs will be tracked and controlled during execution. In addition, this chapter defines the Earned Value Management (EVM) policies, cost forecasting methods, and cost data retention procedures adopted to ensure that the development of key functions, including Carbon Emission Tracking, Waste Management, Sustainability Reporting, and system integration, remains within the approved budget while maintaining the required quality standards.
 
 \subsection{Quality Assurance Plan}
 Quality Assurance focuses on preventing quality problems before they occur. It is mainly carried out during the planning and execution phases to ensure that project processes are followed correctly and that stakeholder requirements are likely to be satisfied.
@@ -863,7 +966,7 @@ The following quality assurance activities are performed during the project life
     \item Weekly peer reviews are conducted for backend APIs, frontend modules, database scripts, and technical documentation.
     \item Design review sessions are held before implementation begins for major system modules and integration interfaces.
     \item The project manager reviews Jira workflow status, defect trends, and testing progress every Friday before milestone evaluation.
-    \item GitHub merge requests require code review approval before changes can be merged into the main branch.
+    \item GitLab merge requests require code review approval before changes can be merged into the main branch.
     \item Test coverage and defect resolution progress are reviewed during integration and system testing phases.
 \end{itemize}
 
@@ -892,7 +995,7 @@ Portability & The system shall operate correctly on all target deployment enviro
 \end{tabular}
 \end{table}
 
-\subsubsection{Continuous Improvement}
+\subsubsection{ Continuous Improvement}
 
 The project applies the PDCA (Plan--Do--Check--Act) cycle throughout the development lifecycle:
 
@@ -915,7 +1018,7 @@ At the end of each milestone, the project team conducts a short retrospective me
     \item \textbf{Sponsor and Client Representative}: participate in milestone acceptance reviews and confirm whether deliverables satisfy business expectations.
 \end{itemize}
 
-If recurring quality issues significantly affect schedule or cost performance, corrective actions or formal change requests may be initiated according to the procedures defined in Sections~4.5 and~5.3.
+If recurring quality issues significantly affect schedule or cost performance, corrective actions or formal change requests may be initiated according to the procedures defined in Sections 4.6 and 5.4.
 
 % ============================================================
 \subsection{Control Quality}
@@ -959,7 +1062,7 @@ A deliverable is considered verified only when:
     \item all planned testing activities are completed,
     \item no unresolved severe defects remain open,
     \item milestone acceptance criteria are satisfied, and
-    \item the responsible reviewer formally approves the deliverable in Jira or GitHub.
+    \item the responsible reviewer formally approves the deliverable in Jira or GitLab.
 \end{itemize}
 
 Verified deliverables are then submitted for milestone acceptance review by the Project Manager, Client Representative, or Sponsor.
