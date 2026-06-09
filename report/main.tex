@@ -435,13 +435,38 @@ Project Sponsor & Final scope baseline approval, major change request authorizat
 \end{table}
 
 \subsection{Requirements Management}
-Requirements are systematically categorized into business, stakeholder, solution, transition, project, and quality requirements. Business requirements focus on centralized ESG data management and compliance with GRI Standards. Stakeholder needs range from simple data entry for store staff to comprehensive analytics for headquarters managers. Solution requirements dictate the functional modules, such as carbon tracking and supplier assessment, alongside non-functional targets like supporting 1000 concurrent users and ensuring sub-two-second page load times. These requirements are elicited through interviews with restaurant managers, focus groups, prototyping, and document analysis. Prioritization follows the MoSCoW method, distinguishing essential features like carbon tracking from optional enhancements like OCR-assisted input. A Requirements Traceability Matrix (RTM) is maintained to link each requirement to its source, WBS component, and test case, ensuring comprehensive coverage and facilitating impact analysis during change requests.
+Requirements are systematically categorized into business, stakeholder, solution, transition, project, and quality requirements. Business requirements focus on centralized ESG data management and compliance with GRI Standards. Stakeholder needs range from simple data entry for store staff to comprehensive analytics for headquarters managers. Solution requirements dictate the functional modules, such as carbon tracking and supplier assessment, alongside non-functional targets like supporting 1000 concurrent users and ensuring sub-two-second page load times. These requirements are elicited through interviews with restaurant managers, focus groups, prototyping, and document analysis. Prioritization follows the MoSCoW method, distinguishing essential features like carbon tracking from optional enhancements like OCR-assisted input. A Requirements Traceability Matrix (RTM) is maintained to link each requirement to its source, WBS component, and test case, ensuring comprehensive coverage and facilitating impact analysis during change requests. Requirements are validated through prototype walkthroughs and milestone reviews with the Luckin Coffee ESG Department, IT Department, and Project Sponsor. Approved requirements are baselined in the RTM, and later changes must follow the CCB process.
 
 \subsection{Project Scope Statement}
-The primary objective is to develop and deploy a web-based Business Sustainability Management Platform for multi-store restaurant chains by June 30, 2026. The product scope encompasses core modules for carbon tracking, waste management, and ESG governance, featuring role-based access control. The project scope includes all design, development, testing, deployment, and documentation activities. Out-of-scope items include native mobile application development, real-time IoT sensor integration, legacy data migration, and long-term post-delivery maintenance. Deliverables are accepted based on the successful implementation of all functional requirements, resolution of critical bugs, and successful deployment on the designated virtual machine. The project is constrained by a fixed June 2026 deadline, a four-member team, and the mandatory use of the Flask and MySQL technology stack, assuming continuous availability of team members and virtual machine infrastructure.
+The primary objective is to develop and deploy a web-based Business Sustainability Management Platform for multi-store restaurant chains by June 30, 2026. The product scope encompasses core modules for carbon tracking, waste management, and ESG governance, featuring role-based access control. Deliverables are accepted based on the successful implementation of all functional requirements, resolution of critical bugs, and successful deployment on the designated virtual machine. The project is constrained by a fixed June 2026 deadline, a four-member team, and the mandatory use of the Flask and MySQL technology stack, assuming continuous availability of team members and virtual machine infrastructure.
+
+\begin{itemize}
+    \item \textbf{Activities in scope} include requirements analysis, system design, backend API development, frontend module development, database implementation, integration testing, VM deployment, user documentation, and final acceptance support.
+    \item \textbf{Activities out of scope} include native mobile application development, real-time IoT sensor integration, legacy data migration, and long-term post-delivery maintenance.
+\end{itemize}
+
+\subsection{Project Deliverables}
+This section lists the major items to be delivered to the customers, subcontractors, integrators, or other parties. The list differentiates the project management deliverables from the product deliverables.
+
+\begin{table}[H]
+\centering
+\caption{Project Deliverables}
+\label{tab:project_deliverables}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}Xl>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Deliverable} & \textbf{Type} & \textbf{Recipient} & \textbf{Delivery Date} & \textbf{Delivery Method} \\ \midrule
+Project Management Plan & Project management deliverable & Project Sponsor & M1 & GitHub / Google Docs \\
+Requirements Specification and RTM & Project management deliverable & Project Manager / Sponsor & M1 & Google Docs \\
+Carbon Emission Tracking Module & Product deliverable & Luckin Coffee ESG Department & M3 & Deployed web module \\
+Waste Management Module & Product deliverable & Luckin Coffee ESG Department & M3 & Deployed web module \\
+Sustainability Reporting Module & Product deliverable & Luckin Coffee ESG Department & M4 & Deployed web module \\
+Integrated ESG Platform & Product deliverable & Luckin Coffee IT and ESG Departments & M5/M6 & VM deployment \\
+User Manual and System Documentation & Support deliverable & Sponsor / End users & M6 & PDF / repository archive \\ \bottomrule
+\end{tabularx}
+\end{table}
 
 \subsection{Work Breakdown Structure (WBS)}
-The Work Breakdown Structure (WBS) decomposes the project scope into manageable work packages, adhering to the 100\% rule to ensure all project work is captured. A hierarchical encoding system is utilized, starting from the project level down to specific tasks. For instance, Work Package 1.4.1 involves developing the carbon emission tracking module, which includes implementing frontend pages, integrating backend APIs, and conducting module tests. The approved Project Scope Statement, WBS, and WBS Dictionary collectively form the scope baseline, which is strictly controlled against unauthorized changes.
+The Work Breakdown Structure (WBS) decomposes the project scope into manageable work packages, adhering to the 100\% rule to ensure all project work is captured. The WBS is organized around six major deliverable groups: requirements and architecture design, backend and database development, frontend infrastructure, core business modules, platform integration and testing, and final documentation and delivery. A hierarchical encoding system is utilized, starting from the project level down to specific tasks. For instance, Work Package 1.4.1 involves developing the carbon emission tracking module, which includes implementing frontend pages, integrating backend APIs, and conducting module tests. The approved Project Scope Statement, WBS, and WBS Dictionary collectively form the scope baseline, which is strictly controlled against unauthorized changes.
 
 \subsubsection{WBS Hierarchical Structure}
 \begin{verbatim}
