@@ -160,7 +160,7 @@ change.
   \hline
   \thead{Liu Haopu} & \thead{Yao Tianren} & \thead{Gong Zhijian} & \thead{Li Sihang}\\
   \hline
-  Project Manager & Requirements Lead & Integration Lead & Frontend Lead \\[4pt]
+  Technical Lead & Requirements Lead & Integration Lead & Frontend Lead \\[4pt]
   \hline
   \includegraphics[height=1cm]{figures/签名/刘昊普电子签名.jpg} &
   \includegraphics[height=1cm]{figures/签名/YaoTianren.jpg} &
@@ -211,18 +211,18 @@ The project's success is measured against the following stakeholder-approved acc
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
     \item \textbf{Scope}: all ten functional modules pass user-acceptance testing with no unresolved severe defects; system documentation and user manuals fully delivered.
     \item \textbf{Schedule}: project completed within the 16-week timeline (March--June~2026) with all six milestone gates (M1--M6) accepted on or before their forecast dates listed in Table~\ref{tab:milestone_schedule}.
-    \item \textbf{Cost}: total expenditure remains within the Cost Baseline of \textbf{¥1{,}200{,}000} (BAC); a Cost Performance Index (CPI) of at least 0.9 maintained over any four-week window.
+    \item \textbf{Cost}: total expenditure remains within the Cost Baseline of \textbf{¥243{,}600} (BAC); a Cost Performance Index (CPI) of at least 0.9 maintained over any four-week window.
     \item \textbf{Quality}: defect density at or below 3~defects per 1{,}000~LOC; backend API average response time under 2~seconds; functional test pass rate at least 95\% before each milestone gate.
     \item \textbf{Business value}: end-to-end sustainability-report generation time reduced from three weeks to under one week after deployment, validated through a post-deployment benchmark conducted by the Luckin~Coffee ESG Department.
 \end{enumerate}
 
 \subsection*{Delivery Approach Summary}
 
-The project is delivered through an enterprise-style delivery organisation centred on a four-member project management and development core. The core team covers five specialist responsibilities across architecture, backend, frontend, visualisation, and quality through assigned work-package roles, supported by an external ESG-compliance consultant engaged for Weeks~2--4 and two client-side representatives: the Head of Luckin~Coffee IT Department as project sponsor and the Head of Luckin~Coffee ESG Department as business owner. Management is conducted under a strong matrix organisational structure with the Project Management Information System assembled from GitHub for version control, WeChat for real-time communication, Google Docs for collaborative documentation, and MySQL Workbench for database management. The project applies the PMBOK 6th~Edition process model (R1) across all ten knowledge areas covered in Sections~2--11 of this plan, with Earned~Value~Management (EVM) used for cost and schedule control at every weekly review and every milestone gate.
+The project is delivered through an enterprise-style delivery organisation centred on a four-member project management and development core. The core team covers five specialist responsibilities across architecture, backend, frontend, visualisation, and quality through assigned work-package roles, supported by an external ESG-compliance consultant engaged for Weeks~2--4 and two client-side representatives: the Head of Luckin~Coffee IT Department as project sponsor and the Head of Luckin~Coffee ESG Department as business owner. Management is conducted under a strong matrix organisational structure with the Project Management Information System assembled from GitHub for version control, Enterprise WeChat for real-time communication, Confluence and Jira for collaborative documentation and task management, and MySQL Workbench for database management. The project applies the PMBOK 6th~Edition process model (R1) across all ten knowledge areas covered in Sections~2--11 of this plan, with Earned~Value~Management (EVM) used for cost and schedule control at every weekly review and every milestone gate.
 
 \subsection*{Top Risks and Reserves}
 
-Fifteen risks (twelve threats and three opportunities) have been identified through brainstorming, SWOT, structured interviews, and root-cause analysis, organised under a Risk~Breakdown~Structure with three top-level categories (Technical, External, Organizational). The five highest-priority risks --- customer scope expansion (E1), cross-module integration defects (T3), architecture instability under load (T1), ESG-regulatory updates (E3), and team-member partial reallocation (O2) --- carry an aggregated Expected~Monetary~Value of \textit{minus} ¥86{,}000. The cost baseline includes a \textbf{¥120{,}000 contingency reserve} (10\% of BAC) and the sponsor controls an additional \textbf{¥80{,}000 management reserve} outside the baseline. The schedule baseline carries a 15-working-day contingency reserve and an 8-working-day management reserve.
+Fifteen risks (twelve threats and three opportunities) have been identified through brainstorming, SWOT, structured interviews, and root-cause analysis, organised under a Risk~Breakdown~Structure with three top-level categories (Technical, External, Organizational). The five highest-priority risks --- customer scope expansion (E1), cross-module integration defects (T3), architecture instability under load (T1), ESG-regulatory updates (E3), and team-member partial reallocation (O2) --- carry an aggregated Expected~Monetary~Value of \textit{minus} ¥86{,}000. The cost baseline includes a \textbf{¥24{,}360 contingency reserve} (10\% of BAC) and the sponsor controls an additional \textbf{¥56{,}400 management reserve} outside the baseline. The schedule baseline carries a 15-working-day contingency reserve and an 8-working-day management reserve.
 
 \subsection*{Document Roadmap}
 
@@ -251,26 +251,26 @@ The project adopts a strong matrix organizational structure, granting the projec
     \node (sponsor) [below of=steering] {Executive / Sponsor};
     \node (supplier) [below of=steering, xshift=4cm] {Senior Supplier\\(IT Operations)};
     
-    \node (pm) [below of=sponsor, yshift=-1cm] {Project Manager\\(Liu Haopu)};
+    \node (pm) [below of=sponsor, yshift=-1cm] {Project Manager\\(Zhang Wei)};
     
-    % 调整虚线框：稍微上移 (yshift=0.5cm)，并减小高度 (3.8cm)，使其刚好包裹 PM 和 Team Leaders
-    \node (pmt) [below of=pm, yshift=0.5cm, dashed, draw, minimum width=9.5cm, minimum height=3.8cm] {};
+    % 调整虚线框：包裹 PM 和所有 Team Leaders
+    \node (pmt) [below of=pm, yshift=0.3cm, dashed, draw, minimum width=11cm, minimum height=3.8cm] {};
     \node at (pmt.north) [above=0.1cm, draw=none] {Project Management Team};
     
-    \node (tl1) [below of=pm, xshift=-3cm, yshift=-0.5cm] {Team Leader 1\\(Yao Tianren)};
-    \node (tl2) [below of=pm, xshift=3cm, yshift=-0.5cm] {Team Leader 2\\(Gong Zhijian)};
+    \node (tl1) [below of=pm, xshift=-4cm, yshift=-0.5cm] {WP1 Lead\\(Yao Tianren)};
+    \node (tl2) [below of=pm, yshift=-0.5cm] {Technical Lead\\(Liu Haopu)};
+    \node (tl3) [below of=pm, xshift=4cm, yshift=-0.5cm] {Integration Lead\\(Gong Zhijian)};
     
-    % 将最底部的两个节点额外下移 (yshift=-0.5cm)，彻底避开虚线框
-    \node (ug) [below of=tl1, yshift=-0.5cm] {User Group\\(Li Sihang)};
-    \node (sme) [below of=tl2, yshift=-0.5cm] {Subject Matter Experts\\(All Team Members)};
+    % 底部节点
+    \node (ug) [below of=tl1, yshift=-0.5cm] {Frontend Lead\\(Li Sihang)};
     
     \draw[->] (corp) -- (steering);
     \draw[->] (steering) -- (sponsor);
     \draw[->] (sponsor) -- (pm);
     \draw[->] (pm) -- (tl1);
     \draw[->] (pm) -- (tl2);
+    \draw[->] (pm) -- (tl3);
     \draw[->] (tl1) -- (ug);
-    \draw[->] (tl2) -- (sme);
 \end{tikzpicture}
 \caption{Project Team Structure and Governance}
 \label{fig:team_structure}
@@ -313,7 +313,7 @@ Table \ref{tab:roles} defines the major roles in the project team, their core in
 \textbf{Project Position} & \textbf{Integration Management Responsibilities} & \textbf{External Resource} \\
 \midrule
 \endhead
-Project Manager (Liu Haopu) & Holds ultimate responsibility for integration activities, coordinates cross-work package dependencies, chairs CCB meetings, and integrates performance data into status reports. & Sponsor, IT Dept \\
+Project Manager (Zhang Wei) & Holds ultimate responsibility for integration activities, coordinates cross-work package dependencies, chairs CCB meetings, and integrates performance data into status reports. & Sponsor, IT Dept \\
 \addlinespace
 Change Control Board & Reviews baseline change requests, assesses their impact on scope, schedule, and quality, and monitors the implementation of approved changes. & None \\
 \addlinespace
@@ -331,7 +331,7 @@ Project Sponsor & Approves the project charter, resolves organizational resource
 }
 
 \subsection{Direct and Manage Project Execution}
-Execution activities are driven by a structured workflow where all code and documentation are managed via GitHub. A main branch is maintained for stable releases alongside feature branches for specific work packages, with peer reviews required before merging. Weekly synchronization meetings are held every Monday to review progress, identify blockers, and align upcoming tasks. Work performance data is collected weekly and integrated into status reports, including completed tasks, bug resolution rates, and test coverage. Approved change requests are assigned to relevant work package leads, and their implementation is verified by the project manager before closure. The Project Management Information System (PMIS) comprises GitHub for version control, Wechat for real-time communication, Google Docs for collaborative documentation, and MySQL Workbench for database management.
+Execution activities are driven by a structured workflow where all code and documentation are managed via GitHub. A main branch is maintained for stable releases alongside feature branches for specific work packages, with peer reviews required before merging. Weekly synchronization meetings are held every Monday to review progress, identify blockers, and align upcoming tasks. Work performance data is collected weekly and integrated into status reports, including completed tasks, bug resolution rates, and test coverage. Approved change requests are assigned to relevant work package leads, and their implementation is verified by the project manager before closure. The Project Management Information System (PMIS) comprises GitHub for version control, Enterprise WeChat for real-time communication, Confluence and Jira for collaborative documentation and task management, and MySQL Workbench for database management.
 
 \subsection{Monitor and Control Project Work}
 Project performance is continuously monitored against the 16-week schedule baseline. Key performance indicators include schedule variance, defect density, and cross-module integration resolution time. Earned Value Management (EVM) principles are applied to quantify progress, triggering corrective actions if the Schedule Performance Index (SPI) falls below 0.9 for two consecutive weeks. A three-tiered information flow ensures consistent reporting: raw work performance data is analyzed into performance information, which is then compiled into weekly status reports for the team and monthly updates for the sponsor. When deviations occur, the root cause is analyzed to develop corrective actions that minimize schedule disruption. Furthermore, technical risks and data anomalies are tracked during weekly reviews, utilizing the platform's built-in anomaly detection module to maintain data integrity.
@@ -342,10 +342,10 @@ Project performance is continuously monitored against the 16-week schedule basel
 The formal change control process governs all modifications affecting the project's scope, schedule, or quality baselines. The Change Control Board (CCB) is the central governing body responsible for reviewing, evaluating, approving, delaying, or rejecting changes to the project. The CCB is chaired by the Project Manager and includes the Project Sponsor and Work Package Leads.
 
 \subsubsection{Change Identification and Request Management}
-Any team member or stakeholder can identify a need for a change. Once identified, the change must be formally documented via a standardized GitLab Issue template, which serves as the formal Change Request (CR). The CR must include a clear description of the proposed change, the rationale behind it, and the expected benefits.
+Any team member or stakeholder can identify a need for a change. Once identified, the change must be formally documented via a standardized GitHub Issue template, which serves as the formal Change Request (CR). The CR must include a clear description of the proposed change, the rationale behind it, and the expected benefits.
 
 \subsubsection{Impact Analysis}
-Upon submission of a Change Request, the relevant Work Package Lead conducts a comprehensive impact analysis. This analysis evaluates the potential effects of the change on the project's scope, schedule, budget, quality, and risks. The impact analysis results are appended to the GitLab Issue to provide the CCB with sufficient information for decision-making.
+Upon submission of a Change Request, the relevant Work Package Lead conducts a comprehensive impact analysis. This analysis evaluates the potential effects of the change on the project's scope, schedule, budget, quality, and risks. The impact analysis results are appended to the GitHub Issue to provide the CCB with sufficient information for decision-making.
 
 \subsubsection{Change Approval Process}
 The CCB reviews pending change requests during weekly Wednesday meetings. The approval authority depends on the change's magnitude:
@@ -354,7 +354,7 @@ As for major changes, scope additions or changes significantly affecting the sch
 As for emergency changes, critical bug fixes may be implemented immediately to restore system functionality but must undergo retrospective CCB review within three business days.
 
 \subsubsection{Change Tracking}
-All change requests, regardless of their approval status, are tracked in a living Change Log maintained within GitLab. The Change Log records the CR status (e.g., Submitted, Under Review, Approved, Rejected, Implemented), the approver, and the implementation date. This ensures traceability and guarantees that only approved modifications are integrated into the main codebase.
+All change requests, regardless of their approval status, are tracked in a living Change Log maintained within GitHub. The Change Log records the CR status (e.g., Submitted, Under Review, Approved, Rejected, Implemented), the approver, and the implementation date. This ensures traceability and guarantees that only approved modifications are integrated into the main codebase.
 
 \subsubsection{Change Control Board (CCB)}
 The Change Control Board is structured to ensure comprehensive evaluation of change requests from both technical and business perspectives.
@@ -362,20 +362,22 @@ The Change Control Board is structured to ensure comprehensive evaluation of cha
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
-  box/.style={draw=heading, thick, rounded corners, align=center, fill=rowalt, minimum width=4.2cm, minimum height=1.2cm, text=heading, font=\small\bfseries},
+  box/.style={draw=heading, thick, rounded corners, align=center, fill=rowalt, minimum width=3.4cm, minimum height=1.2cm, text=heading, font=\small\bfseries},
   line/.style={-latex, thick, draw=heading}
 ]
 
 % Nodes — absolute coordinates to guarantee spacing
-\node[box] (chair) at (0,0) {CCB Chair \\ (Project Manager: Liu Haopu)};
+\node[box] (chair) at (0,0) {CCB Chair \\ (Project Manager: Zhang Wei)};
 \node[box] (sponsor) at (0,3.5) {Project Sponsor \\ (Head of IT Dept)};
 \node[box] (wp1) at (-5.5,-3.5) {WP1 Lead \\ (Yao Tianren)};
-\node[box] (wp3) at (0,-3.5) {WP3 Lead \\ (Li Sihang)};
+\node[box] (wp2) at (-1.8,-3.5) {WP2 Lead \\ (Liu Haopu)};
+\node[box] (wp3) at (1.8,-3.5) {WP3 Lead \\ (Li Sihang)};
 \node[box] (wp45) at (5.5,-3.5) {WP4/WP5 Lead \\ (Gong Zhijian)};
 
 % Lines
 \draw[line] (chair) -- (sponsor) node[midway, right, font=\footnotesize, text=heading] {Escalates major changes};
 \draw[line] (wp1) -- (chair) node[midway, left, font=\footnotesize, text=heading] {Impact Analysis};
+\draw[line] (wp2) -- (chair);
 \draw[line] (wp3) -- (chair);
 \draw[line] (wp45) -- (chair) node[midway, right, font=\footnotesize, text=heading] {Impact Analysis};
 
@@ -397,11 +399,13 @@ The specific composition and responsibilities of each CCB member are detailed in
 \textbf{CCB Member} & \textbf{Role} & \textbf{Responsibilities} \\
 \midrule
 \endhead
-Liu Haopu & CCB Chair / Project Manager & Facilitates CCB meetings, approves minor changes, and ensures approved changes are implemented and tracked. \\
+Zhang Wei & CCB Chair / Project Manager & Facilitates CCB meetings, approves minor changes, and ensures approved changes are implemented and tracked. \\
 \addlinespace
 Head of Luckin Coffee IT Dept & Project Sponsor & Provides final authorization for major changes affecting project scope, budget, or timeline. \\
 \addlinespace
 Yao Tianren & WP1 Lead & Assesses impact on system architecture and requirements. \\
+\addlinespace
+Liu Haopu & WP2 Lead & Assesses impact on backend APIs, database, and cross-module data consistency. \\
 \addlinespace
 Li Sihang & WP3 Lead & Assesses impact on frontend infrastructure and UI/UX consistency. \\
 \addlinespace
@@ -440,7 +444,7 @@ Project Sponsor & Final scope baseline approval, major change request authorizat
 \end{longtable}
 Requirements are systematically categorized into business, stakeholder, solution, transition, project, and quality requirements. Business requirements focus on centralized ESG data management and compliance with GRI Standards. Stakeholder needs range from simple data entry for store staff to comprehensive analytics for headquarters managers. Solution requirements dictate the functional modules, such as carbon tracking and supplier assessment, alongside non-functional targets like supporting 1000 concurrent users and ensuring sub-two-second page load times. These requirements are elicited through interviews with restaurant managers, focus groups, prototyping, and document analysis. Prioritization follows the MoSCoW method, distinguishing essential features like carbon tracking from optional enhancements like OCR-assisted input. A Requirements Traceability Matrix (RTM) is maintained to link each requirement to its source, WBS component, and test case, ensuring comprehensive coverage and facilitating impact analysis during change requests. Requirements are validated through prototype walkthroughs and milestone reviews with the Luckin Coffee ESG Department, IT Department, and Project Sponsor. Approved requirements are baselined in the RTM, and later changes must follow the CCB process.
 
-\subsection{Project Scope Statement}
+\subsection{Project Scope Definition}
 The primary objective is to develop and deploy a web-based Business Sustainability Management Platform for multi-store restaurant chains by June 30, 2026. The product scope encompasses core modules for carbon tracking, waste management, and ESG governance, featuring role-based access control. Deliverables are accepted based on the successful implementation of all functional requirements, resolution of critical bugs, and successful deployment on the designated virtual machine. The project is constrained by a fixed June 2026 deadline, a four-member team, and the mandatory use of the Flask and MySQL technology stack, assuming continuous availability of team members and virtual machine infrastructure.
 
 \begin{itemize}
@@ -448,25 +452,6 @@ The primary objective is to develop and deploy a web-based Business Sustainabili
     \item \textbf{Activities out of scope} include native mobile application development, real-time IoT sensor integration, legacy data migration, and long-term post-delivery maintenance.
 \end{itemize}
 
-\subsection{Project Deliverables}
-This section lists the major items to be delivered to the customers, subcontractors, integrators, or other parties. The list differentiates the project management deliverables from the product deliverables.
-
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{2.5cm}@{}}
-\caption{Project Deliverables}\label{tab:project_deliverables}\\
-\toprule
-\textbf{Deliverable} & \textbf{Type} & \textbf{Recipient} & \textbf{Delivery Date} & \textbf{Delivery Method} \\ \midrule
-\endfirsthead
-\toprule
-\textbf{Deliverable} & \textbf{Type} & \textbf{Recipient} & \textbf{Delivery Date} & \textbf{Delivery Method} \\ \midrule
-\endhead
-Project Management Plan & Project management deliverable & Project Sponsor & M1 & GitHub / Google Docs \\
-Requirements Specification and RTM & Project management deliverable & Project Manager / Sponsor & M1 & Google Docs \\
-Carbon Emission Tracking Module & Product deliverable & Luckin Coffee ESG Department & M3 & Deployed web module \\
-Waste Management Module & Product deliverable & Luckin Coffee ESG Department & M3 & Deployed web module \\
-Sustainability Reporting Module & Product deliverable & Luckin Coffee ESG Department & M4 & Deployed web module \\
-Integrated ESG Platform & Product deliverable & Luckin Coffee IT and ESG Departments & M5/M6 & VM deployment \\
-User Manual and System Documentation & Support deliverable & Sponsor / End users & M6 & PDF / repository archive \\ \bottomrule
-\end{longtable}
 
 \subsection{Work Breakdown Structure (WBS)}
 The Work Breakdown Structure (WBS) decomposes the project scope into manageable work packages, adhering to the 100\% rule to ensure all project work is captured. The WBS is organized around six major deliverable groups: requirements and architecture design, backend and database development, frontend infrastructure, core business modules, platform integration and testing, and final documentation and delivery. A hierarchical encoding system is utilized, starting from the project level down to specific tasks. For instance, Work Package 1.4.1 involves developing the carbon emission tracking module, which includes implementing frontend pages, integrating backend APIs, and conducting module tests. The approved Project Scope Statement, WBS, and WBS Dictionary collectively form the scope baseline, which is strictly controlled against unauthorized changes.
@@ -530,11 +515,31 @@ This subsection defines the standardized WBS dictionary specification used to al
 \textbf{Acceptance Criteria} & All carbon tracking functions work correctly, data is saved and retrieved accurately, interface is responsive and user-friendly \\ \bottomrule
 \end{longtable}
 
+\subsection{Project Deliverables}
+This section lists the major items to be delivered to the customers, subcontractors, integrators, or other parties. The list differentiates the project management deliverables from the product deliverables.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{2.5cm}@{}}
+\caption{Project Deliverables}\label{tab:project_deliverables}\\
+\toprule
+\textbf{Deliverable} & \textbf{Type} & \textbf{Recipient} & \textbf{Delivery Date} & \textbf{Delivery Method} \\ \midrule
+\endfirsthead
+\toprule
+\textbf{Deliverable} & \textbf{Type} & \textbf{Recipient} & \textbf{Delivery Date} & \textbf{Delivery Method} \\ \midrule
+\endhead
+Project Management Plan & Project management deliverable & Project Sponsor & M1 & GitHub / Confluence \\
+Requirements Specification and RTM & Project management deliverable & Project Manager / Sponsor & M1 & Confluence \\
+Carbon Emission Tracking Module & Product deliverable & Luckin Coffee ESG Department & M3 & Deployed web module \\
+Waste Management Module & Product deliverable & Luckin Coffee ESG Department & M3 & Deployed web module \\
+Sustainability Reporting Module & Product deliverable & Luckin Coffee ESG Department & M4 & Deployed web module \\
+Integrated ESG Platform & Product deliverable & Luckin Coffee IT and ESG Departments & M5/M6 & VM deployment \\
+User Manual and System Documentation & Support deliverable & Sponsor / End users & M6 & PDF / repository archive \\ \bottomrule
+\end{longtable}
+
 \subsection{Validate Scope}
 Scope validation formalizes the acceptance of completed project deliverables. Once the development team completes a deliverable and performs internal quality control, it is submitted to the client representative for review. The client evaluates the deliverable against predefined acceptance criteria. If accepted, a formal acceptance document is signed; if rejected, the team addresses the provided feedback and resubmits the deliverable. This process involves the Project Manager coordinating the review, the Development Team demonstrating the functionality, and the Client Representative making the acceptance decision. All acceptance documentation, including signed forms and test reports, is archived in the project repository.
 
 \subsection{Control Scope}
-Scope control involves continuously monitoring the project status to manage changes to the scope baseline. Progress is assessed weekly by comparing actual completed work against the WBS, with any variance exceeding 5\% triggering a formal review. All proposed scope modifications must follow a strict change control process: a written request is submitted, evaluated for impact by the Project Manager Liu Haopu, and subsequently reviewed by the external Change Control Board (CCB). To prevent scope creep, all client requests for new features require formal CCB approval. Similarly, gold plating is strictly prohibited; team members must not implement unauthorized enhancements without submitting them through the formal change request process.
+Scope control involves continuously monitoring the project status to manage changes to the scope baseline. Progress is assessed weekly by comparing actual completed work against the WBS, with any variance exceeding 5\% triggering a formal review. All proposed scope modifications must follow a strict change control process: a written request is submitted, evaluated for impact by the Project Manager Zhang Wei, and subsequently reviewed by the external Change Control Board (CCB). To prevent scope creep, all client requests for new features require formal CCB approval. Similarly, gold plating is strictly prohibited; team members must not implement unauthorized enhancements without submitting them through the formal change request process.
 
 % ============================================================
 %  SECTION 4: SCHEDULE MANAGEMENT
@@ -620,12 +625,12 @@ AA & Obtain formal acceptance from the sponsor \\
 The three-point estimating technique is applied to the overall project duration Time:
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Optimistic estimate (O)}: 90 working days
-    \item \textbf{Most likely estimate (M)}: 105 working days
-    \item \textbf{Pessimistic estimate (P)}: 120 working days
+    \item \textbf{Optimistic estimate (O)}: 65 working days
+    \item \textbf{Most likely estimate (M)}: 80 working days
+    \item \textbf{Pessimistic estimate (P)}: 95 working days
 \end{itemize}
 
-Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated activities duration is \textbf{105 $\pm$ 15 working days}, with a 10\% probability of exceeding 120 days.
+Applying the Beta Distribution formula \(E = (O + 4M + P) / 6\), the estimated activities duration is \textbf{80 $\pm$ 5 working days} (equivalent to 16 weeks), with a 10\% probability of exceeding 95 days.
 
 \textbf{Reserve Plan}
 
@@ -726,7 +731,7 @@ Between formal milestone reviews, schedule performance is monitored weekly throu
 \subsubsection{Project Schedule Network Diagram}
 
 \medskip
-The project schedule network diagram is developed using the Precedence Diagramming Method (PDM) and illustrates the complete sequence of project activities and their logical dependencies from project initiation through formal acceptance. The network consists of 27 activities (Activity A to Activity AA) and six key milestone events, with an estimated total project duration of 105 working days.
+The project schedule network diagram is developed using the Precedence Diagramming Method (PDM) and illustrates the complete sequence of project activities and their logical dependencies from project initiation through formal acceptance. The network consists of 27 activities (Activity A to Activity AA) and six key milestone events, with an estimated total project duration of 80 working days (16 weeks).
 \medskip
 
 \begin{figure}[H]
@@ -767,7 +772,7 @@ Contingency reserves built into the schedule baseline may be drawn upon to absor
 
 \subsubsection{Schedule Modification and Commitment}
 
-The schedule baseline may be formally revised when a milestone is missed, when an approved scope change materially affects the critical path, or when a verified technical blocker cannot be absorbed by available float or contingency reserve. The project manager prepares the revised schedule in Jira, presents it at the Wednesday CCB meeting, and obtains approval per the authority levels in Section 2.6. Each work package lead acknowledges revised task dates within 24 hours via Jira comment. The previous baseline is archived in GitLab as a tagged release. Formal revisions are limited to three over the project lifecycle.
+The schedule baseline may be formally revised when a milestone is missed, when an approved scope change materially affects the critical path, or when a verified technical blocker cannot be absorbed by available float or contingency reserve. The project manager prepares the revised schedule in Jira, presents it at the Wednesday CCB meeting, and obtains approval per the authority levels in Section 2.6. Each work package lead acknowledges revised task dates within 24 hours via Jira comment. The previous baseline is archived in GitHub as a tagged release. Formal revisions are limited to three over the project lifecycle.
 
 % ============================================================
 
@@ -959,7 +964,7 @@ The cost baseline is visualised as an S-curve showing cumulative planned expendi
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/S- curve.png}
+    \includegraphics[width=0.9\textwidth]{figures/S-curve.png}
     \caption{S-curve}
     \label{fig:s_curve}
 \end{figure}
@@ -1018,7 +1023,7 @@ The following quality assurance activities are performed during the project life
     \item Weekly peer reviews are conducted for backend APIs, frontend modules, database scripts, and technical documentation.
     \item Design review sessions are held before implementation begins for major system modules and integration interfaces.
     \item The project manager reviews Jira workflow status, defect trends, and testing progress every Friday before milestone evaluation.
-    \item GitLab merge requests require code review approval before changes can be merged into the main branch.
+    \item GitHub pull requests require code review approval before changes can be merged into the main branch.
     \item Test coverage and defect resolution progress are reviewed during integration and system testing phases.
 \end{itemize}
 
@@ -1107,7 +1112,7 @@ If defect trends indicate recurring process problems, the project manager initia
 
 \subsubsection{Verified Deliverables and Acceptance}
 
-A deliverable is considered verified when all planned testing is completed, no unresolved severe defects remain, milestone acceptance criteria are satisfied, and the responsible reviewer formally approves it in Jira or GitLab. Verified deliverables are then submitted for milestone acceptance review by the Project Manager, Client Representative, or Sponsor.
+A deliverable is considered verified when all planned testing is completed, no unresolved severe defects remain, milestone acceptance criteria are satisfied, and the responsible reviewer formally approves it in Jira or GitHub. Verified deliverables are then submitted for milestone acceptance review by the Project Manager, Client Representative, or Sponsor.
 % ============================================================
 %  SECTION 7: PROCESS IMPROVEMENT PLAN
 % ============================================================
@@ -1213,14 +1218,14 @@ The fishbone diagram in Figure~\ref{fig:req_flow} illustrates the root cause ana
 This project adopts a Strong Matrix Organizational Structure, where the project manager has moderate to high decision-making authority, balancing functional professionalism and project execution efficiency. It establishes a clear division of responsibilities and collaboration mechanism to ensure that the human resources and skill configuration meet the requirements of Luckin Coffee's enterprise-level projects.
 
 \subsection{Human Resource Acquisition}
-The core execution team of this project consists of 4 full-time internal members + 1 external part-time consultant, the Project Manager is an independent management role. All personnel are exclusively allocated to the project with no cross-project resource conflicts:
+The core execution team of this project consists of 4 full-time internal members + 1 external part-time consultant. The Project Manager (Zhang Wei) is engaged as a dedicated management role, coordinating project planning, schedule control, quality assurance and customer communication throughout the full project cycle (Weeks 1--16). All technical personnel are exclusively allocated to the project with no cross-project resource conflicts:
 \begin{itemize}
   \item \textbf{Available Internal Resources}:
   \begin{itemize}
-    \item System Architect (also Backend Developer): Proficient in Flask backend development and database design, with experience in large chain enterprise system architecture, responsible for overall architecture design and backend core logic development, available full cycle (Weeks 1-16)
-    \item Full-Stack Frontend Developer (also Visualization): Proficient in Vue3, Bootstrap and ECharts data visualization, with experience in enterprise-level management system frontend development, responsible for all frontend pages and data visualization functions, available full cycle (Weeks 1-16)
-    \item Test and DevOps Engineer: Proficient in system testing and cloud server deployment, with experience in Luckin Coffee system testing, responsible for full-process testing, environment deployment and operation support, available full cycle (Weeks 1-16)
-    \item Project Manager (also Quality Lead): Proficient in software project management and quality management, responsible for overall project planning, schedule control, quality assurance and customer communication, available full cycle (Weeks 1-16)
+    \item Project Manager (also Backend Developer): Proficient in software project management and Flask backend development, responsible for overall project planning, schedule control, quality assurance, customer communication, and core backend APIs, available full cycle (Weeks 1-16)
+    \item Requirements \& Design Lead: Proficient in system analysis and database design, with experience in large chain enterprise system architecture, responsible for overall architecture design and requirement analysis, available full cycle (Weeks 1-16)
+    \item Frontend Foundation Lead: Proficient in system testing and Vue3 frontend infrastructure, responsible for reusable components, authentication system, and frontend testing, available full cycle (Weeks 1-16)
+    \item Business Frontend Lead (also Integration \& Testing): Proficient in Vue3, Bootstrap and ECharts data visualization, responsible for all business frontend pages, end-to-end integration, and testing, available full cycle (Weeks 1-16)
   \end{itemize}
   \item \textbf{External Resource Requirements}:
   \begin{itemize}
@@ -1233,9 +1238,9 @@ The core execution team of this project consists of 4 full-time internal members
   \end{itemize}
   \item \textbf{Resource Profile}:
   \begin{itemize}
-    \item Weeks 1-4 (Requirements and Design Phase): Full team involvement, focusing on System Architect and Project Manager, completing Luckin Coffee's requirement confirmation and system design
-    \item Weeks 5-12 (Development Phase): Full team at maximum capacity, with frontend and backend developers accounting for the highest proportion (2 people, 50\% of total execution manpower), completing core function development
-    \item Weeks 13-16 (Testing and Deployment Phase): Increased involvement of test and DevOps engineers, gradual reduction of development engineers, cooperating with Luckin Coffee to complete acceptance testing and deployment
+    \item Weeks 1-4 (Requirements and Design Phase): Full team involvement, focusing on Requirements \& Design Lead and Project Manager, completing Luckin Coffee's requirement confirmation and system design
+    \item Weeks 5-12 (Development Phase): Full team at maximum capacity, completing core function development
+    \item Weeks 13-16 (Testing and Deployment Phase): Increased involvement of Integration \& Testing, gradual reduction of new development tasks, cooperating with Luckin Coffee to complete acceptance testing and deployment
   \end{itemize}
   \item \textbf{New Team Member Orientation}: Within 24 hours of joining, new members complete environment setup, permission configuration and project document reading. The corresponding module leader serves as the dedicated mentor for 3 days of one-on-one guidance covering project background, Luckin Coffee's business requirements, technology stack, code specifications and business processes. A capability assessment is conducted at the end of the first week to ensure independent task performance.
 \end{itemize}
@@ -1318,8 +1323,8 @@ This project's procurement management follows the principles of compliance, effi
 \subsection{Make-or-Buy Decisions}
 Analyze based on four dimensions: cost, schedule, technical capability and risk. Core business logic and system functions are independently developed by the internal team. Infrastructure, general third-party services and professional consulting services are outsourced. All outsourced products and services must pass Luckin Coffee's supplier qualification review:
 \begin{itemize}
-  \item Make: All frontend pages, backend API interfaces, database design and business logic implementation (estimated cost: ¥120,000, 30% of outsourcing cost)
-  \item Buy: Cloud servers, domain names, SSL certificates, OCR API, SMS API, email services, MySQL Enterprise Edition licenses, IDE commercial edition licenses, ESG consulting services, Leaflet commercial license, ECharts commercial license, WeasyPrint commercial license (estimated total cost: ¥280,000, 60% of self-development cost)
+  \item Make: All frontend pages, backend API interfaces, database design and business logic implementation (estimated cost: ¥193,600, 80% of total budget)
+  \item Buy: Cloud servers, domain names, SSL certificates, OCR API, SMS API, email services, and ESG consulting services (estimated total cost: ¥50,000, 20% of total budget)
 \end{itemize}
 
 \subsection{Vendor Selection Criteria}
@@ -1362,16 +1367,16 @@ Figure~\ref{fig:contract_risk} illustrates the risk allocation characteristics o
 
 Specific contract type applications for this project:
 \begin{itemize}
-  \item Firm Fixed Price (FFP) Contracts: Applicable to standard products such as cloud servers, domain names, SSL certificates, software licenses and third-party API services. Contract terms must follow Luckin Coffee's standard contract template. FP-EPA, CPIF and CPAF contracts are not used in this project due to the short project cycle (16 weeks) and clear requirements.
+  \item Firm Fixed Price (FFP) Contracts: Applicable to standard products such as cloud servers, domain names, SSL certificates, and third-party API services. Contract terms must follow Luckin Coffee's standard contract template. FP-EPA, CPIF and CPAF contracts are not used in this project due to the short project cycle (16 weeks) and clear requirements.
   \item Time and Materials (T\&M) Contracts: Applicable to ESG consulting services, settled based on actual service hours. Service content and deliverables must be confirmed by Luckin Coffee.
 \end{itemize}
 
 \subsection{Procurement Schedule}
 \begin{itemize}
-  \item Week 1: Complete procurement of test environment cloud servers, domain names, IDE commercial edition licenses, Leaflet and ECharts commercial licenses. All procurement applications need to be submitted to Luckin Coffee for approval.
+  \item Week 1: Complete procurement of test environment cloud servers and domain names. All procurement applications need to be submitted to Luckin Coffee for approval.
   \item Week 2: Complete procurement of ESG consulting services and sign the service contract.
-  \item Week 4: Complete procurement of OCR API, SMS API, email services and WeasyPrint commercial license.
-  \item Week 8: Complete procurement of production environment cloud servers, SSL certificates and MySQL Enterprise Edition licenses. Production environment configuration must comply with Luckin Coffee's information security requirements.
+  \item Week 4: Complete procurement of OCR API, SMS API, and email services.
+  \item Week 8: Complete procurement of production environment cloud servers and SSL certificates. Production environment configuration must comply with Luckin Coffee's information security requirements.
 \end{itemize}
 
 \subsection{Procurement Process}
@@ -1443,9 +1448,9 @@ Luckin Coffee Store Employees & End users of the system, provide feedback, affec
 % --- 10.2 ---
 \subsection{Project Reporting and Communication}
 
-This project has 8 core stakeholders in total (1 Project Manager + 4 Team Members + 1 External Consultant + 2 Luckin Coffee Department Heads). The number of communication channels is:
+This project has 7 core stakeholders in total (1 Project Manager, 1 Requirements \& Design Lead, 1 Frontend Foundation Lead, 1 Business Frontend Lead, 1 External Consultant, and 2 Luckin Coffee Department Heads). The number of communication channels is:
 \[
-\text{Number of Communication Channels} = \frac{n(n-1)}{2} = \frac{8 \times 7}{2} = 28
+\text{Number of Communication Channels} = \frac{n(n-1)}{2} = \frac{7 \times 6}{2} = 21
 \]
 
 To effectively manage communication channels, establish the following standardized communication mechanisms:
@@ -1509,7 +1514,7 @@ The Risk Management Plan defines how risk activities will be conducted on this p
 
 \subsubsection{Methodology, Roles, and Timing}
 
-\textbf{Methodology.} Risk management on this project follows the PMBOK process model (R1) and established software project management practice (R2). The team applies the following tools and techniques across the six processes: brainstorming, SWOT analysis, structured interviews, and root cause analysis for identification; the Probability and Impact (P--I) Matrix for qualitative analysis; Expected Monetary Value (EMV) analysis with decision tree and Sensitivity Analysis (Tornado Diagram) for quantitative analysis; the eight PMBOK response strategies for response planning; and risk reassessment, risk audits, variance and trend analysis, technical performance measurement, reserve analysis, and meetings for control. All risk records are maintained in a Risk Register stored in Confluence and version-controlled in GitLab.
+\textbf{Methodology.} Risk management on this project follows the PMBOK process model (R1) and established software project management practice (R2). The team applies the following tools and techniques across the six processes: brainstorming, SWOT analysis, structured interviews, and root cause analysis for identification; the Probability and Impact (P--I) Matrix for qualitative analysis; Expected Monetary Value (EMV) analysis with decision tree and Sensitivity Analysis (Tornado Diagram) for quantitative analysis; the eight PMBOK response strategies for response planning; and risk reassessment, risk audits, variance and trend analysis, technical performance measurement, reserve analysis, and meetings for control. All risk records are maintained in a Risk Register stored in Confluence and version-controlled in GitHub.
 
 \textbf{Roles and Responsibilities.} The Project Manager is the overall risk owner, accountable for risk planning, escalation, and reserve approval below the management threshold. Each work package lead is the primary risk owner for risks within their scope and is responsible for monitoring triggers and executing approved response actions. Every team member is required to identify and report new risks during the daily stand-up. The ESG Compliance Consultant supports identification and analysis of compliance-related risks during Weeks~2--4. The Project Sponsor (Head of Luckin Coffee IT Department) approves use of the management reserve and authorises responses to severe risks beyond the project manager's authority.
 
@@ -1751,7 +1756,7 @@ Risk control is performed throughout the project lifecycle using the following t
     \item \textbf{Status Meetings}: risk status follows the communication rhythm defined in Section~11.1, with focused review at every Friday team meeting and every milestone review with Luckin Coffee.
 \end{enumerate}
 
-The Risk Register is the single source of truth for all risk control activities, maintained in Confluence with version control via GitLab. Every approved response action, every triggered contingent plan, and every reserve drawdown is recorded against its risk ID for end-of-project lessons-learned analysis.
+The Risk Register is the single source of truth for all risk control activities, maintained in Confluence with version control via GitHub. Every approved response action, every triggered contingent plan, and every reserve drawdown is recorded against its risk ID for end-of-project lessons-learned analysis.
 % ============================================================
 %  SECTION 12: REFERENCES
 % ============================================================
@@ -1762,7 +1767,7 @@ This section consolidates all supporting documents that complement this Project 
 
 \subsection{Project Appendices}
 
-The following documents are attached to this Project Plan for immediate reference. All appendices are version-controlled in GitLab and indexed in Confluence under the \textit{Luckin Coffee Sustainability Platform / PMP} space. The version-numbering convention used below is: \textbf{v1.0} denotes a first-issued, formally baselined document; subsequent minor revisions (\textbf{v1.1}, \textbf{v1.2}, \dots) are issued whenever the document is updated through the change-control process defined in Section~2.6; documents that are continuously appended to during execution (such as the Change Request Log and Lessons-Learned Register) are flagged as \textbf{rolling} and do not carry a discrete version number.
+The following documents are attached to this Project Plan for immediate reference. All appendices are version-controlled in GitHub and indexed in Confluence under the \textit{Luckin Coffee Sustainability Platform / PMP} space. The version-numbering convention used below is: \textbf{v1.0} denotes a first-issued, formally baselined document; subsequent minor revisions (\textbf{v1.1}, \textbf{v1.2}, \dots) are issued whenever the document is updated through the change-control process defined in Section~2.6; documents that are continuously appended to during execution (such as the Change Request Log and Lessons-Learned Register) are flagged as \textbf{rolling} and do not carry a discrete version number.
 
 \vspace{0.5em}
 \noindent
