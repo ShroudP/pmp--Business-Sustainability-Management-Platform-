@@ -160,7 +160,7 @@ change.
   \hline
   \thead{Liu Haopu} & \thead{Yao Tianren} & \thead{Gong Zhijian} & \thead{Li Sihang}\\
   \hline
-  Project Manager & Requirements Lead & Integration Lead & Frontend Lead \\[4pt]
+  Technical Lead & Requirements Lead & Integration Lead & Frontend Lead \\[4pt]
   \hline
   \includegraphics[height=1cm]{figures/签名/刘昊普电子签名.jpg} &
   \includegraphics[height=1cm]{figures/签名/YaoTianren.jpg} &
@@ -251,26 +251,26 @@ The project adopts a strong matrix organizational structure, granting the projec
     \node (sponsor) [below of=steering] {Executive / Sponsor};
     \node (supplier) [below of=steering, xshift=4cm] {Senior Supplier\\(IT Operations)};
     
-    \node (pm) [below of=sponsor, yshift=-1cm] {Project Manager\\(Liu Haopu)};
+    \node (pm) [below of=sponsor, yshift=-1cm] {Project Manager\\(Zhang Wei)};
     
-    % 调整虚线框：稍微上移 (yshift=0.5cm)，并减小高度 (3.8cm)，使其刚好包裹 PM 和 Team Leaders
-    \node (pmt) [below of=pm, yshift=0.5cm, dashed, draw, minimum width=9.5cm, minimum height=3.8cm] {};
+    % 调整虚线框：包裹 PM 和所有 Team Leaders
+    \node (pmt) [below of=pm, yshift=0.3cm, dashed, draw, minimum width=11cm, minimum height=3.8cm] {};
     \node at (pmt.north) [above=0.1cm, draw=none] {Project Management Team};
     
-    \node (tl1) [below of=pm, xshift=-3cm, yshift=-0.5cm] {Team Leader 1\\(Yao Tianren)};
-    \node (tl2) [below of=pm, xshift=3cm, yshift=-0.5cm] {Team Leader 2\\(Gong Zhijian)};
+    \node (tl1) [below of=pm, xshift=-4cm, yshift=-0.5cm] {WP1 Lead\\(Yao Tianren)};
+    \node (tl2) [below of=pm, yshift=-0.5cm] {Technical Lead\\(Liu Haopu)};
+    \node (tl3) [below of=pm, xshift=4cm, yshift=-0.5cm] {Integration Lead\\(Gong Zhijian)};
     
-    % 将最底部的两个节点额外下移 (yshift=-0.5cm)，彻底避开虚线框
-    \node (ug) [below of=tl1, yshift=-0.5cm] {User Group\\(Li Sihang)};
-    \node (sme) [below of=tl2, yshift=-0.5cm] {Subject Matter Experts\\(All Team Members)};
+    % 底部节点
+    \node (ug) [below of=tl1, yshift=-0.5cm] {Frontend Lead\\(Li Sihang)};
     
     \draw[->] (corp) -- (steering);
     \draw[->] (steering) -- (sponsor);
     \draw[->] (sponsor) -- (pm);
     \draw[->] (pm) -- (tl1);
     \draw[->] (pm) -- (tl2);
+    \draw[->] (pm) -- (tl3);
     \draw[->] (tl1) -- (ug);
-    \draw[->] (tl2) -- (sme);
 \end{tikzpicture}
 \caption{Project Team Structure and Governance}
 \label{fig:team_structure}
@@ -313,7 +313,7 @@ Table \ref{tab:roles} defines the major roles in the project team, their core in
 \textbf{Project Position} & \textbf{Integration Management Responsibilities} & \textbf{External Resource} \\
 \midrule
 \endhead
-Project Manager (Liu Haopu) & Holds ultimate responsibility for integration activities, coordinates cross-work package dependencies, chairs CCB meetings, and integrates performance data into status reports. & Sponsor, IT Dept \\
+Project Manager (Zhang Wei) & Holds ultimate responsibility for integration activities, coordinates cross-work package dependencies, chairs CCB meetings, and integrates performance data into status reports. & Sponsor, IT Dept \\
 \addlinespace
 Change Control Board & Reviews baseline change requests, assesses their impact on scope, schedule, and quality, and monitors the implementation of approved changes. & None \\
 \addlinespace
@@ -362,20 +362,22 @@ The Change Control Board is structured to ensure comprehensive evaluation of cha
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
-  box/.style={draw=heading, thick, rounded corners, align=center, fill=rowalt, minimum width=4.2cm, minimum height=1.2cm, text=heading, font=\small\bfseries},
+  box/.style={draw=heading, thick, rounded corners, align=center, fill=rowalt, minimum width=3.4cm, minimum height=1.2cm, text=heading, font=\small\bfseries},
   line/.style={-latex, thick, draw=heading}
 ]
 
 % Nodes — absolute coordinates to guarantee spacing
-\node[box] (chair) at (0,0) {CCB Chair \\ (Project Manager: Liu Haopu)};
+\node[box] (chair) at (0,0) {CCB Chair \\ (Project Manager: Zhang Wei)};
 \node[box] (sponsor) at (0,3.5) {Project Sponsor \\ (Head of IT Dept)};
 \node[box] (wp1) at (-5.5,-3.5) {WP1 Lead \\ (Yao Tianren)};
-\node[box] (wp3) at (0,-3.5) {WP3 Lead \\ (Li Sihang)};
+\node[box] (wp2) at (-1.8,-3.5) {WP2 Lead \\ (Liu Haopu)};
+\node[box] (wp3) at (1.8,-3.5) {WP3 Lead \\ (Li Sihang)};
 \node[box] (wp45) at (5.5,-3.5) {WP4/WP5 Lead \\ (Gong Zhijian)};
 
 % Lines
 \draw[line] (chair) -- (sponsor) node[midway, right, font=\footnotesize, text=heading] {Escalates major changes};
 \draw[line] (wp1) -- (chair) node[midway, left, font=\footnotesize, text=heading] {Impact Analysis};
+\draw[line] (wp2) -- (chair);
 \draw[line] (wp3) -- (chair);
 \draw[line] (wp45) -- (chair) node[midway, right, font=\footnotesize, text=heading] {Impact Analysis};
 
@@ -397,11 +399,13 @@ The specific composition and responsibilities of each CCB member are detailed in
 \textbf{CCB Member} & \textbf{Role} & \textbf{Responsibilities} \\
 \midrule
 \endhead
-Liu Haopu & CCB Chair / Project Manager & Facilitates CCB meetings, approves minor changes, and ensures approved changes are implemented and tracked. \\
+Zhang Wei & CCB Chair / Project Manager & Facilitates CCB meetings, approves minor changes, and ensures approved changes are implemented and tracked. \\
 \addlinespace
 Head of Luckin Coffee IT Dept & Project Sponsor & Provides final authorization for major changes affecting project scope, budget, or timeline. \\
 \addlinespace
 Yao Tianren & WP1 Lead & Assesses impact on system architecture and requirements. \\
+\addlinespace
+Liu Haopu & WP2 Lead & Assesses impact on backend APIs, database, and cross-module data consistency. \\
 \addlinespace
 Li Sihang & WP3 Lead & Assesses impact on frontend infrastructure and UI/UX consistency. \\
 \addlinespace
@@ -534,7 +538,7 @@ This subsection defines the standardized WBS dictionary specification used to al
 Scope validation formalizes the acceptance of completed project deliverables. Once the development team completes a deliverable and performs internal quality control, it is submitted to the client representative for review. The client evaluates the deliverable against predefined acceptance criteria. If accepted, a formal acceptance document is signed; if rejected, the team addresses the provided feedback and resubmits the deliverable. This process involves the Project Manager coordinating the review, the Development Team demonstrating the functionality, and the Client Representative making the acceptance decision. All acceptance documentation, including signed forms and test reports, is archived in the project repository.
 
 \subsection{Control Scope}
-Scope control involves continuously monitoring the project status to manage changes to the scope baseline. Progress is assessed weekly by comparing actual completed work against the WBS, with any variance exceeding 5\% triggering a formal review. All proposed scope modifications must follow a strict change control process: a written request is submitted, evaluated for impact by the Project Manager Liu Haopu, and subsequently reviewed by the external Change Control Board (CCB). To prevent scope creep, all client requests for new features require formal CCB approval. Similarly, gold plating is strictly prohibited; team members must not implement unauthorized enhancements without submitting them through the formal change request process.
+Scope control involves continuously monitoring the project status to manage changes to the scope baseline. Progress is assessed weekly by comparing actual completed work against the WBS, with any variance exceeding 5\% triggering a formal review. All proposed scope modifications must follow a strict change control process: a written request is submitted, evaluated for impact by the Project Manager Zhang Wei, and subsequently reviewed by the external Change Control Board (CCB). To prevent scope creep, all client requests for new features require formal CCB approval. Similarly, gold plating is strictly prohibited; team members must not implement unauthorized enhancements without submitting them through the formal change request process.
 
 % ============================================================
 %  SECTION 4: SCHEDULE MANAGEMENT
@@ -1226,14 +1230,14 @@ The fishbone diagram in Figure~\ref{fig:req_flow} illustrates the root cause ana
 This project adopts a Strong Matrix Organizational Structure, where the project manager has moderate to high decision-making authority, balancing functional professionalism and project execution efficiency. It establishes a clear division of responsibilities and collaboration mechanism to ensure that the human resources and skill configuration meet the requirements of Luckin Coffee's enterprise-level projects.
 
 \subsection{Human Resource Acquisition}
-The core execution team of this project consists of 4 full-time internal members + 1 external part-time consultant, the Project Manager is an independent management role. All personnel are exclusively allocated to the project with no cross-project resource conflicts:
+The core execution team of this project consists of 4 full-time internal members + 1 external part-time consultant. The Project Manager (Zhang Wei) is engaged as a dedicated management role, coordinating project planning, schedule control, quality assurance and customer communication throughout the full project cycle (Weeks 1--16). All technical personnel are exclusively allocated to the project with no cross-project resource conflicts:
 \begin{itemize}
   \item \textbf{Available Internal Resources}:
   \begin{itemize}
     \item System Architect (also Backend Developer): Proficient in Flask backend development and database design, with experience in large chain enterprise system architecture, responsible for overall architecture design and backend core logic development, available full cycle (Weeks 1-16)
     \item Full-Stack Frontend Developer (also Visualization): Proficient in Vue3, Bootstrap and ECharts data visualization, with experience in enterprise-level management system frontend development, responsible for all frontend pages and data visualization functions, available full cycle (Weeks 1-16)
     \item Test and DevOps Engineer: Proficient in system testing and cloud server deployment, with experience in Luckin Coffee system testing, responsible for full-process testing, environment deployment and operation support, available full cycle (Weeks 1-16)
-    \item Project Manager (also Quality Lead): Proficient in software project management and quality management, responsible for overall project planning, schedule control, quality assurance and customer communication, available full cycle (Weeks 1-16)
+    \item Technical Lead (also Backend Developer): Proficient in Flask backend development and database design, responsible for overall architecture coordination, backend core logic development and project documentation, available full cycle (Weeks 1-16)
   \end{itemize}
   \item \textbf{External Resource Requirements}:
   \begin{itemize}
@@ -1246,7 +1250,7 @@ The core execution team of this project consists of 4 full-time internal members
   \end{itemize}
   \item \textbf{Resource Profile}:
   \begin{itemize}
-    \item Weeks 1-4 (Requirements and Design Phase): Full team involvement, focusing on System Architect and Project Manager, completing Luckin Coffee's requirement confirmation and system design
+    \item Weeks 1-4 (Requirements and Design Phase): Full team involvement, focusing on System Architect and Technical Lead, completing Luckin Coffee's requirement confirmation and system design
     \item Weeks 5-12 (Development Phase): Full team at maximum capacity, with frontend and backend developers accounting for the highest proportion (2 people, 50\% of total execution manpower), completing core function development
     \item Weeks 13-16 (Testing and Deployment Phase): Increased involvement of test and DevOps engineers, gradual reduction of development engineers, cooperating with Luckin Coffee to complete acceptance testing and deployment
   \end{itemize}
