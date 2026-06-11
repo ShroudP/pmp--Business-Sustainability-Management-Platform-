@@ -662,8 +662,6 @@ The project schedule is organised around six milestones derived from the major w
 
 \subsection{Milestone Chart}
 
-The detailed milestone schedule with planned dates and deliverables is shown in Table~\ref{tab:milestone_schedule}.
-
 % ========================= TABLE =========================
 
 {\footnotesize
@@ -787,7 +785,6 @@ This subsidiary plan describes the cost management approach for the development 
 
 \subsection{Software Project Cost Estimate}
 % ============================================================
-The cost estimate uses the Function Point analysis method, which assigns complexity weights to each function type based on data and transaction characteristics. Table~\ref{tab:complexity_weights} defines the standard complexity weights used for this project.
 
 % ─── Table 6: Complexity Weights ───────────────────────────────────────────
 \begin{longtable}{lccc}
@@ -808,8 +805,6 @@ Internal Documents      & 8 & 11 & 16 \\
 \bottomrule
 \end{longtable}
 
-Based on the complexity weights, the Unadjusted Function Point (UFC) count is calculated for each function type as shown in Table~\ref{tab:ufp_count}.
-
 % ─── Table 7: Unadjusted Function Point Count ──────────────────────────────
 \begin{longtable}{ll}
 \caption{Unadjusted Function Point Count}\label{tab:ufp_count}\\
@@ -828,8 +823,6 @@ External Interface File & 5 medium, 2 complex \\
 Internal Documents      & 2 simple, 1 medium, 1 complex \\
 \bottomrule
 \end{longtable}
-
-The Technical Complexity Factor (TCF) adjusts the UFC based on 14 system characteristics that influence development effort. Table~\ref{tab:tcf} lists these factors and their degree of influence for this project.
 
 % ─── Table 8: Technical Complexity Factors ─────────────────────────────────
 {\footnotesize
@@ -860,7 +853,7 @@ F13 & Multiple sites               & 4 & F14 & Easy to modify          & 3 \\
     \item \textbf{Function Point (FP)}: 203
     \item \textbf{Cost for each labor hour}: \yen100/hour
     \item \textbf{Productivity of this project}: 12 hours/FP
-    \item \textbf{Budget at Completion (BAC)}: \yen ¥ 243,600
+    \item \textbf{Budget at Completion (BAC)}: \yen243,600
 \end{itemize}
 
 \bigskip
@@ -878,8 +871,6 @@ F13 & Multiple sites               & 4 & F14 & Easy to modify          & 3 \\
 \]
 
 \bigskip
-
-The milestone-by-milestone cost estimate, combining UFC, TCF, Function Points, and the unit cost of ¥1,200 per FP, is presented in Table~\ref{tab:milestone_cost}.
 
 % ─── Main Integrated Milestone Table ───────────────────────────────────────
 % Calculation column format (same as Image 2):  Q × TCF = FP
@@ -955,7 +946,7 @@ M6: Project documentation and final delivery
 
 \midrule
 \textbf{Total Cost}
-  & $\mathbf{187.96 \times 1.08}$ & \textbf{203.00} & \textbf{\yen243,600} \\
+  & \textbf{$187.96 \times 1.08$} & \textbf{203.00} & \textbf{\yen243,600} \\
 
 \end{longtable}
 }
@@ -972,8 +963,6 @@ Estimate Cost = Function Points $\times$ 12\,h/FP $\times$ \yen100/h = FP $\time
 
 %============================================================
 \subsection{Cost Baseline}
-
-The cost baseline is visualised as an S-curve showing cumulative planned expenditure over time, as illustrated in Figure~\ref{fig:s_curve}.
 
 \begin{figure}[H]
     \centering
@@ -1039,8 +1028,6 @@ The following quality assurance activities are performed during the project life
     \item GitHub pull requests require code review approval before changes can be merged into the main branch.
     \item Test coverage and defect resolution progress are reviewed during integration and system testing phases.
 \end{itemize}
-
-Quality assurance activities are primarily preventive and are intended to identify process weaknesses early before they affect final deliverables. Table~\ref{tab:quality_attributes} defines the key software quality attributes and their acceptance criteria for this project.
 
 \subsubsection{Quality Attributes}
 {\footnotesize
@@ -1204,8 +1191,6 @@ Implement optimization using the seven basic quality tools:
     \item \textbf{Value Stream Analysis}: Identify and eliminate non-value-added activities in the process
     \item \textbf{Tool Support}: Use Jira for task and defect management, GitHub for code management and CI/CD, Prometheus+Grafana for system monitoring. All tools must comply with Luckin Coffee's information security requirements
 \end{itemize}
-
-The fishbone diagram in Figure~\ref{fig:req_flow} illustrates the root cause analysis for high code defect rates, identifying potential contributing factors across people, process, technology, and environment dimensions.
 
 \begin{figure}[h]
 \centering
