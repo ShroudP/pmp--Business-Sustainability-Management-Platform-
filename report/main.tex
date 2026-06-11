@@ -254,7 +254,7 @@ The project adopts a strong matrix organizational structure, granting the projec
     \node (pm) [below of=sponsor, yshift=-1cm] {Project Manager\\(Zhang Wei)};
     
     % 调整虚线框：包裹 PM 和所有 Team Leaders
-    \node (pmt) [below of=pm, yshift=0.3cm, dashed, draw, minimum width=11cm, minimum height=3.8cm] {};
+    \node (pmt) [below of=pm, yshift=0.3cm, dashed, draw, minimum width=12.5cm, minimum height=3.8cm] {};
     \node at (pmt.north) [above=0.1cm, draw=none] {Project Management Team};
     
     \node (tl1) [below of=pm, xshift=-4cm, yshift=-0.5cm] {WP1 Lead\\(Yao Tianren)};
@@ -1209,7 +1209,7 @@ The core execution team of this project consists of 4 full-time internal members
 \begin{itemize}
   \item \textbf{Available Internal Resources}:
   \begin{itemize}
-    \item Project Manager (also Backend Developer): Proficient in software project management and Flask backend development, responsible for overall project planning, schedule control, quality assurance, customer communication, and core backend APIs, available full cycle (Weeks 1-16)
+    \item Technical Lead (also Backend Developer): Proficient in software project management and Flask backend development, responsible for backend architecture coordination, core API development, database design, and project documentation, available full cycle (Weeks 1-16)
     \item Requirements \& Design Lead: Proficient in system analysis and database design, with experience in large chain enterprise system architecture, responsible for overall architecture design and requirement analysis, available full cycle (Weeks 1-16)
     \item Frontend Foundation Lead: Proficient in system testing and Vue3 frontend infrastructure, responsible for reusable components, authentication system, and frontend testing, available full cycle (Weeks 1-16)
     \item Business Frontend Lead (also Integration \& Testing): Proficient in Vue3, Bootstrap and ECharts data visualization, responsible for all business frontend pages, end-to-end integration, and testing, available full cycle (Weeks 1-16)
@@ -1435,9 +1435,9 @@ Luckin Coffee Store Employees & End users of the system, provide feedback, affec
 % --- 10.2 ---
 \subsection{Project Reporting and Communication}
 
-This project has 7 core stakeholders in total (1 Project Manager, 1 Requirements \& Design Lead, 1 Frontend Foundation Lead, 1 Business Frontend Lead, 1 External Consultant, and 2 Luckin Coffee Department Heads). The number of communication channels is:
+This project has 8 core stakeholders in total (1 Project Manager + 4 Team Members + 1 External Consultant + 2 Luckin Coffee Department Heads). The number of communication channels is:
 \[
-\text{Number of Communication Channels} = \frac{n(n-1)}{2} = \frac{7 \times 6}{2} = 21
+\text{Number of Communication Channels} = \frac{n(n-1)}{2} = \frac{8 \times 7}{2} = 28
 \]
 
 To effectively manage communication channels, establish the following standardized communication mechanisms:
@@ -1706,7 +1706,7 @@ O2 & Team-member partial reallocation                 & 0.50 & $-$15{,}000 & $-$
 \end{longtable}
 }
 
-The aggregate EMV of $-$¥98{,}500 across all 15~risks is used as the basis for sizing the project's cost contingency reserve. Applying a 20\% safety margin, aligned with the cost-control threshold in Section~5.3, the cost contingency reserve is set at \textbf{¥120{,}000}.
+The aggregate EMV of $-$¥98{,}500 across all 15~risks is used as the basis for sizing the project's cost contingency reserve. Applying a 10\% of BAC sizing rule consistent with the project's cost baseline, the cost contingency reserve is set at \textbf{¥24{,}360}.
 
 \subsubsection{Sensitivity Analysis (Tornado Diagram)}
 
